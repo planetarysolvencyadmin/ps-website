@@ -11,6 +11,7 @@ Founder and Interim CEO
 IFoA Lead
 
 Sandy is a Scottish sustainability actuary who developed the Planetary Solvency concept and has led the research agenda since the first report in 2022, pioneering the collaborative approach that defines our working style. He brings over 20 years’ financial services experience across pensions, savings and investment, including advising several regulatory and policy climate initiatives.
+
 In addition, Sandy previously set up the UK branch of the climate change action charity Protect Our Winters UK.
 
 ## Jesse Abrams
