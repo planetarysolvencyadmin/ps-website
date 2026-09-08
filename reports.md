@@ -6,7 +6,6 @@ description: Planetary Solvency reports and resources
 layout: page
 ---
 
-
 ## Reports
 
 Since 2022, the team behind Planetary Solvency has produced a series of reports, sponsored by the Institute and Faculty of Actuaries (IFoA), combining actuarial risk analysis with the latest Earth system science. Our aim with these is to help deliver a better understanding of the global risks faced by our society and economy.
@@ -15,10 +14,10 @@ Since 2022, the team behind Planetary Solvency has produced a series of reports,
 
 **2023:** [The Emperor's New Climate Scenarios](https://actuaries.org.uk/emperors-new-climate-scenarios), written with Professor Tim Lenton at the University of Exeter, exposed how mainstream economic climate models systematically understate risks – with real-world impacts of climate change largely excluded from models.
 
-![climate-scorpion-report.png](/uploads/climate-scorpion-report.png)
+![climate-scorpion-report.png](/uploads/climate-scorpion-report.png){:width="300px"}
 **2024:** [Climate Scorpion – the sting is in the tail](https://actuaries.org.uk/media/g1qevrfa/climate-scorpion.pdf) formally introduced ‘Planetary Solvency’ as a concept: applying actuarial solvency principles such as risk appetite, stress testing and capital adequacy to the Earth system itself.
 
-![planetary-solvency-finding-balance-thumb.png](/uploads/planetary-solvency-finding-balance-thumb.png)
+![planetary-solvency-finding-balance-thumb.png](/uploads/planetary-solvency-finding-balance-thumb.png){:width="300px"}
 **2025:** [Planetary Solvency - finding our balance with nature](https://actuaries.org.uk/news-and-media-releases/news-articles/2025/jan/16-jan-25-planetary-solvency-finding-our-balance-with-nature/), produced with the University of Exeter's Global Systems Institute, set out the case for global risk management for human prosperity, and developed the Planetary Solvency principles and risk dashboard.
 
 **2026:**
