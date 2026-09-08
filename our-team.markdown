@@ -1,6 +1,7 @@
 ---
 title: Our Team
-date: 2026-09-08 15:43:00 Z
+date: 2026-09-08 16:43:00 +01:00
+permalink: "/our-team/"
 position: 6
 layout: page
 ---
