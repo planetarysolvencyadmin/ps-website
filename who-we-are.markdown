@@ -33,4 +33,4 @@ Ensuring planetary solvency to support lasting human prosperity.
 Reconnecting finance and the economy to the biosphere so that humanity lives in balance with nature.
 
 ## Our Team
-[For more details on who are team is see the our team page.}(/our-team/)
+[For more details on who the team is see the team page.}(/our-team/)
