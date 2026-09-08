@@ -3,9 +3,8 @@ title: Home
 layout: home
 ---
 
-## Working Area
-
-- [Working Area – Climate change risk assessment](/working-area/)
+## Welcome
+Welcome to the testing site for Planetary Solvency.
 
 ## Previous Reports
 
