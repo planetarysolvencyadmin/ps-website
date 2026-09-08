@@ -5,7 +5,7 @@
   --accent-soft: #e4efe9;
   --line: #dfe3df;
   --muted: #5b6660;
-  --max-width: 720px;
+  --max-width: 1044px;
 }
 
 * { box-sizing: border-box; }
@@ -44,7 +44,7 @@ a:hover { text-decoration-thickness: 2px; }
   gap: 0.75rem;
 }
 .site-title {
-  font-size: 1.15rem;
+  font-size: 2.15rem;
   font-weight: 700;
   color: var(--ink);
   text-decoration: none;
