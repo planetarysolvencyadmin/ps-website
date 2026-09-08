@@ -1,6 +1,7 @@
 ---
 title: Working Area
 permalink: "/working-area/"
+position: 2
 layout: page
 subtitle: Climate change risk assessment.
 description: 'Planetary Solvency working area: climate change risk assessment.'

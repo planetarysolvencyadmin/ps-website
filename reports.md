@@ -1,6 +1,7 @@
 ---
 title: Previous Reports
 permalink: "/reports/"
+position: 4
 layout: page
 description: Previous Planetary Solvency reports.
 ---

@@ -1,6 +1,7 @@
 ---
 title: What We Do
 date: 2026-09-08 13:14:00 Z
+position: 5
 ---
 
 At Planetary Solvency, we educate senior leaders and teams across finance, government and business on how to recognise and manage rapidly escalating, unexpected climate and nature-driven systemic risks. 
