@@ -1,6 +1,7 @@
 ---
 title: Who We Are
 date: 2026-09-08 13:07:00 Z
+permalink: "/who-we-are/"
 position: 2
 layout: page
 ---
