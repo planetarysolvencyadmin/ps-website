@@ -1,6 +1,6 @@
 ---
 title: Who We Are
-date: 2026-09-08 13:07:00 Z
+date: 2026-09-08 14:07:00 +01:00
 permalink: "/who-we-are/"
 position: 2
 layout: page
@@ -31,3 +31,6 @@ Ensuring planetary solvency to support lasting human prosperity.
 ## Our Vision
 
 Reconnecting finance and the economy to the biosphere so that humanity lives in balance with nature.
+
+## Our Team
+[For more details on who are team is see the our team page.}(/our-team/)
