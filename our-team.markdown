@@ -1,6 +1,7 @@
 ---
 title: Our Team
 date: 2026-09-08 15:43:00 Z
+position: 6
 layout: page
 ---
 
