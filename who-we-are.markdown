@@ -1,7 +1,7 @@
 ---
 title: Who We Are
 date: 2026-09-08 13:07:00 Z
-position: 3
+position: 2
 layout: page
 ---
 
