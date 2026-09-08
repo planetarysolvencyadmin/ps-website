@@ -7,7 +7,7 @@ layout: page
 ---
 
 
-# Reports
+## Reports
 
 Since 2022, the team behind Planetary Solvency has produced a series of reports, sponsored by the Institute and Faculty of Actuaries (IFoA), combining actuarial risk analysis with the latest Earth system science. Our aim with these is to help deliver a better understanding of the global risks faced by our society and economy.
 
