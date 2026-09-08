@@ -1,5 +1,5 @@
 ---
-title: Contact
+title: Contact / Sign Up
 date: 2026-09-08 15:39:00 Z
 ---
 
