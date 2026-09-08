@@ -4,7 +4,7 @@ position: 1
 layout: home
 ---
 
-# An introduction to Planetary Solvency
+## An introduction to Planetary Solvency
 
 Our society and economy fundamentally depend on the Earth’s living systems to provide critical infrastructure such as food, water, energy, raw materials and climate regulation.
 
