@@ -1,6 +1,7 @@
 ---
 title: Contact / Sign Up
 date: 2026-09-08 15:39:00 Z
+layout: page
 ---
 
 To find out more about Planetary Solvency or enquire about our products and services, feel free to get in touch. Contact details to follow shortly.
