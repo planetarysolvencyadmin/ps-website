@@ -2,6 +2,7 @@
 title: Who We Are
 date: 2026-09-08 13:07:00 Z
 position: 2
+layout: page
 ---
 
 Planetary Solvency is an independent, non-profit risk management programme founded by the [Institute and Faculty of Actuaries (IFoA)](https://actuaries.org.uk/), in partnership with the [University of Exeter's Global Systems Institute](https://www.exeter.ac.uk/research/institutes/gsi/).
