@@ -9,7 +9,7 @@ Welcome to the testing site for Planetary Solvency.
 
 ## Previous Reports
 
-* [Planetary Solvency finding our balance with nature Global risk management for human prosperity](https://actuaries.org.uk/media/ni4erlna/planetary-solvency.pdf){:target="_blank" rel="noopener"}
+* [January 2025 - Planetary Solvency finding our balance with nature Global risk management for human prosperity](https://actuaries.org.uk/media/ni4erlna/planetary-solvency.pdf){:target="_blank" rel="noopener"}
 
 ![planetary-solvency-finding-balance-thumb.png](/uploads/planetary-solvency-finding-balance-thumb.png)
 
