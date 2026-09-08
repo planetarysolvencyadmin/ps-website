@@ -5,8 +5,8 @@ position: 10
 layout: page
 ---
 
-To find out more about Planetary Solvency or enquire about our products and services, feel free to get in touch. Contact details to follow shortly.
+To find out more about Planetary Solvency or enquire about our products and services, feel free to get in touch via this [form](https://docs.google.com/forms/d/e/1FAIpQLSf3kWVe2I6HPTwtHS6LkzqAlUfCW8qOaF6z2cKtPDwhynBAwA/).
 
 ## Newsletter
-You can also sign up to the Planetary Solvency newsletter here:
-https://planetarysolvency.substack.com/subscribe
+You can also sign up to the [Planetary Solvency Substack and newsletter:
+https://planetarysolvency.substack.com/subscribe](https://planetarysolvency.substack.com/subscribe)
