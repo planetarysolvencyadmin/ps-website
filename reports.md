@@ -26,6 +26,6 @@ Since 2022, the team behind Planetary Solvency has produced a series of reports,
 
 # Resources
 
-AMOC 2029: When the sea slows, produced in association with the IFoA, the Strategic Climate Risks Initiative, the University of Exeter and the ASRA Network, is an interactive narrative resource tracking the years one government spends bracing for the slowdown of the Atlantic's overturning circulation. TO DO ADD AMOC SITE URL.
+AMOC 2029: When the sea slows, produced in association with the IFoA, the Strategic Climate Risks Initiative, the University of Exeter and the ASRA Network, is an interactive narrative resource tracking the years one government spends bracing for the slowdown of the Atlantic's overturning circulation. AMOC Link TBC.
 
 [← Back to home](/)
