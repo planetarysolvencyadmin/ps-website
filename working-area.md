@@ -1,8 +1,8 @@
 ---
-layout: default
 title: Working Area
-permalink: /working-area/
-description: "Planetary Solvency working area: climate change risk assessment."
+permalink: "/working-area/"
+layout: default
+description: 'Planetary Solvency working area: climate change risk assessment.'
 ---
 
 <h1>Working Area</h1>

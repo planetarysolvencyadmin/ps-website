@@ -1,8 +1,8 @@
 ---
-layout: default
 title: Reports
-permalink: /reports/
-description: "Previous Planetary Solvency reports."
+permalink: "/reports/"
+layout: default
+description: Previous Planetary Solvency reports.
 ---
 
 <h1>Previous Reports</h1>
