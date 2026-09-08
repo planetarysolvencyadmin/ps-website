@@ -1,6 +1,7 @@
 ---
 title: Partners
 date: 2026-09-08 15:44:00 Z
+layout: page
 ---
 
 We are building a growing network of aligned impact and science partners, which include:
