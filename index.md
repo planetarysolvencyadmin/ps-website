@@ -5,7 +5,7 @@ layout: home
 
 ## Welcome
 
-Welcome to the testing site for Planetary Solvency.
+Welcome to the testing website for Planetary Solvency.
 
 ## Previous Reports
 
