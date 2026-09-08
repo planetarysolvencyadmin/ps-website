@@ -1,6 +1,8 @@
 ---
 title: Reports
-date: 2026-09-08 13:03:00 Z
+date: 2026-09-08 14:03:00 +01:00
+permalink: intel-hub-reports
+layout: page
 ---
 
 Since 2022, the team behind Planetary Solvency has produced a series of reports, sponsored by the Institute and Faculty of Actuaries (IFoA), combining actuarial risk analysis with the latest Earth system science. Our aim with these is to help deliver a better understanding of the global risks faced by our society and economy.
