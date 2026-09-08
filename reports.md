@@ -2,17 +2,17 @@
 title: Intelligence Hub
 permalink: "/reports/"
 position: 8
-description: Previous Planetary Solvency reports.
+description: Planetary Solvency reports and resources
 layout: page
 ---
 
 # Reports
 
 Since 2022, the team behind Planetary Solvency has produced a series of reports, sponsored by the Institute and Faculty of Actuaries (IFoA), combining actuarial risk analysis with the latest Earth system science. Our aim with these is to help deliver a better understanding of the global risks faced by our society and economy.
- 
+
 **2022:** [Climate Emergency – tipping the odds in our favour.](https://actuaries.org.uk/media/gebdhxzi/climate-emergency.pdf) As a joint policy briefing by the IFoA and Sir David King’s Climate Crisis Advisory Group, this briefing warned that climate tipping points are closer than modelled, introducing early risk-based framing. It detailed that a key goal of climate change policy should be to limit the probability of a very bad outcome to an acceptably small value.
 
-**2023:** [The Emperor's New Climate Scenarios](https://actuaries.org.uk/emperors-new-climate-scenarios), written with Professor Tim Lenton at the University of Exeter, exposed how mainstream economic climate models systematically understate risks – with real-world impacts of climate change largely excluded from models. 
+**2023:** [The Emperor's New Climate Scenarios](https://actuaries.org.uk/emperors-new-climate-scenarios), written with Professor Tim Lenton at the University of Exeter, exposed how mainstream economic climate models systematically understate risks – with real-world impacts of climate change largely excluded from models.
 
 ![climate-scorpion-report.png](/uploads/climate-scorpion-report.png)
 **2024:** [Climate Scorpion – the sting is in the tail](https://actuaries.org.uk/media/g1qevrfa/climate-scorpion.pdf) formally introduced ‘Planetary Solvency’ as a concept: applying actuarial solvency principles such as risk appetite, stress testing and capital adequacy to the Earth system itself.
