@@ -4,6 +4,7 @@ position: 1
 layout: home
 ---
 
+## Welcome
 Our society and economy fundamentally depend on the Earth’s living systems to provide critical infrastructure such as food, water, energy, raw materials and climate regulation.
 
 Human prosperity depends on staying within the limits of these living systems, with global finance holding trillions in assets whose value depends on the stability of a functioning biosphere and ecosystem services.
