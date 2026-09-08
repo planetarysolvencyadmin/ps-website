@@ -1,6 +1,7 @@
 ---
 title: What We Do
 date: 2026-09-08 13:14:00 Z
+permalink: "/what-we-do/"
 position: 3
 layout: page
 ---
