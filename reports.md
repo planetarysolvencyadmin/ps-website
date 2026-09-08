@@ -1,6 +1,7 @@
 ---
 title: Intelligence Hub
 permalink: "/reports/"
+published: false
 position: 5
 description: Previous Planetary Solvency reports.
 layout: page
