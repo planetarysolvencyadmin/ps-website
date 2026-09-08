@@ -1,6 +1,7 @@
 ---
 title: Contact / Sign Up
 date: 2026-09-08 16:39:00 +01:00
+permalink: "/contact/"
 position: 10
 layout: page
 ---
