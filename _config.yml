@@ -2,10 +2,6 @@
 title: Planetary Solvency
 timezone: Europe/London
 collections:
-  intelligence-hub:
-    title: Intelligence Hub
-    output: true
-    permalink: intel-hub
   posts:
     title: Posts
     output: true
