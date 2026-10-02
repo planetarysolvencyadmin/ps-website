@@ -2,42 +2,42 @@
 - title: Explore
   url: /explore/
   items:
-    - { title: What is Planetary Solvency?, anchor: what-is-planetary-solvency }
+    - { title: "What is Planetary Solvency?", anchor: what-is-planetary-solvency }
     - { title: "Our approach: why PS is different", anchor: our-approach }
-    - { title: What we do, anchor: what-we-do }
-    - { title: Mission, anchor: mission }
-    - { title: Vision, anchor: vision }
-    - { title: Values, anchor: values }
-    - { title: Team, anchor: team }
+    - { title: "What we do", anchor: what-we-do }
+    - { title: "Mission", anchor: mission }
+    - { title: "Vision", anchor: vision }
+    - { title: "Values", anchor: values }
+    - { title: "Team", anchor: team }
 
 - title: Intelligence
   url: /intelligence/
   items:
-    - { title: Research, anchor: research }
-    - { title: Reports, anchor: reports }
-    - { title: Briefings, anchor: briefings }
-    - { title: AMOC2029, anchor: amoc2029 }
-    - { title: Planetary Risk Dashboard, anchor: planetary-risk-dashboard }
-    - { title: Planetary Solvency Scenarios, anchor: planetary-solvency-scenarios }
+    - { title: "Research", anchor: research }
+    - { title: "Reports", anchor: reports }
+    - { title: "Briefings", anchor: briefings }
+    - { title: "AMOC2029", anchor: amoc2029 }
+    - { title: "Planetary Risk Dashboard", anchor: planetary-risk-dashboard }
+    - { title: "Planetary Solvency Scenarios", anchor: planetary-solvency-scenarios }
 
 - title: Act
   url: /act/
   items:
-    - { title: Risk navigation workshops, anchor: risk-navigation-workshops }
-    - { title: PS Recovery Plan, anchor: recovery-plan }
-    - { title: Planetary Literacy, anchor: planetary-literacy }
+    - { title: "Risk navigation workshops", anchor: risk-navigation-workshops }
+    - { title: "PS Recovery Plan", anchor: recovery-plan }
+    - { title: "Planetary Literacy", anchor: planetary-literacy }
 
 - title: Connect
   url: /connect/
   items:
-    - { title: PS network and partners, anchor: network-and-partners }
-    - { title: Work with us, anchor: work-with-us }
-    - { title: PS Chronicles newsletter sign-up, anchor: newsletter }
-    - { title: Contact, anchor: contact }
+    - { title: "PS network and partners", anchor: network-and-partners }
+    - { title: "Work with us", anchor: work-with-us }
+    - { title: "PS Chronicles newsletter sign-up", anchor: newsletter }
+    - { title: "Contact", anchor: contact }
 
 - title: Press & commentary
   url: /press-and-commentary/
   items:
-    - { title: News and announcements, anchor: news-and-announcements }
-    - { title: Commentary, anchor: commentary }
-    - { title: Media enquiries, anchor: media-enquiries }
+    - { title: "News and announcements", anchor: news-and-announcements }
+    - { title: "Commentary", anchor: commentary }
+    - { title: "Media enquiries", anchor: media-enquiries }
