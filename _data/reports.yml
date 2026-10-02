@@ -1,0 +1,41 @@
+# Report series. Add `image` (a file in _uploads, served from /uploads/) when a thumbnail is available.
+# `question` is the public question each report answers (shown in the Research section).
+- year: 2022
+  title: "Climate Emergency – tipping the odds in our favour"
+  url: https://actuaries.org.uk/media/gebdhxzi/climate-emergency.pdf
+  pdf: https://actuaries.org.uk/media/gebdhxzi/climate-emergency.pdf
+  question: "Climate change is a risk management problem, why aren’t we treating it that way?"
+  summary: "As a joint policy briefing by the IFoA and Sir David King’s Climate Crisis Advisory Group, this briefing warned that climate tipping points are closer than modelled, introducing early risk-based framing. It detailed that a key goal of climate change policy should be to limit the probability of a very bad outcome to an acceptably small value."
+
+- year: 2023
+  title: "The Emperor's New Climate Scenarios"
+  url: https://actuaries.org.uk/emperors-new-climate-scenarios
+  question: "Why are central banks and regulators underestimating climate risk?"
+  summary: "Written with Professor Tim Lenton at the University of Exeter, this report exposed how mainstream economic climate models systematically understate risks – with real-world impacts of climate change largely excluded from models."
+
+- year: 2024
+  title: "Climate Scorpion – the sting is in the tail"
+  url: https://actuaries.org.uk/media/g1qevrfa/climate-scorpion.pdf
+  pdf: https://actuaries.org.uk/media/g1qevrfa/climate-scorpion.pdf
+  image: /uploads/climate-scorpion-report.png
+  question: "What if the planet is more sensitive to greenhouse gases than we thought?"
+  summary: "Formally introduced ‘Planetary Solvency’ as a concept: applying actuarial solvency principles such as risk appetite, stress testing and capital adequacy to the Earth system itself."
+
+- year: 2025
+  title: "Planetary Solvency - finding our balance with nature"
+  url: https://actuaries.org.uk/news-and-media-releases/news-articles/2025/jan/16-jan-25-planetary-solvency-finding-our-balance-with-nature/
+  image: /uploads/planetary-solvency-finding-balance-thumb.png
+  question: "How could we apply a solvency approach to managing our interaction with the planet?"
+  summary: "Produced with the University of Exeter's Global Systems Institute, this report set out the case for global risk management for human prosperity, and developed the Planetary Solvency principles and risk dashboard."
+
+- year: 2026
+  title: "Parasol Lost: Recovery plan needed"
+  url: https://actuaries.org.uk/news-and-media-releases/news-articles/2026/jan/14-jan-26-parasol-lost-recovery-plan-needed/
+  question: "Why is global warming accelerating and what could we do about it?"
+  summary: "Produced with the University of Exeter, this report detailed a risk-led analysis of aerosol masking, global heating acceleration, and the systemic implications for financial stability. In addition, it outlined key components for a planetary solvency recovery plan."
+
+- year: 2026
+  title: "Planetary Solvency: Tipping into the wild unknown"
+  url: https://actuaries.org.uk/planetary-solvency-tipping-into-the-wild-unknown/
+  question: "Why does nature loss impact our food supply?"
+  summary: "Produced with Anglia Ruskin University, this report highlighted inadequate risk assessment, nature degradation, food and pandemic risk, and set out the case for treating nature as critical infrastructure."
