@@ -1,7 +1,7 @@
 ---
 title: Terms of use
+permalink: "/terms-of-use/"
 description: Terms of use for the Planetary Solvency website.
-permalink: /terms-of-use/
 layout: page
 ---
 

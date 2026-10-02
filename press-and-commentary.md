@@ -1,7 +1,7 @@
 ---
 title: Press & commentary
+permalink: "/press-and-commentary/"
 description: Planetary Solvency news, commentary and media enquiries.
-permalink: /press-and-commentary/
 layout: page
 ---
 

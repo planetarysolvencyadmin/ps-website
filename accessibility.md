@@ -1,7 +1,7 @@
 ---
 title: Accessibility
+permalink: "/accessibility/"
 description: Accessibility statement for the Planetary Solvency website.
-permalink: /accessibility/
 layout: page
 ---
 

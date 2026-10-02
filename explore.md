@@ -1,7 +1,8 @@
 ---
 title: Explore
-permalink: /explore/
-description: What Planetary Solvency is, how our approach differs, and who is behind it.
+permalink: "/explore/"
+description: What Planetary Solvency is, how our approach differs, and who is behind
+  it.
 layout: page
 ---
 

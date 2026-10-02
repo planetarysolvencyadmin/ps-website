@@ -1,8 +1,9 @@
 ---
 title: Intelligence
+permalink: "/intelligence/"
 subtitle: Intelligence for a changing planet
-permalink: /intelligence/
-description: Planetary Solvency research, reports, briefings and tools translating Earth system evidence into decision-relevant insight.
+description: Planetary Solvency research, reports, briefings and tools translating
+  Earth system evidence into decision-relevant insight.
 layout: page
 ---
 

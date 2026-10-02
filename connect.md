@@ -1,7 +1,8 @@
 ---
 title: Connect
-description: Our partner network, how to work with us, our newsletter and how to get in touch.
-permalink: /connect/
+permalink: "/connect/"
+description: Our partner network, how to work with us, our newsletter and how to get
+  in touch.
 layout: page
 ---
 

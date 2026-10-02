@@ -1,7 +1,7 @@
 ---
 title: Privacy
+permalink: "/privacy/"
 description: How Planetary Solvency handles personal information.
-permalink: /privacy/
 layout: page
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Cookies
+permalink: "/cookies/"
 description: How Planetary Solvency uses cookies.
-permalink: /cookies/
 layout: page
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Governance & funding
+permalink: "/governance-and-funding/"
 description: How Planetary Solvency is governed and funded.
-permalink: /governance-and-funding/
 layout: page
 ---
 
