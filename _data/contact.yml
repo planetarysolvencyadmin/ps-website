@@ -3,7 +3,7 @@
 fallback_url: https://forms.gle/6nAWLYNDxW4ChwsT6
 # Optional spam check. Leave blank to switch it off. To switch it on, create a free Turnstile widget in
 # Cloudflare, paste its Site key here, and add its Secret key to Pages as TURNSTILE_SECRET.
-turnstile_site_key: ""
+turnstile_site_key: "0x4AAAAAAFNAq9HyxF_LQNjj"
 fields:
   - { name: name, label: Name, type: text, autocomplete: name, required: true }
   - { name: email, label: Email, type: email, autocomplete: email, required: true }
