@@ -5,6 +5,7 @@
 //
 // Settings:
 //   TURNSTILE_SECRET  (optional) Pages > Settings > Variables and Secrets. If unset, the Turnstile check is skipped.
+//   CONTACT_DEBUG     (optional) set to 1 while testing to see why a send failed. Remove it afterwards.
 //
 // If the Google Form changes (new questions, a new form), update the two constants below.
 // The IDs come from the form's page source: the ID after /d/e/ in its link, and each question's "entry" number.
@@ -59,7 +60,10 @@ export async function onRequestPost({ request, env }) {
   }
 
   const sent = await sendToGoogle(values);
-  if (!sent) return reply(false, 502, 'Sorry, we could not send your message just now.');
+  if (!sent.ok) {
+    const detail = env && env.CONTACT_DEBUG ? ` [${sent.why}]` : '';
+    return reply(false, 502, `Sorry, we could not send your message just now.${detail}`);
+  }
   return reply(true, 200, 'Thank you. Your message has been sent.');
 }
 
@@ -84,26 +88,45 @@ async function verifyTurnstile(secret, token, ip) {
   }
 }
 
+// Returns { ok: true } or { ok: false, why: '...' }
 async function sendToGoogle(values) {
   const base = `https://docs.google.com/forms/d/e/${GOOGLE_FORM_ID}`;
   // Google's own page carries hidden fields (a token and similar). Copy them across the way a browser would.
-  const hidden = { fvv: '1', pageHistory: '0' };
+  const scraped = { fvv: '1', pageHistory: '0' };
   try {
     const html = await (await fetch(`${base}/viewform`)).text();
-    for (const m of html.matchAll(/<input type="hidden" name="([^"]+)" value="([^"]*)"/g)) hidden[m[1]] = decodeEntities(m[2]);
+    for (const m of html.matchAll(/<input type="hidden" name="([^"]+)" value="([^"]*)"/g)) scraped[m[1]] = decodeEntities(m[2]);
   } catch {
     // carry on with the defaults
   }
-  const body = new URLSearchParams(hidden);
-  for (const [key, entry] of Object.entries(ENTRY)) body.set(entry, values[key]);
-  try {
-    const res = await fetch(`${base}/formResponse`, { method: 'POST', body, redirect: 'manual' });
-    if (res.status !== 200) return false; // a redirect here usually means the form wants a Google sign-in
-    const text = await res.text();
-    return !/ServiceLogin|accounts\.google\.com\/v3\/signin/.test(text);
-  } catch {
-    return false;
+  // Try with the copied fields first, then with just the basics in case a copied value is the problem
+  const attempts = [scraped, { fvv: '1', pageHistory: '0' }];
+  let why = 'no attempt made';
+  for (const hidden of attempts) {
+    const body = new URLSearchParams(hidden);
+    for (const [key, entry] of Object.entries(ENTRY)) body.set(entry, values[key]);
+    try {
+      const res = await fetch(`${base}/formResponse`, {
+        method: 'POST',
+        body,
+        redirect: 'manual',
+        headers: { Origin: 'https://docs.google.com', Referer: `${base}/viewform` }
+      });
+      if (res.status >= 200 && res.status < 300) return { ok: true };
+      if (res.status >= 300 && res.status < 400) {
+        // A redirect to a Google sign-in page means the form needs a login; any other redirect is Google moving on after saving
+        const where = res.headers.get('Location') || '';
+        if (!/accounts\.google\.com|ServiceLogin/.test(where)) return { ok: true };
+        why = 'google asked for a sign-in';
+        break;
+      }
+      why = `google answered ${res.status}`;
+    } catch (err) {
+      why = `could not reach google (${err && err.message})`;
+    }
   }
+  console.log('contact form: not sent to Google:', why);
+  return { ok: false, why };
 }
 
 function decodeEntities(s) {

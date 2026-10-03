@@ -14,13 +14,13 @@ function post(fields, { json = true, origin = 'https://example.org' } = {}) {
   return new Request(URL_, { method: 'POST', headers, body: new URLSearchParams(fields) });
 }
 
-function mockFetch({ formStatus = 200, formBody = 'Thanks', turnstile = true } = {}) {
+function mockFetch({ formStatus = 200, formBody = 'Thanks', turnstile = true, location = '' } = {}) {
   const calls = [];
   globalThis.fetch = async (url, init = {}) => {
     calls.push({ url: String(url), init });
     if (String(url).includes('siteverify')) return new Response(JSON.stringify({ success: turnstile }));
     if (String(url).endsWith('/viewform')) return new Response('<input type="hidden" name="fbzx" value="123"><input type="hidden" name="partialResponse" value="[null,null,&quot;123&quot;]">');
-    return new Response(formBody, { status: formStatus });
+    return new Response(formBody, { status: formStatus, headers: location ? { Location: location } : {} });
   };
   return calls;
 }
@@ -71,10 +71,41 @@ test('checks Turnstile when a secret is set, and skips it when not', async () =>
   assert.equal(skipped.status, 200);
 });
 
-test('reports failure when Google redirects (for example to a sign-in page)', async () => {
-  mockFetch({ formStatus: 302 });
+test('reports failure when Google redirects to a sign-in page', async () => {
+  mockFetch({ formStatus: 302, location: 'https://accounts.google.com/ServiceLogin?continue=x' });
   const res = await onRequestPost({ request: post(GOOD), env: {} });
   assert.equal(res.status, 502);
+});
+
+test('treats another redirect from Google as saved', async () => {
+  mockFetch({ formStatus: 302, location: 'https://docs.google.com/forms/d/e/abc/formResponse' });
+  const res = await onRequestPost({ request: post(GOOD), env: {} });
+  assert.equal(res.status, 200);
+});
+
+test('retries without the copied hidden fields when Google answers 400', async () => {
+  const calls = [];
+  let n = 0;
+  globalThis.fetch = async (url, init = {}) => {
+    calls.push({ url: String(url), init });
+    if (String(url).endsWith('/viewform')) return new Response('<input type="hidden" name="token" value="stale">');
+    n += 1;
+    return new Response('', { status: n === 1 ? 400 : 200 });
+  };
+  const res = await onRequestPost({ request: post(GOOD), env: {} });
+  assert.equal(res.status, 200);
+  const posts = calls.filter(c => c.url.endsWith('/formResponse'));
+  assert.equal(posts.length, 2);
+  assert.equal(posts[0].init.body.get('token'), 'stale');
+  assert.equal(posts[1].init.body.get('token'), null);
+});
+
+test('shows the reason only when CONTACT_DEBUG is set', async () => {
+  mockFetch({ formStatus: 500 });
+  const quiet = await (await onRequestPost({ request: post(GOOD), env: {} })).json();
+  assert.doesNotMatch(quiet.message, /google answered/);
+  const loud = await (await onRequestPost({ request: post(GOOD), env: { CONTACT_DEBUG: '1' } })).json();
+  assert.match(loud.message, /google answered 500/);
 });
 
 test('without JavaScript, success redirects back to the page and failure shows a short page', async () => {
