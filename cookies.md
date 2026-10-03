@@ -3,6 +3,7 @@ title: Cookies
 permalink: "/cookies/"
 description: How Planetary Solvency uses cookies.
 layout: page
+bands: false
 ---
 
 <p class="note">Draft text for review. Please check it against the cookies the live site actually sets before publication.</p>
@@ -23,6 +24,7 @@ If you follow links to other services, or use them from our pages, they may set 
 
 * **Substack**, for our newsletter and sign-up
 * **Google Forms**, for our contact form
+* **Cloudflare Turnstile**, a spam check on the contact form (only if switched on)
 * **YouTube**, if you watch a linked video
 * **Reports and resources hosted by others**, such as the IFoA website
 

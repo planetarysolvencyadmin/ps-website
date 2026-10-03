@@ -19,7 +19,8 @@ We are building a growing network of aligned partners across science, solutions 
 </div>
 {% endfor %}
 
-## Work with us {#work-with-us}
+## Work with us
+{: #work-with-us .band-lilac}
 
 We are actively building our partner network for 2027 and welcome conversations with organisations who share our mission. We welcome conversations with:
 
@@ -35,7 +36,8 @@ Aligned organisations who support with methodologies, collaborations, toolkits a
 
 <a class="button" href="#contact">Get in touch</a>
 
-## PS Chronicles newsletter sign-up {#newsletter}
+## PS Chronicles newsletter sign-up
+{: #newsletter .band-navy}
 
 Sign up to the Planetary Solvency newsletter, the PS Chronicles, on Substack.
 
@@ -43,6 +45,6 @@ Sign up to the Planetary Solvency newsletter, the PS Chronicles, on Substack.
 
 ## Contact {#contact}
 
-To find out more about Planetary Solvency or enquire about our products and services, feel free to get in touch via our [contact form](https://forms.gle/6nAWLYNDxW4ChwsT6).
+To find out more about Planetary Solvency or enquire about our products and services, get in touch.
 
-<a class="button" href="https://forms.gle/6nAWLYNDxW4ChwsT6">Contact us</a>
+{% include contact-form.html %}

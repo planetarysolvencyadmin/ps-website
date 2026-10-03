@@ -1,0 +1,49 @@
+{% assign c = site.data.contact %}
+<p id="contact-sent" class="form-sent" role="status">Thank you. Your message has been sent.</p>
+<form class="contact-form" id="contact-form" method="post" action="/api/contact">
+  {% for f in c.fields %}
+  <div class="field">
+    <label for="cf-{{ f.name }}">{{ f.label }}{% unless f.required %} <span class="optional">(optional)</span>{% endunless %}</label>
+    {% if f.type == "textarea" %}
+    <textarea id="cf-{{ f.name }}" name="{{ f.name }}" rows="6"{% if f.required %} required{% endif %}></textarea>
+    {% else %}
+    <input id="cf-{{ f.name }}" name="{{ f.name }}" type="{{ f.type }}"{% if f.autocomplete %} autocomplete="{{ f.autocomplete }}"{% endif %}{% if f.required %} required{% endif %}>
+    {% endif %}
+  </div>
+  {% endfor %}
+  <div class="field trap" aria-hidden="true">
+    <label for="cf-website">Leave this field empty</label>
+    <input id="cf-website" name="website" type="text" tabindex="-1" autocomplete="off">
+  </div>
+  {% if c.turnstile_site_key != "" and c.turnstile_site_key %}
+  <div class="cf-turnstile" data-sitekey="{{ c.turnstile_site_key }}"></div>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  {% endif %}
+  <button class="button" type="submit">Send message</button>
+  <p class="form-note">We use this form only to reply to you. See our <a href="{{ '/privacy/' | relative_url }}">privacy notice</a>. Your message is stored in Google Forms.</p>
+  <p class="form-status" id="contact-status" role="status" aria-live="polite"></p>
+</form>
+<script>
+  (function () {
+    var form = document.getElementById('contact-form');
+    var status = document.getElementById('contact-status');
+    var button = form.querySelector('button[type=submit]');
+    var opened = Date.now();
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (Date.now() - opened < 3000) { status.textContent = 'Please take a moment to check your message, then send it again.'; return; }
+      button.disabled = true;
+      status.textContent = 'Sending...';
+      fetch(form.action, { method: 'POST', headers: { Accept: 'application/json' }, body: new URLSearchParams(new FormData(form)) })
+        .then(function (res) { return res.json().catch(function () { return {}; }).then(function (data) { return { ok: res.ok, data: data }; }); })
+        .then(function (r) {
+          if (r.ok) { form.reset(); status.textContent = r.data.message || 'Thank you. Your message has been sent.'; }
+          else { status.innerHTML = ''; status.appendChild(document.createTextNode((r.data.message || 'Sorry, that did not send.') + ' You can also use our ')); var a = document.createElement('a'); a.href = '{{ c.fallback_url }}'; a.textContent = 'contact form'; status.appendChild(a); status.appendChild(document.createTextNode('.')); }
+        })
+        .catch(function () {
+          status.innerHTML = 'Sorry, that did not send. Please try our <a href="{{ c.fallback_url }}">contact form</a> instead.';
+        })
+        .then(function () { button.disabled = false; if (window.turnstile) { try { window.turnstile.reset(); } catch (e) {} } });
+    });
+  })();
+</script>

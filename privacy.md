@@ -3,6 +3,7 @@ title: Privacy
 permalink: "/privacy/"
 description: How Planetary Solvency handles personal information.
 layout: page
+bands: false
 ---
 
 <p class="note">Draft text for review. It has not been legally reviewed. Details in [square brackets] are placeholders to be completed.</p>
@@ -15,7 +16,7 @@ layout: page
 
 This website is a static site and does not ask you to create an account. We may receive personal information when you:
 
-* **Contact us** through our contact form. This is hosted by Google Forms, so the details you submit (such as your name, email address and message) are processed by Google as well as by us.
+* **Contact us** through our contact form. Your message passes through our website host (Cloudflare) and is stored in Google Forms, so the details you submit (your name, email address, phone number if you give one, and your message) are processed by both. We may use Cloudflare Turnstile to check that a submission comes from a person.
 * **Subscribe to our newsletter**. Our newsletter is delivered through Substack, which collects your email address under its own privacy policy.
 * **Visit the website**. Like most websites, our hosting provider may log technical information such as your IP address, browser type and the pages you request.
 

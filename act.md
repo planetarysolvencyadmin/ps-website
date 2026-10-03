@@ -17,7 +17,8 @@ Watch the Chapter Zero session, [Imagining new futures: securing planetary solve
 <a class="button" href="https://www.youtube.com/watch?v=kWY2mg0GQn4">Watch the video</a>
 <a class="button secondary" href="https://docs.google.com/document/d/16YjLkBYnAoYBg6aqQ2EJPaxmBSQMgoRe/edit">Download the briefing document</a>
 
-## PS Recovery Plan {#recovery-plan}
+## PS Recovery Plan
+{: #recovery-plan .band-coral}
 
 We are at a ‘break glass’ moment for climate change. Emergency action is required to stabilise the climate system, and to implement equivalent risk management practices to those that protect financial stability. Governments and other stakeholders need to execute a Planetary Solvency recovery plan, congruent with CCAG’s 4R planet strategy, identifying quick wins, emergency brakes and options to change our trajectory away from the high risk zone.
 

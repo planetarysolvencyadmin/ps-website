@@ -3,6 +3,7 @@ title: Accessibility
 permalink: "/accessibility/"
 description: Accessibility statement for the Planetary Solvency website.
 layout: page
+bands: false
 ---
 
 <p class="note">Draft text for review. It should be updated once the site has been formally tested.</p>

@@ -1,0 +1,12 @@
+# Photos shown in a circle beside the home page text. One is picked at random on each visit.
+# Files live in assets/images/home/ (square, about 500px, WebP). `alt` is read by screen readers.
+- file: glacier.webp
+  alt: A glacier face collapsing into the sea in a burst of spray
+- file: power-station.webp
+  alt: Smoke from power station cooling towers against a sunset
+- file: storm.webp
+  alt: A supercell storm cloud over open farmland
+- file: coral-reef.webp
+  alt: A colourful coral reef seen from just below the surface
+- file: coloured-sands.webp
+  alt: Rolling dunes of purple, pink and orange sand

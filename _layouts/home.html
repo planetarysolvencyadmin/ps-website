@@ -2,6 +2,27 @@
 layout: default
 ---
 
-<div class="wrap content home">
-  {{ content }}
+{% assign first_image = site.data.home_images | first %}
+<div class="wrap home">
+  <div class="content home-text">
+    {{ content }}
+  </div>
+  <div class="home-visual">
+    <svg class="orbit" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+      <ellipse cx="200" cy="200" rx="198" ry="110" transform="rotate(-24 200 200)" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="3 6"/>
+      <circle cx="46" cy="262" r="6" fill="var(--coral)"/>
+    </svg>
+    <img class="home-photo" id="home-photo" width="480" height="480" alt="">
+    <noscript><img class="home-photo" width="480" height="480" alt="{{ first_image.alt }}" src="{{ '/assets/images/home/' | append: first_image.file | relative_url }}"></noscript>
+  </div>
 </div>
+<script>
+  (function () {
+    var photos = [{% for img in site.data.home_images %}
+      { src: {{ '/assets/images/home/' | append: img.file | relative_url | jsonify }}, alt: {{ img.alt | jsonify }} }{% unless forloop.last %},{% endunless %}{% endfor %}
+    ];
+    var el = document.getElementById('home-photo');
+    var pick = photos[Math.floor(Math.random() * photos.length)];
+    if (el && pick) { el.alt = pick.alt; el.src = pick.src; }
+  })();
+</script>

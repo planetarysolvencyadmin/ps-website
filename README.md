@@ -19,6 +19,15 @@ Then open http://localhost:4000
 * **News and commentary:** add a post (Posts in Siteleaf). Set `kind` to `news` or `commentary` to choose its list. Set `link` to send readers straight to an outside article, and `source` to name the outlet.
 * **Colours and fonts:** the variables at the top of `assets/css/style.css`.
 
+## Contact form
+
+The form on `/connect/` posts to `functions/api/contact.js`, a Cloudflare Pages Function (free plan), which checks the message and passes it to the Google Form so responses still land in the same Google Sheet. The Google Form ID and question numbers are constants at the top of that file.
+
+* **Spam check (optional):** create a free Turnstile widget in Cloudflare, paste the Site key into `_data/contact.yml` (`turnstile_site_key`) and add the Secret key in Pages under Settings, Variables and Secrets as `TURNSTILE_SECRET`.
+* **Rate limiting (optional):** add a free Cloudflare rate limiting rule for `/api/contact`.
+* **Tests:** `node --test tests/contact.test.mjs`
+* The Google Form must allow responses without a Google sign-in.
+
 ## Deployment
 
 This repo is built and deployed via Cloudflare Pages. See `DEPLOYMENT.md` for

@@ -47,18 +47,21 @@ Short, decision-focused summaries of the risks and what to do about them.
 * [Planetary Solvency: risks and recommendations (PDF)](https://actuaries.org.uk/media/v1ynflzj/planetary-solvency-risks-and-recommendations.pdf)
 * [The UK chancellor is investing in growth and defence. Climate change risks damaging both](https://www.sustainableviews.com/the-uk-chancellor-is-investing-in-growth-and-defence-climate-change-risks-damaging-both-b1c097ed/) (Sustainable Views)
 
-## AMOC2029 {#amoc2029}
+## AMOC2029
+{: #amoc2029 .band-navy}
 
 *AMOC 2029: When the sea slows*, produced in association with the IFoA, the Strategic Climate Risks Initiative, the University of Exeter and the ASRA Network, is an interactive narrative resource tracking the years one government spends bracing for the slowdown of the Atlantic's overturning circulation.
 
 <span class="tag">Link to follow</span>
 
-## Planetary Risk Dashboard <span class="tag">In development</span> {#planetary-risk-dashboard}
+## Planetary Risk Dashboard <span class="tag">In development</span>
+{: #planetary-risk-dashboard .band-lilac}
 
 An actionable visualisation of real-time risks across climate, nature, society and economic sectors, building on the illustrative global dashboard pioneered with the University of Exeter and the FCA Sandbox project.
 
 <a class="button" href="https://global-tipping-points.org/planetary-solvency/">View the dashboard</a>
 
-## Planetary Solvency Scenarios <span class="tag">In development</span> {#planetary-solvency-scenarios}
+## Planetary Solvency Scenarios <span class="tag">In development</span>
+{: #planetary-solvency-scenarios .band-lilac}
 
 A scenario explorer for national and financial institution planetary solvency scenarios. The systemic risk scenario is being developed with the Climate Financial Risk Forum, with around 40 financial institutions and a number of academics contributing.

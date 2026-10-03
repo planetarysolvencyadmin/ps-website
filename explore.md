@@ -38,6 +38,7 @@ To address this we:
 * **Innovate** - develop a practical systemic risk toolkit - a risk dashboard, scenario explorer, workshops and training
 * **Deploy** - build coalitions, accredit individuals and organisations, and give institutions permission and cover to act
 * **Convene** - convening scientists, risk professionals, financial institutions, businesses and policymakers as a single working network
+{: .card-list}
 
 Some examples of our current work in this include:
 
@@ -65,17 +66,22 @@ Building on our heritage of reports combining actuarial risk analysis with the l
 
 </div>
 
-## Mission {#mission}
+## Mission
+{: #mission .band-navy}
 
 Ensuring planetary solvency to support lasting human prosperity.
+{: .statement}
 
-## Vision {#vision}
+## Vision
+{: #vision .band-navy}
 
 Connecting finance and the economy to the biosphere, so that humanity lives in balance with nature.
+{: .statement}
 
 Our vision is for financial and economic decisions to work with the Earth system rather than against it: directing capital, innovation, policy and collective effort towards a secure, resilient and prosperous future.
 
-## Values {#values}
+## Values
+{: #values .band-lilac}
 
 * **Collaborative:** We listen, learn and work across boundaries to develop better solutions together.
 * **Risk-led:** We assess risk honestly, systemically and courageously—even when the message is uncomfortable.
@@ -83,6 +89,7 @@ Our vision is for financial and economic decisions to work with the Earth system
 * **Pragmatic:** We turn complexity into clear, workable action without compromising our purpose.
 * **Effective:** We pursue real-world impact, measure what matters and choose substance over optics.
 * **Enthusiasm:** We bring energy, imagination, good humour and relentless positivity to difficult work —and enjoy disrupting what is not working.
+{: .card-list}
 
 ## Team {#team}
 

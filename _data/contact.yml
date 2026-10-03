@@ -1,0 +1,11 @@
+# Contact form on /connect/. It posts to /api/contact (functions/api/contact.js), which checks the message
+# and passes it on to the Google Form. The Google Form ID and question numbers live in that file.
+fallback_url: https://forms.gle/6nAWLYNDxW4ChwsT6
+# Optional spam check. Leave blank to switch it off. To switch it on, create a free Turnstile widget in
+# Cloudflare, paste its Site key here, and add its Secret key to Pages as TURNSTILE_SECRET.
+turnstile_site_key: "0x4AAAAAAFNAq9HyxF_LQNjj"
+fields:
+  - { name: name, label: Name, type: text, autocomplete: name, required: true }
+  - { name: email, label: Email, type: email, autocomplete: email, required: true }
+  - { name: message, label: Message, type: textarea, required: true }
+  - { name: phone, label: Phone number, type: tel, autocomplete: tel, required: false }

@@ -2,6 +2,11 @@
    Change colours here only. Tints marked "derived" are lightened/darkened versions
    of the brand colours, used where the brand colour itself fails contrast checks. */
 :root {
+  /* Section band colours (changed per band below) */
+  --band-text: var(--ink);
+  --band-heading: var(--navy);
+  --band-link: var(--teal-dark);
+  --band-bar: var(--coral);
   /* Brand palette (from the design agency) */
   --teal: #5A7F82;      /* primary logo colour: accents and borders */
   --coral: #F48E76;     /* secondary: page heading bar */
@@ -88,25 +93,70 @@ a:hover { color: var(--navy); text-decoration-thickness: 2px; }
 }
 .jump-nav a:hover { border-color: var(--navy); }
 
-.site-main { flex: 1; padding-bottom: 3.5rem; }
+.site-main { flex: 1; }
 .site-main:focus { outline: none; }
-.content { padding-top: 2.5rem; }
-.home { padding-top: 3rem; }
-.home h1 { font-size: clamp(2rem, 5vw, 3.25rem); }
+.content { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+.home {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 400px); gap: 3rem;
+  align-items: center; padding-top: 3rem; padding-bottom: 3.5rem; overflow-x: clip;
+}
+.home .content { padding: 0; }
+.home h1 { font-size: clamp(2rem, 4.5vw, 3rem); }
+.home-visual { position: relative; width: 100%; max-width: 400px; justify-self: center; color: var(--teal); }
+.orbit { position: absolute; left: -9%; top: -9%; width: 118%; height: 118%; pointer-events: none; }
+.home-photo {
+  position: relative; display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover;
+  border-radius: 50%; background: var(--soft);
+  outline: 3px solid var(--coral); outline-offset: 7px;
+}
+@media (max-width: 800px) {
+  .home { grid-template-columns: 1fr; gap: 2.5rem; }
+  .home-visual { order: -1; max-width: 220px; margin: 0.5rem auto 0; }
+}
 
 /* Type */
 h1, h2, h3 { color: var(--navy); letter-spacing: -0.015em; }
 h1 { font-size: clamp(1.9rem, 4vw, 2.6rem); line-height: 1.15; margin: 0 0 1rem; }
-h2 {
-  font-size: 1.6rem; line-height: 1.25; margin: 3rem 0 1rem; padding-top: 2rem;
-  border-top: 1px solid var(--line); scroll-margin-top: 1rem;
-}
-.content > h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+h2 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 1rem; scroll-margin-top: 1rem; }
 h3 { font-size: 1.2rem; line-height: 1.3; margin: 2rem 0 0.5rem; }
+.content h3 { color: var(--teal-dark); }
 p { margin: 0 0 1rem; }
 .content > p, .content > ul:not([class]), .content > ol { max-width: 68ch; }
 .content ul:not([class]), .content ol { padding-left: 1.25rem; margin: 0 0 1.25rem; }
 .content li { margin-bottom: 0.5rem; }
+
+/* Section bands: each h2 on a page starts a full-width band. White and pale lilac alternate;
+   add {: .band-navy}, {: .band-lilac} or {: .band-coral} after a heading in markdown to pick a colour. */
+.band { padding: 3rem 0 2.5rem; color: var(--band-text); }
+.band .content { padding: 0; }
+.band :where(h2, h3) { color: var(--band-heading); }
+.band .content h3 { color: var(--band-h3, var(--teal-dark)); }
+.band :where(a:not(.button)) { color: var(--band-link); }
+.band :where(a:not(.button)):hover { text-decoration-thickness: 2px; filter: brightness(1.1); }
+.band h2::after { content: ""; display: block; width: 3rem; height: 4px; background: var(--band-bar); margin-top: 0.6rem; border-radius: 2px; }
+.band-pale { background: var(--lilac-soft); }
+.band-navy { background: var(--navy); --band-text: #fff; --band-heading: #fff; --band-link: var(--lilac); --band-h3: var(--lilac); --band-bar: var(--coral); }
+.band-lilac { background: var(--lilac); --band-link: var(--navy); --band-h3: var(--navy); --band-bar: var(--navy); }
+.band-coral { background: var(--coral); --band-link: var(--navy); --band-h3: var(--navy); --band-bar: var(--navy); }
+.band-navy + .band-navy, .band-lilac + .band-lilac, .band-coral + .band-coral { padding-top: 0; }
+.band-navy .button { background: var(--coral); color: var(--ink); }
+.band-navy .button:hover { background: #fff; color: var(--ink); }
+.band-navy .button.secondary { background: none; color: #fff; border-color: #fff; }
+.band-navy .button.secondary:hover { background: rgba(255, 255, 255, 0.12); color: #fff; }
+.band-navy :focus-visible { outline-color: #fff; }
+/* Cards keep dark-on-white text whatever band they sit in */
+.report-card, .team-card, ul.questions li, ul.partner-list li, ul.post-list li, ul.card-list li {
+  --band-text: var(--ink); --band-heading: var(--navy); --band-h3: var(--navy); --band-link: var(--teal-dark); color: var(--ink);
+}
+
+.statement { font-size: clamp(1.35rem, 3vw, 1.9rem); line-height: 1.35; font-weight: 700; max-width: 32ch !important; }
+.band-navy .statement { color: #fff; }
+
+ul.card-list { list-style: none; margin: 1.25rem 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+ul.card-list li { background: #fff; border-radius: 8px; padding: 1rem 1.25rem; margin: 0; border-top: 4px solid var(--teal); }
+ul.card-list li:nth-child(3n+2) { border-top-color: var(--coral); }
+ul.card-list li:nth-child(3n) { border-top-color: var(--lilac); }
+ul.card-list strong { color: var(--navy); }
 
 /* Components */
 .tag {
@@ -128,6 +178,7 @@ p { margin: 0 0 1rem; }
 }
 
 .example { border-left: 4px solid var(--coral); padding-left: 1.25rem; margin: 1.5rem 0; max-width: 68ch; }
+.band-coral .example, .band-lilac .example { border-left-color: var(--navy); }
 .example h3 { margin-top: 0; }
 
 ul.questions, ul.partner-list, ul.post-list { list-style: none; margin: 0; padding: 0; }
@@ -165,6 +216,22 @@ ul.partner-list a { color: var(--navy); }
 .team-card h3 { margin: 0; }
 .team-card .role { color: var(--teal-dark); font-weight: 700; margin: 0.15rem 0 0.75rem; }
 .team-card p { font-size: 0.95rem; }
+
+/* Contact form */
+.contact-form { max-width: 36rem; margin-top: 1.5rem; }
+.field { margin-bottom: 1.1rem; }
+.field label { display: block; font-weight: 700; margin-bottom: 0.3rem; color: var(--navy); }
+.optional { font-weight: 400; color: var(--muted); }
+.field input, .field textarea {
+  width: 100%; font: inherit; color: var(--ink); background: #fff;
+  border: 2px solid var(--navy); border-radius: 6px; padding: 0.6rem 0.75rem; min-height: 44px;
+}
+.field input:focus-visible, .field textarea:focus-visible { outline: 3px solid var(--coral); outline-offset: 1px; }
+.form-sent { display: none; font-weight: 700; padding: 0.75rem 1rem; background: #fff; border-left: 4px solid var(--teal); border-radius: 4px; max-width: 36rem; }
+.form-sent:target { display: block; }
+.field.trap { position: absolute; left: -9999px; }
+.form-note { font-size: 0.9rem; color: var(--muted); margin-top: 0.5rem; }
+.form-status { font-weight: 700; min-height: 1.5em; }
 
 /* Footer */
 .site-footer { background: var(--deep); color: #fff; padding: 2rem 0; font-size: 0.9rem; }
