@@ -6,7 +6,7 @@ layout: home
 
 # **Managing planetary risk. Protecting human prosperity.**
 
-Planetary Solvency is a global risk management initiative that equips leaders to understand and manage interconnected climate and nature risks — so they can make decisions that support a stable planet, resilient economies, security and prosperity.
+Planetary Solvency is a global risk management initiative that equips leaders to understand and manage interconnected climate and nature risks; so they can make decisions that support a stable planet, resilient economies, security and prosperity.
 
 Planetary Solvency is built on a simple but urgent insight: our society and economy depend completely on a stable Earth system, yet most financial and economic decisions still treat climate, nature and systemic risk as peripheral.
 
