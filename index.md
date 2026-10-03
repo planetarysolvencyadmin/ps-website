@@ -18,7 +18,7 @@ Our aim is not simply to warn about risk. It is to give the institutions that al
 
 **We believe global catastrophic risks – severe, unprecedented and irreversible catastrophes - are plausible, unless we alter our trajectory.**
 
-The key message is that we still have agency here and the ability to change course. To avoid Planetary Insolvency, policymakers must urgently implement a fundamental, policy-led change of direction, informed by up-to-date information on what is happening, what is likely, the risks associated with ongoing global warming and a willingness to address the root causes of the problems we face.
+The key message is that we still have agency and the ability to change course. To avoid Planetary Insolvency, policymakers must urgently implement a fundamental, policy-led change of direction, informed by up-to-date information on what is happening, what is likely, the risks associated with ongoing global warming and a willingness to address the root causes of the problems we face.
 
 We strongly believe a systems approach is needed to navigate the challenges ahead of us. We operate as a nexus organisation, weaving a web of unusual connections between risk professionals, scientists, financial institutions, regulators, corporates, policymakers and NGOs around a shared, risk-led, science-informed approach to systemic risk.
 
