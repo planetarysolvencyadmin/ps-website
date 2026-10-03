@@ -8,6 +8,15 @@ collections:
   uploads:
     title: Uploads
     output: true
+defaults:
+- scope:
+    path: ''
+    type: posts
+  values:
+    layout: post
+    kind: news
+    link: ''
+    source: ''
 tagline: A systems approach to global risk management for human prosperity.
 description: Planetary Solvency is a systems approach to understanding and managing
   global risk in support of long-term human prosperity.
@@ -26,15 +35,3 @@ exclude:
 - README.md
 - vendor
 - node_modules
-defaults:
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: post
-      # news or commentary: decides which list the post appears in on /press-and-commentary/
-      kind: news
-      # optional: a web address to link straight to (e.g. a media clip); leave blank for a normal post
-      link: ""
-      # optional: publication or outlet name shown with the date
-      source: ""
