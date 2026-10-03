@@ -21,6 +21,8 @@ plugins:
 sass:
   style: compressed
 exclude:
+- functions
+- tests
 - Gemfile
 - Gemfile.lock
 - README.md
