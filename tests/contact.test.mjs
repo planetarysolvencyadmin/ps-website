@@ -104,6 +104,8 @@ test('shows the reason only when CONTACT_DEBUG is set', async () => {
   mockFetch({ formStatus: 500 });
   const quiet = await (await onRequestPost({ request: post(GOOD), env: {} })).json();
   assert.doesNotMatch(quiet.message, /google answered/);
+  const off = await (await onRequestPost({ request: post(GOOD), env: { CONTACT_DEBUG: '0' } })).json();
+  assert.doesNotMatch(off.message, /google answered/);
   const loud = await (await onRequestPost({ request: post(GOOD), env: { CONTACT_DEBUG: '1' } })).json();
   assert.match(loud.message, /google answered 500/);
 });

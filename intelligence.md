@@ -1,4 +1,5 @@
 ---
+image: /assets/images/banners/storm.webp
 title: Intelligence
 permalink: "/intelligence/"
 subtitle: Intelligence for a changing planet
