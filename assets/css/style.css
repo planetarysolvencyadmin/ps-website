@@ -78,7 +78,14 @@ a:hover { color: var(--navy); text-decoration-thickness: 2px; }
 
 /* Page heading bar */
 .page-band { background: var(--coral); color: var(--ink); padding: 2.25rem 0 2rem; }
+.page-band .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
 .page-band h1 { margin: 0; color: var(--navy); }
+/* Optional circular photo set with `image:` in a page's front matter; leave `image_alt` blank because it is decoration */
+.band-photo {
+  flex: none; width: 150px; height: 150px; border-radius: 50%; object-fit: cover; background: var(--soft);
+  outline: 3px solid #fff; outline-offset: 4px; margin: 4px 7px 4px 0;
+}
+@media (max-width: 600px) { .band-photo { width: 84px; height: 84px; outline-width: 2px; outline-offset: 3px; } }
 .page-band .tagline { margin: 0.5rem 0 0; color: var(--ink); font-size: 1.15rem; max-width: 60ch; }
 
 /* In-page jump links on hub pages */

@@ -1,4 +1,5 @@
 ---
+image: /assets/images/banners/glacier.webp
 title: Act
 permalink: "/act/"
 description: Workshops, a recovery plan and training to turn understanding of planetary
