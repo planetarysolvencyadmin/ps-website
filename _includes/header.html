@@ -1,13 +1,21 @@
 <header class="site-header">
   <div class="wrap">
-    <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <a class="site-logo" href="{{ '/' | relative_url }}">
+      <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="Planetary Solvency, home" width="160" height="45">
+    </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav class="site-nav" id="site-nav" aria-label="Main">
       <ul class="nav-list">
         {% for section in site.data.navigation %}
-        <li class="nav-item{% if page.url == section.url %} is-current{% endif %}">
-          <a class="nav-top" href="{{ section.url | relative_url }}"{% if page.url == section.url %} aria-current="page"{% endif %}>{{ section.title }}</a>
-          <ul class="nav-sub">
+        <li class="nav-item">
+          <div class="nav-row">
+            <a class="nav-top" href="{{ section.url | relative_url }}"{% if page.url == section.url %} aria-current="page"{% endif %}>{{ section.title }}</a>
+            <button class="nav-expand" type="button" aria-expanded="false" aria-controls="sub-{{ forloop.index }}">
+              <span class="visually-hidden">{{ section.title }} sections</span>
+              <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+          <ul class="nav-sub" id="sub-{{ forloop.index }}">
             {% for item in section.items %}
             <li><a href="{{ section.url | append: '#' | append: item.anchor | relative_url }}">{{ item.title }}</a></li>
             {% endfor %}
@@ -20,12 +28,49 @@
 </header>
 <script>
   (function () {
-    var btn = document.querySelector('.nav-toggle');
     var nav = document.getElementById('site-nav');
-    if (!btn || !nav) return;
-    btn.addEventListener('click', function () {
+    var toggle = document.querySelector('.nav-toggle');
+    var items = nav.querySelectorAll('.nav-item');
+
+    function closeSections(except) {
+      items.forEach(function (item) {
+        if (item === except) return;
+        item.classList.remove('is-open');
+        item.querySelector('.nav-expand').setAttribute('aria-expanded', 'false');
+      });
+    }
+    function closeAll() {
+      closeSections(null);
+      nav.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+
+    toggle.addEventListener('click', function () {
       var open = nav.classList.toggle('is-open');
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (!open) closeSections(null);
+    });
+
+    items.forEach(function (item) {
+      var btn = item.querySelector('.nav-expand');
+      btn.addEventListener('click', function () {
+        var open = item.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        closeSections(item);
+      });
+    });
+
+    nav.querySelectorAll('.nav-sub a').forEach(function (a) {
+      a.addEventListener('click', closeAll);
+    });
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.site-header')) closeAll();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape') return;
+      var open = nav.querySelector('.nav-item.is-open .nav-expand');
+      closeSections(null);
+      if (open) open.focus();
     });
   })();
 </script>
