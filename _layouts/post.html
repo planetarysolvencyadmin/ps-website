@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<div class="page-band">
+  <div class="wrap">
+    <h1>{{ page.title }}</h1>
+    <p class="tagline">{{ page.date | date: "%-d %B %Y" }}{% if page.source != "" and page.source %} · {{ page.source }}{% endif %}</p>
+  </div>
+</div>
+<div class="wrap content">
+  {{ content }}
+  {% if page.link != "" and page.link %}<p><a class="button" href="{{ page.link }}">Read the original</a></p>{% endif %}
+  <p><a href="{{ '/press-and-commentary/' | relative_url }}">&larr; Back to press &amp; commentary</a></p>
+</div>

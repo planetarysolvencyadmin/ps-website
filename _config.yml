@@ -14,7 +14,7 @@ description: Planetary Solvency is a systems approach to understanding and manag
 url: https://test.planetarysolvency.org
 baseurl: 
 markdown: kramdown
-permalink: "/:title/"
+permalink: "/news/:title/"
 plugins:
 - jekyll-sitemap
 - jekyll-feed
@@ -26,3 +26,15 @@ exclude:
 - README.md
 - vendor
 - node_modules
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      # news or commentary: decides which list the post appears in on /press-and-commentary/
+      kind: news
+      # optional: a web address to link straight to (e.g. a media clip); leave blank for a normal post
+      link: ""
+      # optional: publication or outlet name shown with the date
+      source: ""

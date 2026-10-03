@@ -2,8 +2,24 @@
 layout: default
 ---
 
-<h1>{{ page.title }}</h1>
-{% if page.subtitle %}<p class="tagline">{{ page.subtitle }}</p>{% endif %}
-<div class="content">
+<div class="page-band">
+  <div class="wrap">
+    <h1>{{ page.title }}</h1>
+    {% if page.subtitle %}<p class="tagline">{{ page.subtitle }}</p>{% endif %}
+  </div>
+</div>
+{% for section in site.data.navigation %}{% if section.url == page.url %}
+<nav class="jump-nav" aria-label="On this page">
+  <div class="wrap">
+    <span class="jump-label">On this page</span>
+    <ul>
+      {% for item in section.items %}
+      <li><a href="#{{ item.anchor }}">{{ item.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</nav>
+{% endif %}{% endfor %}
+<div class="wrap content">
   {{ content }}
 </div>

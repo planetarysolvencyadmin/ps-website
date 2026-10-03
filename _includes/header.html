@@ -1,31 +1,14 @@
 <header class="site-header">
   <div class="wrap">
-    <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-    <nav class="site-nav" id="site-nav" aria-label="Main">
+    <a class="site-logo" href="{{ '/' | relative_url }}">
+      <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="Planetary Solvency, home" width="160" height="45">
+    </a>
+    <nav class="site-nav" aria-label="Main">
       <ul class="nav-list">
         {% for section in site.data.navigation %}
-        <li class="nav-item{% if page.url == section.url %} is-current{% endif %}">
-          <a class="nav-top" href="{{ section.url | relative_url }}"{% if page.url == section.url %} aria-current="page"{% endif %}>{{ section.title }}</a>
-          <ul class="nav-sub">
-            {% for item in section.items %}
-            <li><a href="{{ section.url | append: '#' | append: item.anchor | relative_url }}">{{ item.title }}</a></li>
-            {% endfor %}
-          </ul>
-        </li>
+        <li><a class="nav-top" href="{{ section.url | relative_url }}"{% if page.url == section.url %} aria-current="page"{% endif %}>{{ section.title }}</a></li>
         {% endfor %}
       </ul>
     </nav>
   </div>
 </header>
-<script>
-  (function () {
-    var btn = document.querySelector('.nav-toggle');
-    var nav = document.getElementById('site-nav');
-    if (!btn || !nav) return;
-    btn.addEventListener('click', function () {
-      var open = nav.classList.toggle('is-open');
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-  })();
-</script>
