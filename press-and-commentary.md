@@ -39,6 +39,7 @@ News and announcements will appear here. In the meantime, follow us on the [Plan
 Opinion and analysis from the Planetary Solvency team will appear here.
 {% endif %}
 
-## Media enquiries {#media-enquiries}
+## Media enquiries
+{: #media-enquiries .band-lilac}
 
 For interviews, comment or background briefings, please get in touch via our [contact form](https://forms.gle/6nAWLYNDxW4ChwsT6).

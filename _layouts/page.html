@@ -20,6 +20,30 @@ layout: default
   </div>
 </nav>
 {% endif %}{% endfor %}
+{% if page.bands == false %}
 <div class="wrap content">
   {{ content }}
 </div>
+{% else %}
+{% assign parts = content | split: '<h2' %}
+{% if parts[0] != blank %}
+<div class="wrap content">
+  {{ parts[0] }}
+</div>
+{% endif %}
+{% for part in parts offset: 1 %}
+{% assign head = part | split: '>' | first %}
+{% assign tone = forloop.index0 | modulo: 2 %}
+{% if head contains 'band-navy' %}{% assign band = 'band-navy' %}
+{% elsif head contains 'band-lilac' %}{% assign band = 'band-lilac' %}
+{% elsif head contains 'band-coral' %}{% assign band = 'band-coral' %}
+{% elsif tone == 1 %}{% assign band = 'band-pale' %}
+{% else %}{% assign band = 'band-white' %}
+{% endif %}
+<section class="band {{ band }}">
+  <div class="wrap content">
+    <h2{{ part }}
+  </div>
+</section>
+{% endfor %}
+{% endif %}

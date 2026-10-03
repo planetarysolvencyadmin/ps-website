@@ -3,6 +3,7 @@ title: Cookies
 description: How Planetary Solvency uses cookies.
 permalink: /cookies/
 layout: page
+bands: false
 ---
 
 <p class="note">Draft text for review. Please check it against the cookies the live site actually sets before publication.</p>

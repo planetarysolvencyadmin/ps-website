@@ -1,0 +1,15 @@
+# Contact form settings. The form on /connect/ posts straight to your Google Form, so responses
+# keep landing in the same Google Sheet. While `form_id` is blank, the page shows a plain link instead.
+#
+# To switch it on:
+# 1. Open the Google Form editor, click the three dots (top right) and choose "Get pre-filled link".
+# 2. Type a dummy answer into every question, click "Get link", then paste the link somewhere.
+# 3. In that link, the long ID between /d/e/ and /viewform is the form_id.
+# 4. Each answer appears as entry.NUMBER=... Put each NUMBER against the matching field below.
+form_id: ""
+fallback_url: https://forms.gle/6nAWLYNDxW4ChwsT6
+fields:
+  - { label: Name, type: text, autocomplete: name, required: true, entry: "" }
+  - { label: Email, type: email, autocomplete: email, required: true, entry: "" }
+  - { label: Organisation, type: text, autocomplete: organization, required: false, entry: "" }
+  - { label: Message, type: textarea, required: true, entry: "" }

@@ -3,6 +3,7 @@ title: Governance & funding
 description: How Planetary Solvency is governed and funded.
 permalink: /governance-and-funding/
 layout: page
+bands: false
 ---
 
 <p class="note">Draft text for review. Details in [square brackets] are placeholders to be completed.</p>

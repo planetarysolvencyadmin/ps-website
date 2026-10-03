@@ -3,6 +3,7 @@ title: Terms of use
 description: Terms of use for the Planetary Solvency website.
 permalink: /terms-of-use/
 layout: page
+bands: false
 ---
 
 <p class="note">Draft text for review. It has not been legally reviewed. Details in [square brackets] are placeholders to be completed.</p>
