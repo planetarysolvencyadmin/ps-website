@@ -6,6 +6,7 @@
 // Settings:
 //   TURNSTILE_SECRET  (optional) Pages > Settings > Variables and Secrets. If unset, the Turnstile check is skipped.
 //   CONTACT_DEBUG     (optional) set to 1 while testing to see why a send failed. Remove it afterwards.
+//                     Only 1, true or yes switch it on; 0, false or blank leave it off.
 //
 // If the Google Form changes (new questions, a new form), update the two constants below.
 // The IDs come from the form's page source: the ID after /d/e/ in its link, and each question's "entry" number.
@@ -61,7 +62,8 @@ export async function onRequestPost({ request, env }) {
 
   const sent = await sendToGoogle(values);
   if (!sent.ok) {
-    const detail = env && env.CONTACT_DEBUG ? ` [${sent.why}]` : '';
+    const debug = env && ['1', 'true', 'yes'].includes(String(env.CONTACT_DEBUG || '').trim().toLowerCase());
+    const detail = debug ? ` [${sent.why}]` : '';
     return reply(false, 502, `Sorry, we could not send your message just now.${detail}`);
   }
   return reply(true, 200, 'Thank you. Your message has been sent.');

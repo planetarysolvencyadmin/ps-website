@@ -1,5 +1,10 @@
 {% assign c = site.data.contact %}
 <p id="contact-sent" class="form-sent" role="status">Thank you. Your message has been sent.</p>
+<div id="contact-success" class="form-success" role="status" tabindex="-1" hidden>
+  <h3>Message sent</h3>
+  <p>Thank you. Your message has been sent to the Planetary Solvency team. We will reply to the email address you gave.</p>
+  <p><button type="button" class="button secondary" id="contact-again">Send another message</button></p>
+</div>
 <form class="contact-form" id="contact-form" method="post" action="/api/contact">
   {% for f in c.fields %}
   <div class="field">
@@ -28,7 +33,13 @@
     var form = document.getElementById('contact-form');
     var status = document.getElementById('contact-status');
     var button = form.querySelector('button[type=submit]');
+    var success = document.getElementById('contact-success');
+    var again = document.getElementById('contact-again');
     var opened = Date.now();
+    again.addEventListener('click', function () {
+      success.hidden = true; form.hidden = false; opened = Date.now();
+      form.querySelector('input, textarea').focus();
+    });
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (Date.now() - opened < 3000) { status.textContent = 'Please take a moment to check your message, then send it again.'; return; }
@@ -37,7 +48,7 @@
       fetch(form.action, { method: 'POST', headers: { Accept: 'application/json' }, body: new URLSearchParams(new FormData(form)) })
         .then(function (res) { return res.json().catch(function () { return {}; }).then(function (data) { return { ok: res.ok, data: data }; }); })
         .then(function (r) {
-          if (r.ok) { form.reset(); status.textContent = r.data.message || 'Thank you. Your message has been sent.'; }
+          if (r.ok) { form.reset(); status.textContent = ''; form.hidden = true; success.hidden = false; success.focus(); }
           else { status.innerHTML = ''; status.appendChild(document.createTextNode((r.data.message || 'Sorry, that did not send.') + ' You can also use our ')); var a = document.createElement('a'); a.href = '{{ c.fallback_url }}'; a.textContent = 'contact form'; status.appendChild(a); status.appendChild(document.createTextNode('.')); }
         })
         .catch(function () {
