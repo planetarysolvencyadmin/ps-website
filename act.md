@@ -1,7 +1,7 @@
 ---
-image: /assets/images/banners/glacier.webp
 title: Act
 permalink: "/act/"
+image: "/assets/images/banners/glacier.webp"
 description: Workshops, a recovery plan and training to turn understanding of planetary
   risk into action.
 layout: page

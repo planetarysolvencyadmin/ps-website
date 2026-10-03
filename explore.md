@@ -1,7 +1,7 @@
 ---
-image: /assets/images/banners/coral-reef.webp
 title: Explore
 permalink: "/explore/"
+image: "/assets/images/banners/coral-reef.webp"
 description: What Planetary Solvency is, how our approach differs, and who is behind
   it.
 layout: page

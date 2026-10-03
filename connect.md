@@ -1,7 +1,7 @@
 ---
-image: /assets/images/banners/coloured-sands.webp
 title: Connect
 permalink: "/connect/"
+image: "/assets/images/banners/coloured-sands.webp"
 description: Our partner network, how to work with us, our newsletter and how to get
   in touch.
 layout: page

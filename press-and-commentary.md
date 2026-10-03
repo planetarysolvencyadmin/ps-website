@@ -1,7 +1,7 @@
 ---
-image: /assets/images/banners/power-station.webp
 title: Press & commentary
 permalink: "/press-and-commentary/"
+image: "/assets/images/banners/power-station.webp"
 description: Planetary Solvency news, commentary and media enquiries.
 layout: page
 ---
