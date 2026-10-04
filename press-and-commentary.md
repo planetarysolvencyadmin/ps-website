@@ -17,4 +17,6 @@ layout: page
 ## Media enquiries
 {: #media-enquiries .band-lilac}
 
-For interviews, comment or background briefings, please get in touch via our [contact form](https://forms.gle/6nAWLYNDxW4ChwsT6).
+For interviews, comment or background briefings, please get in touch via the form below
+
+{% include contact-form.html %}
