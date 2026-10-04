@@ -18,28 +18,13 @@ The world has no shortage of climate and Nature information. What is often missi
 
 Our publications examine the conditions needed for lasting human prosperity, the risks created by destabilising the Earth system and the practical choices available to reduce those risks. Each of our reports starts from a question:
 
-<ul class="questions">
-{% for r in site.data.reports %}
-<li><a href="{{ r.url }}">{{ r.question }}</a> <small>{{ r.title }} ({{ r.year }})</small></li>
-{% endfor %}
-</ul>
+{% include research-questions.html %}
 
 ## Reports {#reports}
 
 Since 2022, the team behind Planetary Solvency has produced a series of reports, sponsored by the Institute and Faculty of Actuaries (IFoA), combining actuarial risk analysis with the latest Earth system science. Our aim with these is to help deliver a better understanding of the global risks faced by our society and economy.
 
-<div class="report-grid">
-{% for r in site.data.reports %}
-<article class="report-card">
-{% if r.image %}<a class="report-thumb" href="{{ r.url }}"><img src="{{ r.image | relative_url }}" alt="Cover of {{ r.title }}"></a>{% else %}<a class="report-thumb placeholder" href="{{ r.url }}" aria-hidden="true" tabindex="-1">{{ r.year }}</a>{% endif %}
-<div class="report-body">
-<h3><a href="{{ r.url }}">{{ r.year }}: {{ r.title }}</a></h3>
-<p>{{ r.summary }}</p>
-<p class="report-links"><a href="{{ r.url }}">Read online</a>{% if r.pdf %} | <a href="{{ r.pdf }}">Download PDF</a>{% endif %}</p>
-</div>
-</article>
-{% endfor %}
-</div>
+{% include report-grid.html %}
 
 ## Briefings {#briefings}
 
@@ -53,16 +38,16 @@ Short, decision-focused summaries of the risks and what to do about them.
 
 *AMOC 2029: When the sea slows*, produced in association with the IFoA, the Strategic Climate Risks Initiative, the University of Exeter and the ASRA Network, is an interactive narrative resource tracking the years one government spends bracing for the slowdown of the Atlantic's overturning circulation.
 
-<a class="button" href="https://amoc2029.org/">Visit AMOC2029</a>
+[Visit AMOC2029](https://amoc2029.org/){: .button}
 
-## Planetary Risk Dashboard <span class="tag">In development</span>
+## Planetary Risk Dashboard *In development*{: .tag}
 {: #planetary-risk-dashboard .band-lilac}
 
 An actionable visualisation of real-time risks across climate, nature, society and economic sectors, building on the illustrative global dashboard pioneered with the University of Exeter and the FCA Sandbox project.
 
-<a class="button" href="https://global-tipping-points.org/planetary-solvency/">View the dashboard</a>
+[View the dashboard](https://global-tipping-points.org/planetary-solvency/){: .button}
 
-## Planetary Solvency Scenarios <span class="tag">In development</span>
+## Planetary Solvency Scenarios *In development*{: .tag}
 {: #planetary-solvency-scenarios .band-lilac}
 
 A scenario explorer for national and financial institution planetary solvency scenarios. The systemic risk scenario is being developed with the Climate Financial Risk Forum, with around 40 financial institutions and a number of academics contributing.

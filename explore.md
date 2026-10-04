@@ -43,29 +43,20 @@ To address this we:
 
 Some examples of our current work in this include:
 
-<div class="example" markdown="1">
+> ### Systemic Risk Economic Impacts
+>
+> We are working in the FCA Sandbox with leading financial institutions and systemic risk analysts to develop a plausible but severe combined nature and climate systemic risk scenario — assessing macro-economic impacts and outcomes for financial firms.
+{: .example}
 
-### Systemic Risk Economic Impacts
+> ### Systemic Risk Scenario Tools
+>
+> We are working collaboratively with the Climate Financial Risk Forum to develop national and financial institution planetary solvency scenarios — building from the illustrative global dashboard pioneered with the University of Exeter and the FCA Sandbox project.
+{: .example}
 
-We are working in the FCA Sandbox with leading financial institutions and systemic risk analysts to develop a plausible but severe combined nature and climate systemic risk scenario — assessing macro-economic impacts and outcomes for financial firms.
-
-</div>
-
-<div class="example" markdown="1">
-
-### Systemic Risk Scenario Tools
-
-We are working collaboratively with the Climate Financial Risk Forum to develop national and financial institution planetary solvency scenarios — building from the illustrative global dashboard pioneered with the University of Exeter and the FCA Sandbox project.
-
-</div>
-
-<div class="example" markdown="1">
-
-### Systemic Risk Intelligence
-
-Building on our heritage of reports combining actuarial risk analysis with the latest Earth system science, we are currently collaborating with the ocean science community to build the direct link between ocean health and financial stability. We are doing this to evidence why pension scheme asset allocation must include systemic risk and tipping point mitigation.
-
-</div>
+> ### Systemic Risk Intelligence
+>
+> Building on our heritage of reports combining actuarial risk analysis with the latest Earth system science, we are currently collaborating with the ocean science community to build the direct link between ocean health and financial stability. We are doing this to evidence why pension scheme asset allocation must include systemic risk and tipping point mitigation.
+{: .example}
 
 ## Mission
 {: #mission .band-navy}
@@ -96,13 +87,4 @@ Our vision is for financial and economic decisions to work with the Earth system
 
 Planetary Solvency brings together people with experience across Earth-system science, actuarial risk management, finance, policy, business and public engagement:
 
-<div class="team-grid">
-{% for person in site.data.team %}
-<div class="team-card">
-<h3>{{ person.name }}</h3>
-<p class="role">{{ person.role }}</p>
-{% for para in person.bio %}<p>{{ para }}</p>
-{% endfor %}{% if person.bio.size == 0 %}<p><em>Biography to follow.</em></p>{% endif %}
-</div>
-{% endfor %}
-</div>
+{% include team.html %}

@@ -31,7 +31,7 @@ layout: default
 {% assign parts = content | split: '<h2' %}
 {% assign intro = parts[0] | strip %}
 {% if intro.size > 0 %}
-<div class="wrap content">
+<div class="wrap content intro">
   {{ intro }}
 </div>
 {% endif %}
