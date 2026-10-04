@@ -29,9 +29,10 @@ layout: default
 </div>
 {% else %}
 {% assign parts = content | split: '<h2' %}
-{% if parts[0] != blank %}
+{% assign intro = parts[0] | strip %}
+{% if intro.size > 0 %}
 <div class="wrap content">
-  {{ parts[0] }}
+  {{ intro }}
 </div>
 {% endif %}
 {% for part in parts offset: 1 %}
