@@ -105,11 +105,12 @@ a:hover { color: var(--navy); text-decoration-thickness: 2px; }
 .content { padding-top: 2.5rem; padding-bottom: 2.5rem; }
 .home {
   display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 400px); gap: 3rem;
-  align-items: center; padding-top: 3rem; padding-bottom: 3.5rem; overflow-x: clip;
+  align-items: start; padding-top: 3rem; padding-bottom: 3.5rem; overflow-x: clip;
 }
 .home .content { padding: 0; }
 .home h1 { font-size: clamp(2rem, 4.5vw, 3rem); }
-.home-visual { position: relative; width: 100%; max-width: 400px; justify-self: center; color: var(--teal); }
+/* Stays near the top of the screen while the longer text scrolls past */
+.home-visual { position: sticky; top: 2rem; align-self: start; width: 100%; max-width: 400px; justify-self: center; color: var(--teal); }
 /* A soft dark wash keeps the white logo readable on pale photos */
 .home-visual::before {
   content: ""; position: absolute; inset: 0; z-index: 1; border-radius: 50%; pointer-events: none;
@@ -126,7 +127,7 @@ a:hover { color: var(--navy); text-decoration-thickness: 2px; }
 }
 @media (max-width: 800px) {
   .home { grid-template-columns: 1fr; gap: 2.5rem; }
-  .home-visual { order: -1; max-width: 220px; margin: 0.5rem auto 0; }
+  .home-visual { position: static; order: -1; max-width: 220px; margin: 0.5rem auto 0; }
 }
 
 /* Type */
