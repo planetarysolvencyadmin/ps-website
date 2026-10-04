@@ -127,7 +127,7 @@ a:hover { color: var(--navy); text-decoration-thickness: 2px; }
 }
 @media (max-width: 800px) {
   .home { grid-template-columns: 1fr; gap: 2.5rem; }
-  .home-visual { position: static; order: -1; max-width: 220px; margin: 0.5rem auto 0; }
+  .home-visual { position: relative; top: auto; order: -1; max-width: 220px; margin: 0.5rem auto 0; }
 }
 
 /* Type */
