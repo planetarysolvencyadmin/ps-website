@@ -13,6 +13,8 @@ Then open http://localhost:4000
 
 ## Editing content
 
+See [EDITING.md](EDITING.md) for the safe-editing rules (what to change, what to leave alone, and the patterns to copy).
+
 * **Pages:** `explore.md`, `intelligence.md`, `act.md`, `connect.md`, `press-and-commentary.md` and the footer pages are plain markdown.
 * **Top menu and footer links:** `_data/navigation.yml` and `_data/footer.yml`.
 * **Reports, partners and team:** `_data/reports.yml`, `_data/partners.yml`, `_data/team.yml`.

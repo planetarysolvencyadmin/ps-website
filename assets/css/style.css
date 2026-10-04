@@ -154,6 +154,9 @@ p { margin: 0 0 1rem; }
 .band-navy { background: var(--navy); --band-text: #fff; --band-heading: #fff; --band-link: var(--lilac); --band-h3: var(--lilac); --band-bar: var(--coral); }
 .band-lilac { background: var(--lilac); --band-link: var(--navy); --band-h3: var(--navy); --band-bar: var(--navy); }
 .band-coral { background: var(--coral); --band-link: var(--navy); --band-h3: var(--navy); --band-bar: var(--navy); }
+/* Intro text, then the first section: keep the gap between them modest */
+.content.intro { padding-bottom: 0; }
+.intro + .band-white { padding-top: 2rem; }
 .band-navy + .band-navy, .band-lilac + .band-lilac, .band-coral + .band-coral { padding-top: 0; }
 .band-navy .button { background: var(--coral); color: var(--ink); }
 .band-navy .button:hover { background: #fff; color: var(--ink); }
@@ -178,7 +181,7 @@ ul.card-list strong { color: var(--navy); }
 .tag {
   display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
   background: var(--lilac); color: var(--navy); border-radius: 999px; padding: 0.15rem 0.65rem;
-  margin-left: 0.5rem; vertical-align: middle;
+  margin-left: 0.5rem; vertical-align: middle; font-style: normal;
 }
 .button {
   display: inline-block; background: var(--navy); color: #fff; text-decoration: none; font-weight: 700;
@@ -188,11 +191,12 @@ ul.card-list strong { color: var(--navy); }
 .button.secondary { background: none; color: var(--navy); border: 2px solid var(--navy); padding: calc(0.65rem - 2px) calc(1.25rem - 2px); }
 .button.secondary:hover { background: var(--lilac-soft); color: var(--navy); }
 
-.note {
+.note { margin: 0 0 1rem;
   background: var(--lilac-soft); border-left: 4px solid var(--lilac);
   padding: 0.75rem 1rem; border-radius: 4px; font-size: 0.95rem; max-width: 68ch;
 }
 
+.note p { margin: 0; }
 .example { border-left: 4px solid var(--coral); padding-left: 1.25rem; margin: 1.5rem 0; max-width: 68ch; }
 .band-coral .example, .band-lilac .example { border-left-color: var(--navy); }
 .example h3 { margin-top: 0; }

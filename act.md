@@ -11,12 +11,10 @@ layout: page
 
 Bespoke workshops exploring different aspects of systemic risk, helping boards and senior teams navigate worsening trajectories and decide what to do about them.
 
-<!-- Short description to be confirmed; wording above is adapted from the previous Products and Services page. -->
-
 Watch the Chapter Zero session, [Imagining new futures: securing planetary solvency](https://www.youtube.com/watch?v=kWY2mg0GQn4).
 
-<a class="button" href="https://www.youtube.com/watch?v=kWY2mg0GQn4">Watch the video</a>
-<a class="button secondary" href="https://docs.google.com/document/d/16YjLkBYnAoYBg6aqQ2EJPaxmBSQMgoRe/edit">Download the briefing document</a>
+[Watch the video](https://www.youtube.com/watch?v=kWY2mg0GQn4){: .button}
+[Download the briefing document](https://docs.google.com/document/d/16YjLkBYnAoYBg6aqQ2EJPaxmBSQMgoRe/edit){: .button .secondary}
 
 ## PS Recovery Plan
 {: #recovery-plan .band-coral}
@@ -27,6 +25,7 @@ Action is required to: radically accelerate societal adaptation to a changing cl
 
 The key message is that we still have agency here and the ability to change course. To avoid Planetary Insolvency, policymakers must urgently implement a fundamental, policy-led change of direction, informed by up-to-date information on what is happening, what is likely, the risks associated with ongoing global warming and a willingness to address the root causes of the problems we face.
 
-## Planetary Literacy <span class="tag">In development</span> {#planetary-literacy}
+## Planetary Literacy *In development*{: .tag}
+{: #planetary-literacy}
 
 Planetary Literacy is a practical digital training course we are developing to turn understanding into action. It explores why Planetary Solvency is needed, what the concept means and what the latest research tells us about interconnected planetary risks. Participants finish by developing a personal action plan, identifying how they can use their role, influence and choices to help protect human prosperity on a stable planet.

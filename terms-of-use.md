@@ -6,7 +6,8 @@ layout: page
 bands: false
 ---
 
-<p class="note">Draft text for review. It has not been legally reviewed. Details in [square brackets] are placeholders to be completed.</p>
+> Draft text for review. It has not been legally reviewed. Details in [square brackets] are placeholders to be completed.
+{: .note}
 
 ## About these terms
 

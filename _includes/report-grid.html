@@ -1,0 +1,12 @@
+<div class="report-grid">
+{% for r in site.data.reports %}
+<article class="report-card">
+{% if r.image %}<a class="report-thumb" href="{{ r.url }}"><img src="{{ r.image | relative_url }}" alt="Cover of {{ r.title }}"></a>{% else %}<a class="report-thumb placeholder" href="{{ r.url }}" aria-hidden="true" tabindex="-1">{{ r.year }}</a>{% endif %}
+<div class="report-body">
+<h3><a href="{{ r.url }}">{{ r.year }}: {{ r.title }}</a></h3>
+<p>{{ r.summary }}</p>
+<p class="report-links"><a href="{{ r.url }}">Read online</a>{% if r.pdf %} | <a href="{{ r.pdf }}">Download PDF</a>{% endif %}</p>
+</div>
+</article>
+{% endfor %}
+</div>
