@@ -231,7 +231,7 @@ ul.partner-list li {
 }
 ul.partner-list a { color: var(--navy); }
 
-.team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+.team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
 .team-card { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 1.25rem 1.5rem; }
 .team-card h3 { margin: 0; }
 .team-card .role { color: var(--teal-dark); font-weight: 700; margin: 0.15rem 0 0.75rem; }
@@ -242,6 +242,7 @@ ul.partner-list a { color: var(--navy); }
 .field { margin-bottom: 1.1rem; }
 .field label { display: block; font-weight: 700; margin-bottom: 0.3rem; color: var(--navy); }
 .optional { font-weight: 400; color: var(--muted); }
+.band-lilac .optional, .band-lilac .form-note { color: var(--navy); }
 .field input, .field textarea {
   width: 100%; font: inherit; color: var(--ink); background: #fff;
   border: 2px solid var(--navy); border-radius: 6px; padding: 0.6rem 0.75rem; min-height: 44px;
