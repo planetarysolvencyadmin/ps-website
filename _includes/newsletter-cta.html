@@ -1,0 +1,12 @@
+{% assign n = site.data.newsletter %}
+<aside class="newsletter-cta" aria-label="Newsletter">
+  <div class="wrap">
+    <div class="cta-card">
+      <div class="cta-copy">
+        <p class="cta-title">{{ n.title }}</p>
+        <p class="cta-text">{{ n.text }}</p>
+      </div>
+      <a class="button" href="{{ n.url }}">{{ n.button }}<span class="visually-hidden"> to the Planetary Solvency newsletter</span></a>
+    </div>
+  </div>
+</aside>
