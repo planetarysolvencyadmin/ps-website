@@ -5,7 +5,7 @@
 <div class="report-body">
 <h3><a href="{{ r.url }}">{{ r.year }}: {{ r.title }}</a></h3>
 <p>{{ r.summary }}</p>
-<p class="report-links"><a href="{{ r.url }}">Read online</a>{% if r.pdf %} | <a href="{{ r.pdf }}">Download PDF</a>{% endif %}</p>
+<p class="report-links">{% if r.pdf == r.url %}<a href="{{ r.pdf }}" aria-label="Download PDF: {{ r.title | escape }} ({{ r.year }})">Download PDF</a>{% else %}<a href="{{ r.url }}" aria-label="Read online: {{ r.title | escape }} ({{ r.year }})">Read online</a>{% if r.pdf %} | <a href="{{ r.pdf }}" aria-label="Download PDF: {{ r.title | escape }} ({{ r.year }})">Download PDF</a>{% endif %}{% endif %}</p>
 </div>
 </article>
 {% endfor %}
