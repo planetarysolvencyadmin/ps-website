@@ -25,13 +25,14 @@ We want as many people as possible to be able to use this website. We aim to mee
 * The site has not yet been formally audited against WCAG 2.2.
 * Some reports and resources are PDFs hosted by other organisations, which may not be fully accessible.
 * Embedded or linked videos may not have captions or transcripts.
+* Keyboard-only and screen reader testing is still to be done.
+
+## How we tested
+
+In October 2026 we ran an automated scan with [axe-core](https://github.com/dequelabs/axe-core) across all pages of the site, at desktop width and at 320px wide. It checked against WCAG 2.2 level A and AA rules. Automated tools find only some accessibility problems, so this does not replace manual testing.
 
 ## Feedback and requests
 
-If you have difficulty using any part of this site, or need information in another format, please [get in touch](/connect/#contact) and tell us what you need. We aim to reply within [5] working days.
+If you have difficulty using any part of this site, or need information in another format, please [get in touch](/connect/#contact) and tell us what you need.
 
-## Enforcement
-
-If you are not happy with how we respond, in Great Britain you can contact the [Equality Advisory and Support Service](https://www.equalityadvisoryservice.com/).
-
-This statement was drafted in [month year].
+This statement was drafted in October 2026.
