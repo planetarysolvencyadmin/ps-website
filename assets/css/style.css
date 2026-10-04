@@ -110,7 +110,7 @@ a:hover { color: var(--navy); text-decoration-thickness: 2px; }
 .home .content { padding: 0; }
 .home h1 { font-size: clamp(2rem, 4.5vw, 3rem); }
 /* Stays near the top of the screen while the longer text scrolls past */
-.home-visual { position: sticky; top: 2rem; align-self: start; width: 100%; max-width: 400px; justify-self: center; color: var(--teal); }
+.home-visual { position: sticky; top: 3.5rem; margin-top: 2.5rem; align-self: start; width: 100%; max-width: 400px; justify-self: center; color: var(--teal); }
 /* A soft dark wash keeps the white logo readable on pale photos */
 .home-visual::before {
   content: ""; position: absolute; inset: 0; z-index: 1; border-radius: 50%; pointer-events: none;
@@ -144,7 +144,7 @@ p { margin: 0 0 1rem; }
 /* Section bands: each h2 on a page starts a full-width band. White and pale lilac alternate;
    add {: .band-navy}, {: .band-lilac} or {: .band-coral} after a heading in markdown to pick a colour. */
 .band { padding: 3rem 0 2.5rem; color: var(--band-text); }
-.band .content { padding: 0; }
+.band .content { padding-top: 0; padding-bottom: 0; }
 .band :where(h2, h3) { color: var(--band-heading); }
 .band .content h3 { color: var(--band-h3, var(--teal-dark)); }
 .band :where(a:not(.button)) { color: var(--band-link); }

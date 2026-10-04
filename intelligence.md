@@ -53,7 +53,7 @@ Short, decision-focused summaries of the risks and what to do about them.
 
 *AMOC 2029: When the sea slows*, produced in association with the IFoA, the Strategic Climate Risks Initiative, the University of Exeter and the ASRA Network, is an interactive narrative resource tracking the years one government spends bracing for the slowdown of the Atlantic's overturning circulation.
 
-<span class="tag">Link to follow</span>
+<a class="button" href="https://amoc2029.org/">Visit AMOC2029</a>
 
 ## Planetary Risk Dashboard <span class="tag">In development</span>
 {: #planetary-risk-dashboard .band-lilac}
