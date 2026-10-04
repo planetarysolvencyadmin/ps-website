@@ -1,0 +1,6 @@
+# The newsletter sign-up banner shown at the bottom of every page, just above the footer.
+# To hide it on one page, add `newsletter: false` at the top of that page.
+url: https://planetarysolvency.substack.com/subscribe
+title: Subscribe to the Planetary Solvency newsletter
+text: Get the PS Chronicles from Planetary Solvency, delivered by Substack.
+button: Subscribe
