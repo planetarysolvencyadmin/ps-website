@@ -6,9 +6,6 @@ layout: page
 bands: false
 ---
 
-> Draft text for review. It should be updated once the site has been formally tested.
-{: .note}
-
 ## Our commitment
 
 We want as many people as possible to be able to use this website. We aim to meet level AA of the [Web Content Accessibility Guidelines (WCAG) 2.2](https://www.w3.org/TR/WCAG22/).
