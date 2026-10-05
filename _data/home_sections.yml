@@ -1,0 +1,14 @@
+# The five picture links under the home page introduction, in order.
+# `image` is an id from _data/images.yml. The label is taken from the menu (_data/navigation.yml)
+# using the same `url`, so renaming a menu item renames its link here too.
+# The same image is used in the round header on that section's own page.
+- url: /explore/
+  image: coral2
+- url: /intelligence/
+  image: cyclone1
+- url: /act/
+  image: ice1
+- url: /connect/
+  image: flood3
+- url: /press-and-commentary/
+  image: fossilfuels2

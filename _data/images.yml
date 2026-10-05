@@ -1,0 +1,117 @@
+# The image library. Each key is an image id used in front matter (e.g. `hero_image: cloud2`)
+# and in _data/home_sections.yml. The files themselves are in assets/images/library/ and are
+# produced by `node scripts/process-images.mjs` (see EDITING.md); the sizes available are
+# listed in the generated _data/image_files.yml.
+#
+#   alt      Describes the picture for screen readers. Use "" only if the image is purely decorative.
+#   credit   Photographer or source, shown nowhere yet but kept for the record.
+#   licence  Terms the image can be used under.
+#   focal    Optional. Which part of the picture stays in view when the hero is cropped,
+#            as a CSS object-position, e.g. "50% 30%". Default is the centre.
+#
+# TODO: credit and licence are still TO CONFIRM for every image.
+cloud1:
+  alt: A towering shelf cloud rolling over a city skyline at dusk
+  credit: TO CONFIRM
+  licence: TO CONFIRM
+cloud2:
+  alt: A rotating supercell storm over open farmland and a straight road, with rain falling beneath the cloud base
+  credit: TO CONFIRM
+  licence: TO CONFIRM
+coloured-sands:
+  alt: Rolling dunes of purple, pink and orange sand
+  credit: TO CONFIRM
+  licence: TO CONFIRM
+coral1:
+  alt: Close-up of brightly coloured corals and anemones in purple, orange and yellow
+  credit: TO CONFIRM
+  licence: TO CONFIRM
+coral2:
+  alt: A colourful coral reef seen from just below the surface
+  credit: TO CONFIRM
+  licence: TO CONFIRM
+cyclone1:
+  alt: A large tropical cyclone with a clear eye, seen from space
+  credit: TO CONFIRM
+  licence: TO CONFIRM
+  focal: "50% 38%"
+deforestation1:
+  alt: Aerial view of cleared, burning land beside intact green forest, with an excavator at work
+  credit: TO CONFIRM
+  licence: TO CONFIRM
+drought1:
+  alt: Cracked, dry lakebed stretching towards distant hills at sunset
+  credit: TO CONFIRM
+  licence: TO CONFIRM
+fire1:
+  alt: A helicopter dropping water on a forest fire glowing orange at night
+  credit: TO CONFIRM
+  licence: TO CONFIRM
+fire2:
+  alt: Flames spreading across a wooded hillside beneath thick smoke, reflected in a lake
+  credit: TO CONFIRM
+  licence: TO CONFIRM
+fire3:
+  alt: Flames and smoke rising through green woodland
+  credit: TO CONFIRM
+  licence: TO CONFIRM
+fire4:
+  alt: Wildfires burning on a hillside above a lake at night, with a small island in the foreground
+  credit: TO CONFIRM
+  licence: TO CONFIRM
+fire5:
+  alt: Silhouetted trees in front of a forest fire glowing red and orange
+  credit: TO CONFIRM
+  licence: TO CONFIRM
+flood1:
+  alt: Aerial view of a town and surrounding fields flooded by a brown river
+  credit: TO CONFIRM
+  licence: TO CONFIRM
+flood2:
+  alt: Flood water covering farmland beside a river under a stormy sky
+  credit: TO CONFIRM
+  licence: TO CONFIRM
+flood3:
+  alt: Aerial view of a village and trees surrounded by brown flood water
+  credit: TO CONFIRM
+  licence: TO CONFIRM
+flood4:
+  alt: Flooded wetland and fields reflecting a sunset sky
+  credit: TO CONFIRM
+  licence: TO CONFIRM
+floodedcrops:
+  alt: Rows of young maize standing in flood water, with the sun low on the horizon
+  credit: TO CONFIRM
+  licence: TO CONFIRM
+fossilfuels1:
+  alt: A coal-fired power station with cooling towers and a chimney, steam glowing pink at dawn
+  credit: TO CONFIRM
+  licence: TO CONFIRM
+fossilfuels2:
+  alt: Dark smoke rising from power station cooling towers silhouetted against a sunset
+  credit: TO CONFIRM
+  licence: TO CONFIRM
+fossilfuels3:
+  alt: A power station chimney releasing a curving plume of smoke over low cloud at sunrise
+  credit: TO CONFIRM
+  licence: TO CONFIRM
+ice1:
+  alt: A glacier face collapsing into the sea in a burst of spray
+  credit: TO CONFIRM
+  licence: TO CONFIRM
+mine1:
+  alt: Excavators and trucks working in an open-cast mine
+  credit: TO CONFIRM
+  licence: TO CONFIRM
+ocean1:
+  alt: Aerial view of a turquoise ocean wave breaking into white foam
+  credit: TO CONFIRM
+  licence: TO CONFIRM
+ocean2:
+  alt: A humpback whale swimming in deep blue water, lit by shafts of sunlight
+  credit: TO CONFIRM
+  licence: TO CONFIRM
+ocean3:
+  alt: Looking up at breaking waves and sunlight from beneath the sea surface
+  credit: TO CONFIRM
+  licence: TO CONFIRM

@@ -1,0 +1,33 @@
+# The pool of hero images. One is picked at random on each visit to the home page.
+# Each entry is an id from _data/images.yml. Add, remove or reorder freely.
+# To show one fixed image instead, set `hero_image: <id>` in index.md (and `random` to go back to the pool).
+# Clouds are left out because they are too dark behind the headline. Move any line between the two lists.
+
+# In the pool
+- flood1
+- flood2
+- flood3
+- flood4
+- floodedcrops
+- fire1
+- fire2
+- fire3
+- fire4
+- fire5
+- drought1
+- deforestation1
+- fossilfuels1
+- fossilfuels2
+- fossilfuels3
+- ice1
+- cyclone1
+- coral2
+- mine1
+
+# Available but not in the pool (copy a line up to include it)
+# - coral1
+# - ocean1
+# - ocean2
+# - ocean3
+# - cloud1
+# - cloud2

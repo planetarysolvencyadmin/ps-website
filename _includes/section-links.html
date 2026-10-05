@@ -1,0 +1,17 @@
+{%- comment -%}
+  Picture links to the main sections. Pictures: _data/home_sections.yml. Labels: _data/navigation.yml.
+  Shape: add the modifier class `section-links--square` below, or set --tile-radius in the CSS.
+{%- endcomment -%}
+<nav class="section-links" aria-label="Sections">
+  <ul class="section-links-list">
+    {%- for s in site.data.home_sections -%}
+    {%- assign nav = site.data.navigation | where: 'url', s.url | first -%}
+    <li>
+      <a class="section-link" href="{{ s.url | relative_url }}">
+        <span class="section-link-tile">{% include responsive-image.html id=s.image kind="square" class="section-link-img" sizes="(min-width: 900px) 170px, (min-width: 480px) 160px, 140px" decorative=true %}</span>
+        <span class="section-link-label">{{ nav.title }}</span>
+      </a>
+    </li>
+    {%- endfor -%}
+  </ul>
+</nav>

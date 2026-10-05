@@ -8,7 +8,9 @@ layout: default
       <h1>{{ page.title }}</h1>
       {% if page.subtitle %}<p class="tagline">{{ page.subtitle }}</p>{% endif %}
     </div>
-    {% if page.image %}<img class="band-photo" src="{{ page.image | relative_url }}" alt="{{ page.image_alt }}" width="300" height="300">{% endif %}
+    {%- assign section = site.data.home_sections | where: 'url', page.url | first -%}
+    {% if section %}{% include responsive-image.html id=section.image kind="square" class="band-photo" sizes="(max-width: 600px) 84px, 150px" decorative=true eager=true %}
+    {% elsif page.image %}<img class="band-photo" src="{{ page.image | relative_url }}" alt="{{ page.image_alt }}" width="300" height="300">{% endif %}
   </div>
 </div>
 {% for section in site.data.navigation %}{% if section.url == page.url %}

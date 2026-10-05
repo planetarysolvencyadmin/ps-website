@@ -6,3 +6,6 @@ vendor/
 .bundle/
 .DS_Store
 Gemfile.lock
+
+# Full-size image originals (never commit; the processed derivatives live in assets/images/library/)
+/originals/
