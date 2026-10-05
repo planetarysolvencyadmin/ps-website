@@ -31,7 +31,7 @@ Do not put HTML tags in page text. Use the patterns below instead.
 ## Home page pictures
 
 - **Hero:** a random image from the pool in `_data/hero_images.yml` on each visit. In `index.md`, `hero_title:` is the h1 text, and `hero_image:` can be set to one id to pin an image (leave as `random` for the pool).
-- **Section circles and page headers:** `_data/home_sections.yml` sets the picture for each link and for the round header on that section's page. The label comes from the menu in `_data/navigation.yml`.
+- **Section circles:** `_data/home_sections.yml` sets each circle's colour (or an optional picture, which also appears in that section's page header). The label comes from the menu in `_data/navigation.yml`.
 - **Image library:** each picture has an entry in `_data/images.yml` (alt text, credit, licence, optional `focal` crop point). Adding pictures needs a script run; the full steps are in [IMAGES.md](IMAGES.md).
 - **Circles to squares:** add `section-links--square` to the `<nav>` class in `_includes/section-links.html`.
 

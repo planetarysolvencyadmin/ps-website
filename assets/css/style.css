@@ -133,7 +133,7 @@ a:hover { color: var(--navy); text-decoration-thickness: 2px; }
 .home-intro > p { max-width: 62ch; margin: 0; font-size: clamp(1.1rem, 2vw, 1.3rem); line-height: 1.55; }
 .home-sections { padding-top: 1.5rem; padding-bottom: 4rem; }
 
-/* Picture links. Change the shape here: --tile-radius 50% is a circle, a small value such as 12px a rounded square.
+/* Section links: coloured tiles (name inside) or pictures (name underneath). Change the shape here: --tile-radius 50% is a circle, a small value such as 12px a rounded square.
    Or add the class section-links--square to the nav in _includes/section-links.html. */
 .section-links { --tile-radius: 50%; --cols: 5; --gap: 2.25rem; }
 .section-links--square { --tile-radius: 12px; }
@@ -153,6 +153,18 @@ a:hover { color: var(--navy); text-decoration-thickness: 2px; }
 .section-link:focus-visible .section-link-tile { outline-width: 5px; }
 .section-link:hover .section-link-img, .section-link:focus-visible .section-link-img { transform: scale(1.06); }
 .section-link:hover .section-link-label, .section-link:focus-visible .section-link-label { text-decoration-color: var(--coral); }
+/* Colour tiles: the name sits in the middle of the shape. Each pairing is at least 4.5:1 for the label. */
+.section-link--colour .section-link-tile {
+  display: flex; align-items: center; justify-content: center; padding: 0.75rem;
+  background: var(--tile-bg); color: var(--tile-fg);
+}
+.section-link--colour .section-link-label { margin: 0; color: inherit; font-size: clamp(1.05rem, 1.8vw, 1.3rem); line-height: 1.2; }
+.section-link--colour:hover .section-link-label, .section-link--colour:focus-visible .section-link-label { text-decoration-color: currentColor; }
+.tile-teal-dark { --tile-bg: var(--teal-dark); --tile-fg: #fff; }
+.tile-navy { --tile-bg: var(--navy); --tile-fg: #fff; }
+.tile-coral { --tile-bg: var(--coral); --tile-fg: var(--ink); }
+.tile-lilac { --tile-bg: var(--lilac); --tile-fg: var(--ink); }
+.tile-deep { --tile-bg: var(--deep); --tile-fg: #fff; }
 @media (max-width: 899px) { .section-links { --cols: 3; } }
 @media (max-width: 559px) { .section-links { --cols: 2; --gap: 1.75rem; } }
 @media (max-width: 339px) { .section-links { --cols: 1; } }

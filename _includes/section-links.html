@@ -1,5 +1,7 @@
 {%- comment -%}
-  Picture links to the main sections. Pictures: _data/home_sections.yml. Labels: _data/navigation.yml.
+  Links to the main sections. Settings: _data/home_sections.yml. Labels: _data/navigation.yml.
+  Each section is either a colour tile with its name in the middle (`colour`), or, if an `image` is set,
+  a picture with the name underneath.
   Shape: add the modifier class `section-links--square` below, or set --tile-radius in the CSS.
 {%- endcomment -%}
 <nav class="section-links" aria-label="Sections">
@@ -7,10 +9,16 @@
     {%- for s in site.data.home_sections -%}
     {%- assign nav = site.data.navigation | where: 'url', s.url | first -%}
     <li>
+      {%- if s.image %}
       <a class="section-link" href="{{ s.url | relative_url }}">
         <span class="section-link-tile">{% include responsive-image.html id=s.image kind="square" class="section-link-img" sizes="(min-width: 900px) 170px, (min-width: 480px) 160px, 140px" decorative=true %}</span>
         <span class="section-link-label">{{ nav.title }}</span>
       </a>
+      {%- else %}
+      <a class="section-link section-link--colour tile-{{ s.colour | default: 'teal-dark' }}" href="{{ s.url | relative_url }}">
+        <span class="section-link-tile"><span class="section-link-label">{{ nav.title }}</span></span>
+      </a>
+      {%- endif %}
     </li>
     {%- endfor -%}
   </ul>

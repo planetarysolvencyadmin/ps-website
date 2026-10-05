@@ -9,7 +9,7 @@ layout: default
       {% if page.subtitle %}<p class="tagline">{{ page.subtitle }}</p>{% endif %}
     </div>
     {%- assign section = site.data.home_sections | where: 'url', page.url | first -%}
-    {% if section %}{% include responsive-image.html id=section.image kind="square" class="band-photo" sizes="(max-width: 600px) 84px, 150px" decorative=true eager=true %}
+    {% if section %}{% if section.image %}{% include responsive-image.html id=section.image kind="square" class="band-photo" sizes="(max-width: 600px) 84px, 150px" decorative=true eager=true %}{% endif %}
     {% elsif page.image %}<img class="band-photo" src="{{ page.image | relative_url }}" alt="{{ page.image_alt }}" width="300" height="300">{% endif %}
   </div>
 </div>
