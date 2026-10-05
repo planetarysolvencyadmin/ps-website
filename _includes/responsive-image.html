@@ -1,0 +1,31 @@
+{%- comment -%}
+  Picture element for an image from the library (_data/images.yml).
+  Parameters: id, kind ("hero" or "square"), sizes, class, alt (optional override),
+  decorative (true for alt="", e.g. when a visible label sits next to the image),
+  priority (true for the hero: high fetch priority and never lazy-loaded; otherwise lazy),
+  eager (true for small images that are visible straight away: not lazy-loaded, normal priority).
+  WebP is offered first, with a JPEG fallback.
+{%- endcomment -%}
+{%- assign meta = site.data.images[include.id] -%}
+{%- assign files = site.data.image_files[include.id] -%}
+{%- if meta and files -%}
+  {%- assign prefix = '/assets/images/library/' | append: include.id -%}
+  {%- if include.kind == 'hero' -%}
+    {%- assign widths = files.hero -%}
+    {%- assign stem = prefix -%}
+    {%- assign w = files.hero_ratio[0] -%}
+    {%- assign h = files.hero_ratio[1] -%}
+  {%- else -%}
+    {%- assign widths = files.square -%}
+    {%- assign stem = prefix | append: '-sq' -%}
+    {%- assign w = files.square[0] -%}
+    {%- assign h = files.square[0] -%}
+  {%- endif -%}
+  {%- capture webp_set -%}{% for x in widths %}{{ stem | append: '-' | append: x | append: '.webp' | relative_url }} {{ x }}w{% unless forloop.last %}, {% endunless %}{% endfor %}{%- endcapture -%}
+  {%- capture jpg_set -%}{% for x in widths %}{{ stem | append: '-' | append: x | append: '.jpg' | relative_url }} {{ x }}w{% unless forloop.last %}, {% endunless %}{% endfor %}{%- endcapture -%}
+  {%- assign fallback = stem | append: '-' | append: widths.first | append: '.jpg' -%}
+<picture>
+  <source type="image/webp" srcset="{{ webp_set }}" sizes="{{ include.sizes }}">
+  <img class="{{ include.class }}" src="{{ fallback | relative_url }}" srcset="{{ jpg_set }}" sizes="{{ include.sizes }}" width="{{ w }}" height="{{ h }}" alt="{% unless include.decorative %}{{ include.alt | default: meta.alt | escape }}{% endunless %}"{% if include.priority %} fetchpriority="high" decoding="async"{% elsif include.eager %} decoding="async"{% else %} loading="lazy" decoding="async"{% endif %}{% if include.kind == 'hero' and meta.focal %} style="object-position: {{ meta.focal | escape }}"{% endif %}>
+</picture>
+{%- endif -%}

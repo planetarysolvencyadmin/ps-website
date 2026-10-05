@@ -1,6 +1,17 @@
-/* Planetary Solvency: plain CSS, no build step, no web fonts, no images in the design.
+/* Planetary Solvency: plain CSS, no build step, one self-hosted web font (Inter), no images in the design.
    Change colours here only. Tints marked "derived" are lightened/darkened versions
    of the brand colours, used where the brand colour itself fails contrast checks. */
+/* Inter, self-hosted (SIL Open Font License 1.1, see assets/fonts/OFL-Inter.txt). One variable file per style covers weights 100 to 900
+   and the optical-size axis. The browser only downloads the latin-ext files if a page uses characters outside the latin set. */
+@font-face { font-family: "Inter"; font-style: italic; font-weight: 100 900; font-display: swap; src: url("../fonts/inter-latin-italic.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Inter"; font-style: italic; font-weight: 100 900; font-display: swap; src: url("../fonts/inter-latin-ext-italic.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Inter"; font-style: normal; font-weight: 100 900; font-display: swap; src: url("../fonts/inter-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Inter"; font-style: normal; font-weight: 100 900; font-display: swap; src: url("../fonts/inter-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
 :root {
   /* Section band colours (changed per band below) */
   --band-text: var(--ink);
@@ -30,8 +41,9 @@ html { -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
-  /* Neue Haas Grotesk first (used if installed or licensed later), then the closest fonts every device already has */
-  font-family: "Neue Haas Grotesk Display Pro", "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
+  /* Inter (self-hosted above), then the closest fonts every device already has */
+  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
+  font-optical-sizing: auto;
   font-size: 1.0625rem;
   color: var(--ink);
   background: var(--paper);
@@ -80,7 +92,9 @@ a:hover { color: var(--navy); text-decoration-thickness: 2px; }
 .page-band { background: var(--coral); color: var(--ink); padding: 2.25rem 0 2rem; }
 .page-band .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
 .page-band h1 { margin: 0; color: var(--navy); }
-/* Optional circular photo set with `image:` in a page's front matter; leave `image_alt` blank because it is decoration */
+/* Round photo in the page header. Section pages take theirs from _data/home_sections.yml (same picture as the home page link);
+   other pages can set `image:` in front matter. It is decoration, so leave `image_alt` blank. */
+.page-band picture { flex: none; display: block; }
 .band-photo {
   flex: none; width: 150px; height: 150px; border-radius: 50%; object-fit: cover; background: var(--soft);
   outline: 3px solid #fff; outline-offset: 4px; margin: 4px 7px 4px 0;
@@ -103,32 +117,58 @@ a:hover { color: var(--navy); text-decoration-thickness: 2px; }
 .site-main { flex: 1; }
 .site-main:focus { outline: none; }
 .content { padding-top: 2.5rem; padding-bottom: 2.5rem; }
-.home {
-  display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 400px); gap: 3rem;
-  align-items: start; padding-top: 3rem; padding-bottom: 3.5rem; overflow-x: clip;
+/* Home: hero band, introduction and section links */
+.hero { position: relative; display: grid; align-items: end; min-height: clamp(340px, 46vw, 560px); background: var(--deep); color: #fff; overflow: hidden; }
+.hero picture { position: absolute; inset: 0; display: block; }
+.hero-image { display: block; width: 100%; height: 100%; object-fit: cover; }
+/* The scrim sits under the text, not over the whole picture. White text on navy at 75% over a pure white photo is 6.7:1,
+   so it passes WCAG AA (4.5:1) on any image. Everything below the top 8rem of the panel is solid; the top 8rem eases out
+   so the photo is not boxed in. The panel's top padding keeps the headline inside the solid part. */
+.hero-scrim {
+  position: relative; padding: 9rem 0 2rem;
+  background: linear-gradient(to top, rgba(14, 41, 60, 0.75) calc(100% - 8rem), rgba(14, 41, 60, 0.3) calc(100% - 4rem), rgba(14, 41, 60, 0));
 }
-.home .content { padding: 0; }
-.home h1 { font-size: clamp(2rem, 4.5vw, 3rem); }
-/* Stays near the top of the screen while the longer text scrolls past */
-.home-visual { position: sticky; top: 3.5rem; margin-top: 2.5rem; align-self: start; width: 100%; max-width: 400px; justify-self: center; color: var(--teal); }
-/* A soft dark wash keeps the white logo readable on pale photos */
-.home-visual::before {
-  content: ""; position: absolute; inset: 0; z-index: 1; border-radius: 50%; pointer-events: none;
-  background: radial-gradient(circle, rgba(14, 41, 60, 0.6) 0%, rgba(14, 41, 60, 0.4) 55%, rgba(14, 41, 60, 0.15) 100%);
+.hero h1 { margin: 0; max-width: 20ch; color: #fff; font-size: clamp(2rem, 5.5vw, 3.75rem); line-height: 1.1; }
+.home-intro { padding-top: 2.5rem; padding-bottom: 1.5rem; }
+.home-intro > p { max-width: 62ch; margin: 0; font-size: clamp(1.1rem, 2vw, 1.3rem); line-height: 1.55; }
+.home-sections { padding-top: 1.5rem; padding-bottom: 4rem; }
+
+/* Section links: coloured tiles (name inside) or pictures (name underneath). Change the shape here: --tile-radius 50% is a circle, a small value such as 12px a rounded square.
+   Or add the class section-links--square to the nav in _includes/section-links.html. */
+.section-links { --tile-radius: 50%; --cols: 5; --gap: 2.25rem; }
+.section-links--square { --tile-radius: 12px; }
+.section-links-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 2.5rem var(--gap); list-style: none; margin: 0; padding: 0; }
+.section-links-list li { flex: 0 0 calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols)); min-width: 0; margin: 0; }
+.section-link { display: block; text-align: center; text-decoration: none; color: var(--navy); }
+.section-link:focus-visible { outline: none; }
+.section-link-tile {
+  display: block; width: 100%; max-width: 190px; margin: 0 auto; aspect-ratio: 1; overflow: hidden; background: var(--soft);
+  border-radius: var(--tile-radius); outline: 3px solid var(--coral); outline-offset: 7px;
+  transition: outline-offset 0.15s ease;
 }
-.home-logo {
-  position: absolute; z-index: 2; left: 50%; top: 50%; width: 66%; height: auto;
-  transform: translate(-50%, -50%); filter: drop-shadow(0 1px 8px rgba(0, 0, 0, 0.35));
+.section-link-tile picture { display: block; width: 100%; height: 100%; }
+.section-link-img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+.section-link-label { display: block; margin-top: 1.25rem; font-size: 1.2rem; font-weight: 700; letter-spacing: -0.01em; text-decoration: underline transparent 3px; text-underline-offset: 0.25em; }
+.section-link:hover .section-link-tile, .section-link:focus-visible .section-link-tile { outline-color: var(--navy); outline-offset: 9px; }
+.section-link:focus-visible .section-link-tile { outline-width: 5px; }
+.section-link:hover .section-link-img, .section-link:focus-visible .section-link-img { transform: scale(1.06); }
+.section-link:hover .section-link-label, .section-link:focus-visible .section-link-label { text-decoration-color: var(--coral); }
+/* Colour tiles: the name sits in the middle of the shape. Each pairing is at least 4.5:1 for the label. */
+.section-link--colour .section-link-tile {
+  display: flex; align-items: center; justify-content: center; padding: 0.75rem;
+  background: var(--tile-bg); color: var(--tile-fg);
 }
-.home-photo {
-  position: relative; z-index: 0; display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover;
-  border-radius: 50%; background: var(--soft);
-  outline: 3px solid var(--coral); outline-offset: 7px;
-}
-@media (max-width: 800px) {
-  .home { grid-template-columns: 1fr; gap: 2.5rem; }
-  .home-visual { position: relative; top: auto; order: -1; max-width: 220px; margin: 0.5rem auto 0; }
-}
+.section-link--colour .section-link-label { margin: 0; color: inherit; font-size: clamp(1.05rem, 1.8vw, 1.3rem); line-height: 1.2; }
+.section-link--colour:hover .section-link-label, .section-link--colour:focus-visible .section-link-label { text-decoration-color: currentColor; }
+.tile-teal-dark { --tile-bg: var(--teal-dark); --tile-fg: #fff; }
+.tile-navy { --tile-bg: var(--navy); --tile-fg: #fff; }
+.tile-coral { --tile-bg: var(--coral); --tile-fg: var(--ink); }
+.tile-lilac { --tile-bg: var(--lilac); --tile-fg: var(--ink); }
+.tile-deep { --tile-bg: var(--deep); --tile-fg: #fff; }
+@media (max-width: 899px) { .section-links { --cols: 3; } }
+@media (max-width: 559px) { .section-links { --cols: 2; --gap: 1.75rem; } }
+@media (max-width: 339px) { .section-links { --cols: 1; } }
+@media (prefers-reduced-motion: reduce) { .section-link-img, .section-link-tile { transition: none; } .section-link:hover .section-link-img, .section-link:focus-visible .section-link-img { transform: none; } }
 
 /* Type */
 h1, h2, h3 { color: var(--navy); letter-spacing: -0.015em; }

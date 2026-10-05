@@ -36,5 +36,7 @@ exclude:
 - Gemfile.lock
 - README.md
 - EDITING.md
+- IMAGES.md
+- scripts
 - vendor
 - node_modules

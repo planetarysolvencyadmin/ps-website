@@ -1,7 +1,6 @@
 ---
 title: Intelligence
 permalink: "/intelligence/"
-image: "/assets/images/banners/storm.webp"
 subtitle: Intelligence for a changing planet
 description: Planetary Solvency research, reports, briefings and tools translating
   Earth system evidence into decision-relevant insight.

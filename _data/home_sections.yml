@@ -1,0 +1,23 @@
+# The five links under the home page introduction, in order.
+# The label is taken from the menu (_data/navigation.yml) using the same `url`, so renaming a menu item renames its link here too.
+#
+# Each link is one of:
+#   colour   A coloured circle with the section name in the middle. One of: teal-dark, navy, coral, lilac, deep.
+#            (The plain brand teal is left out: no text colour reaches 4.5:1 on it. Teal-dark is the readable version.)
+#   image    An id from _data/images.yml: a picture circle with the name underneath, and the same picture in the round
+#            header on that section's own page. If both are set, image wins.
+- url: /explore/
+  colour: teal-dark
+  # image: coral2
+- url: /intelligence/
+  colour: navy
+  # image: cyclone1
+- url: /act/
+  colour: coral
+  # image: ice1
+- url: /connect/
+  colour: lilac
+  # image: flood3
+- url: /press-and-commentary/
+  colour: deep
+  # image: fossilfuels2

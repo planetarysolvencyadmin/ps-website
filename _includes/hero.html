@@ -1,0 +1,44 @@
+{%- comment -%}
+  Full-width image band with the page's h1 over it. Used by the home layout.
+  Front matter: hero_title, and hero_image: either one id from _data/images.yml (fixed image)
+  or `random` (the default), which picks from the pool in _data/hero_images.yml on each visit.
+  Random choice is made in the browser. With JavaScript off, the image is chosen at build time instead.
+{%- endcomment -%}
+<section class="hero" aria-labelledby="hero-title">
+  {%- if page.hero_image and page.hero_image != 'random' -%}
+  {% include responsive-image.html id=page.hero_image kind="hero" class="hero-image" sizes="100vw" priority=true %}
+  {%- else -%}
+  {%- capture valid -%}{% for id in site.data.hero_images %}{% if site.data.images[id] and site.data.image_files[id] %}{{ id }},{% endif %}{% endfor %}{%- endcapture -%}
+  {%- assign valid = valid | split: ',' -%}
+  {%- if valid.size > 0 -%}
+  <script>
+    (function () {
+      var pool = [{% for id in valid %}{%- assign meta = site.data.images[id] -%}{%- assign files = site.data.image_files[id] -%}
+        { s: {{ '/assets/images/library/' | append: id | relative_url | jsonify }}, w: {{ files.hero | jsonify }}, r: {{ files.hero_ratio | jsonify }}, a: {{ meta.alt | jsonify }}, f: {{ meta.focal | jsonify }} }{% unless forloop.last %},{% endunless %}{% endfor %}
+      ];
+      var p = pool[Math.floor(Math.random() * pool.length)];
+      var set = function (ext) { return p.w.map(function (w) { return p.s + '-' + w + '.' + ext + ' ' + w + 'w'; }).join(', '); };
+      var pic = document.createElement('picture');
+      var src = document.createElement('source');
+      var img = document.createElement('img');
+      pic.appendChild(src); pic.appendChild(img);
+      src.type = 'image/webp'; src.sizes = '100vw'; src.srcset = set('webp');
+      img.className = 'hero-image'; img.sizes = '100vw'; img.srcset = set('jpg');
+      img.width = p.r[0]; img.height = p.r[1]; img.alt = p.a; img.decoding = 'async'; img.fetchPriority = 'high';
+      if (p.f) img.style.objectPosition = p.f;
+      img.src = p.s + '-' + p.w[0] + '.jpg';
+      var me = document.currentScript;
+      me.parentNode.insertBefore(pic, me);
+    })();
+  </script>
+  {%- assign pick = site.time | date: '%s' | modulo: valid.size -%}
+  {%- assign fallback_id = valid[pick] -%}
+  <noscript>{% include responsive-image.html id=fallback_id kind="hero" class="hero-image" sizes="100vw" priority=true %}</noscript>
+  {%- endif -%}
+  {%- endif %}
+  <div class="hero-scrim">
+    <div class="wrap">
+      <h1 id="hero-title">{{ page.hero_title }}</h1>
+    </div>
+  </div>
+</section>
