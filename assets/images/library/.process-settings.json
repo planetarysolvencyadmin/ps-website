@@ -7,36 +7,7 @@
     ],
     "webp": 78,
     "jpeg": 80,
-    "treatment": {
-      "lens": 0.81,
-      "blur": 0.03,
-      "modulate": "106,95",
-      "ring": 0.003,
-      "ringMin": 2,
-      "orbit": 0.0012,
-      "orbitMin": 1,
-      "dash": [
-        0.005,
-        0.007
-      ],
-      "orbits": [
-        {
-          "a": 0.5,
-          "b": 0.4,
-          "tilt": 5,
-          "dashed": false
-        },
-        {
-          "a": 0.58,
-          "b": 0.3,
-          "tilt": -30,
-          "dashed": true
-        }
-      ],
-      "square": {
-        "lens": 0.5
-      }
-    }
+    "treatment": null
   },
   "square": {
     "widths": [
@@ -45,35 +16,6 @@
     ],
     "webp": 78,
     "jpeg": 80,
-    "treatment": {
-      "lens": 0.81,
-      "blur": 0.03,
-      "modulate": "106,95",
-      "ring": 0.003,
-      "ringMin": 2,
-      "orbit": 0.0012,
-      "orbitMin": 1,
-      "dash": [
-        0.005,
-        0.007
-      ],
-      "orbits": [
-        {
-          "a": 0.5,
-          "b": 0.4,
-          "tilt": 5,
-          "dashed": false
-        },
-        {
-          "a": 0.58,
-          "b": 0.3,
-          "tilt": -30,
-          "dashed": true
-        }
-      ],
-      "square": {
-        "lens": 0.5
-      }
-    }
+    "treatment": null
   }
 }
