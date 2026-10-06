@@ -2,9 +2,8 @@
 - title: Explore
   url: /explore/
   items:
-    - { title: "Why Planetary Solvency?", anchor: why-planetary-solvency }
     - { title: "What is Planetary Solvency?", anchor: what-is-planetary-solvency }
-    - { title: "Our approach: why PS is different", anchor: our-approach }
+    - { title: "Our Approach: What We Do", anchor: our-approach }
     - { title: "What we do", anchor: what-we-do }
     - { title: "Mission", anchor: mission }
     - { title: "Vision", anchor: vision }
