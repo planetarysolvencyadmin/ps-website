@@ -13,8 +13,5 @@ platforms :windows, :jruby do
   gem "tzinfo-data"
 end
 
-# Note: the "wdm" gem is deliberately not used. 0.1.1 is abandoned and will not
-# compile on Ruby 3.4+, and Jekyll's file watcher works fine without it on Windows.
-
 # webrick is required for Ruby >= 3.0 to run `jekyll serve`
 gem "webrick", "~> 1.8"
