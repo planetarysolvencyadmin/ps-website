@@ -11,6 +11,8 @@ bundle exec jekyll serve
 
 Then open http://localhost:4000
 
+**Windows:** install Ruby from [RubyInstaller](https://rubyinstaller.org/) (the "with Devkit" build) and tick the `ridk install` step at the end. If `bundle install` fails building the `wdm` gem, pull the latest version of this repo (the `wdm` dependency has been removed, as it does not compile on Ruby 3.4 or later). If a stale install is lingering, run `bundle install` again after `git pull`.
+
 ## Editing content
 
 See [EDITING.md](EDITING.md) for the safe-editing rules (what to change, what to leave alone, and the patterns to copy).
