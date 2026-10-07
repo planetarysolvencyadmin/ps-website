@@ -1,5 +1,13 @@
-<ul class="questions">
-{% for r in site.data.reports %}
-<li><a href="{{ r.url }}">{{ r.question }}</a> <small>{{ r.title }} ({{ r.year }})</small></li>
-{% endfor %}
+<ul class="questions-list">
+  {% for r in site.data.reports %}
+  <li class="question-item">
+    <a href="{{ r.url }}" class="question-link">
+      <img src="{{ r.image | relative_url }}" alt="Cover of {{ r.title }}" class="question-thumb" style="width:67px; height:84px">
+      <div class="question-content">
+        <span class="question-text">{{ r.question }}</span>
+        <small class="question-meta">{{ r.title }} ({{ r.year }})</small>
+      </div>
+    </a>
+  </li>
+  {% endfor %}
 </ul>

@@ -12,19 +12,19 @@
 - title: Intelligence
   url: /intelligence/
   items:
-    - { title: "Research", anchor: research }
-    - { title: "Reports", anchor: reports }
-    - { title: "Briefings", anchor: briefings }
+    - { title: "Research and Reports", anchor: research }
     - { title: "AMOC2029", anchor: amoc2029 }
     - { title: "Planetary Risk Dashboard", anchor: planetary-risk-dashboard }
-    - { title: "Planetary Solvency Scenarios", anchor: planetary-solvency-scenarios }
+    - { title: "Planetary Solvency Informed Scenarios", anchor: planetary-solvency-scenarios }
+    - { title: "PS Recovery Plan", anchor: recovery-plan }
 
 - title: Act
   url: /act/
   items:
+    - { title: "Briefings", anchor: briefings }
     - { title: "Risk navigation workshops", anchor: risk-navigation-workshops }
-    - { title: "PS Recovery Plan", anchor: recovery-plan }
     - { title: "Planetary Literacy", anchor: planetary-literacy }
+    
 
 - title: Connect
   url: /connect/

@@ -4,12 +4,14 @@
   title: "Climate Emergency – tipping the odds in our favour"
   url: https://actuaries.org.uk/media/gebdhxzi/climate-emergency.pdf
   pdf: https://actuaries.org.uk/media/gebdhxzi/climate-emergency.pdf
+  image: /uploads/climate-emergency-report.png
   question: "Climate change is a risk management problem, why aren’t we treating it that way?"
   summary: "As a joint policy briefing by the IFoA and Sir David King’s Climate Crisis Advisory Group, this briefing warned that climate tipping points are closer than modelled, introducing early risk-based framing. It detailed that a key goal of climate change policy should be to limit the probability of a very bad outcome to an acceptably small value."
 
 - year: 2023
   title: "The Emperor's New Climate Scenarios"
   url: https://actuaries.org.uk/emperors-new-climate-scenarios
+  image: /uploads/emperor-report.png
   question: "Why are central banks and regulators underestimating climate risk?"
   summary: "Written with Professor Tim Lenton at the University of Exeter, this report exposed how mainstream economic climate models systematically understate risks – with real-world impacts of climate change largely excluded from models."
 
@@ -31,11 +33,14 @@
 - year: 2026
   title: "Parasol Lost: Recovery plan needed"
   url: https://actuaries.org.uk/news-and-media-releases/news-articles/2026/jan/14-jan-26-parasol-lost-recovery-plan-needed/
+  image: /uploads/parasol-lost-report.png
   question: "Why is global warming accelerating and what could we do about it?"
   summary: "Produced with the University of Exeter, this report detailed a risk-led analysis of aerosol masking, global heating acceleration, and the systemic implications for financial stability. In addition, it outlined key components for a planetary solvency recovery plan."
 
 - year: 2026
   title: "Planetary Solvency: Tipping into the wild unknown"
   url: https://actuaries.org.uk/planetary-solvency-tipping-into-the-wild-unknown/
+  pdf: https://actuaries.org.uk/media/4m4k45at/planetary-solvency-tipping-into-the-wild-unknown.pdf
+  image: /uploads/tipping-into-wild-report.png
   question: "Why does nature loss impact our food supply?"
   summary: "Produced with Anglia Ruskin University, this report highlighted inadequate risk assessment, nature degradation, food and pandemic risk, and set out the case for treating nature as critical infrastructure."
