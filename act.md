@@ -6,23 +6,19 @@ description: Workshops, a recovery plan and training to turn understanding of pl
 layout: page
 ---
 
-## Risk navigation workshops {#risk-navigation-workshops}
+## Briefings {#briefings}
+Widespread systems illiteracy is leaving many leaders and boards of businesses unprepared for a future in which breaching planetary boundaries presents material financial and operational risks: something they must actively manage. Failing to account for nature-related dependencies exposes organisations to severe regulatory, litigation, and transition risks. 
 
-Bespoke workshops exploring different aspects of systemic risk, helping boards and senior teams navigate worsening trajectories and decide what to do about them.
+Bespoke senior leadership briefings will soon be available from Planetary Solvency, in collaboration with our relevant partners, to upskill leadership teams and help them navigate through this new reality. Please [register your interest via our contact form.](/connect/#contact) 
 
-Watch the Chapter Zero session, [Imagining new futures: securing planetary solvency](https://www.youtube.com/watch?v=kWY2mg0GQn4).
+## Risk navigation workshops *In development*{: .tag}
+{: #risk-navigation-workshops}
+
+We are currently scoping the design and build of immersive, bespoke workshops for senior teams that will explore different aspects of systemic risk and positive tipping points, through the planetary solvency lens. Please [register your interest via our contact form.](/connect/#contact) 
+
+We also partner with a number of aligned organisations, to bring planetary solvency principles to a broader audience. This short film by Chapter Zero reflects on the importance of exploring planetary solvency in the boardroom:  [Imagining new futures: securing planetary solvency](https://www.youtube.com/watch?v=kWY2mg0GQn4).
 
 [Watch the video](https://www.youtube.com/watch?v=kWY2mg0GQn4){: .button}
-[Download the briefing document](https://docs.google.com/document/d/16YjLkBYnAoYBg6aqQ2EJPaxmBSQMgoRe/edit){: .button .secondary}
-
-## PS Recovery Plan
-{: #recovery-plan .band-coral}
-
-We are at a ‘break glass’ moment for climate change. Emergency action is required to stabilise the climate system, and to implement equivalent risk management practices to those that protect financial stability. Governments and other stakeholders need to execute a Planetary Solvency recovery plan, congruent with CCAG’s 4R planet strategy, identifying quick wins, emergency brakes and options to change our trajectory away from the high risk zone.
-
-Action is required to: radically accelerate societal adaptation to a changing climate, supercharge the pace of the energy transition to reduce fossil fuel use and emissions, and remove excess greenhouse gases already in the atmosphere. It will be overwhelmingly positive economically to do so.
-
-The key message is that we still have agency here and the ability to change course. To avoid Planetary Insolvency, policymakers must urgently implement a fundamental, policy-led change of direction, informed by up-to-date information on what is happening, what is likely, the risks associated with ongoing global warming and a willingness to address the root causes of the problems we face.
 
 ## Planetary Literacy *In development*{: .tag}
 {: #planetary-literacy}
