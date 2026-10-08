@@ -1,6 +1,6 @@
 # Options for a friendlier editing interface
 
-Notes for choosing how less technical people edit the site. Nothing here is set up yet. Last researched October 2026; check each tool's current docs before committing, as these projects move quickly.
+Notes for choosing how less technical people edit the site. Pages CMS has since been configured (see [pages-cms.md](pages-cms.md)); the rest is background. Last researched October 2026; check each tool's current docs before committing, as these projects move quickly.
 
 ## What we need
 

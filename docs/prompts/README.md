@@ -11,6 +11,8 @@ Ready-made prompts for the jobs that come up most. Copy one, replace the `[BRACK
 | Add, update or remove a partner | [partner.md](partner.md) |
 | Check the site before or after a change | [check-the-site.md](check-the-site.md) |
 
+Editors who prefer forms to prompts can use Pages CMS for most of these jobs: see [../pages-cms.md](../pages-cms.md). The prompts remain the route for anything the forms cannot do, such as resizing a new report cover.
+
 ## How to work
 
 1. Start the assistant in a fresh session on this repository, so it begins from the latest `main`.

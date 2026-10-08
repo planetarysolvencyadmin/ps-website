@@ -1,6 +1,6 @@
 # Instructions for AI assistants (and humans who like rules)
 
-This file is the single source of truth for any AI tool working on this repository, whether that is Claude Code, Gemini CLI, Copilot, Cursor or anything else. `CLAUDE.md` and `GEMINI.md` only point here. Humans: [EDITING.md](EDITING.md) and [IMAGES.md](IMAGES.md) are the friendlier versions of the same rules, and ready-made prompts for common jobs are in [docs/prompts/](docs/prompts/README.md).
+This file is the single source of truth for any AI tool working on this repository, whether that is Claude Code, Gemini CLI, Copilot, Cursor or anything else. `CLAUDE.md` and `GEMINI.md` only point here. Humans: [EDITING.md](EDITING.md) and [IMAGES.md](IMAGES.md) are the friendlier versions of the same rules, and ready-made prompts for common jobs are in [docs/prompts/](docs/prompts/README.md). What each data file is for, and its rules, is in [docs/data-files.md](docs/data-files.md); the Pages CMS editor is described in [docs/pages-cms.md](docs/pages-cms.md).
 
 ## What this is
 
@@ -30,6 +30,7 @@ The website for Planetary Solvency (planetarysolvency.org): a [Jekyll](https://j
 | News and commentary | A new file in `_posts/` | Validate |
 | Home page pictures and the image library | `_data/images.yml`, `_data/hero_images.yml`, `_data/home_sections.yml` | `node scripts/process-images.mjs` (needs the originals; see IMAGES.md) |
 | Newsletter banner, contact form settings | `_data/newsletter.yml`, `_data/contact.yml` | Validate |
+| Fields in a data file edited through Pages CMS (reports, team, partners, newsletter, posts) | The data file **and** `.pages.yml` in the same change | Validate (it fails if they disagree) |
 | Colours, spacing, fonts | `assets/css/style.css` | Ask first |
 
 ## Checks to run before every pull request
@@ -49,6 +50,7 @@ If `bundle exec jekyll` is not found, run `bundle install` first. `validate-site
 - **Link text says where the link goes** ("Read the Parasol Lost report"), never "click here". Links start `https://`.
 - **Every image needs alt text** that describes what is in it, briefly and concretely. Never "image of". Leave alt text empty only for purely decorative images.
 - Text must stay readable: do not set text colours or backgrounds in page content.
+- Partners are always written `- name: ...` with an optional `url:`, never as a bare name.
 - Data files are strict YAML: indentation matters, and any value containing a colon, or starting with a quote or special character, must be wrapped in double quotes. Copy the style of the entries already there.
 
 ## Pull request description

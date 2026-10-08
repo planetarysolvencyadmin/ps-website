@@ -1,6 +1,6 @@
 # Add, update or remove a partner
 
-Partners are grouped (Science, Solutions, Impact) in `_data/partners.yml` and shown on the Connect page. A partner is either a plain name, or a name with a link.
+Partners are grouped (Science, Solutions, Impact) in `_data/partners.yml` and shown on the Connect page. A partner is a `name` with an optional `url` link.
 
 ## Prompt: add a partner
 
@@ -12,7 +12,7 @@ Website: [https://... or "none"]
 Group: [Science, Solutions or Impact]
 They have agreed to be listed: [yes]
 
-Add them to the right group in _data/partners.yml, in the same format as the others: a plain name if there is no link, or `{ name: "...", url: "https://..." }` if there is one. Put them at the end of the group unless I say otherwise. Check that the website URL loads and belongs to that organisation, and tell me what you found. Do not add any other details.
+Add them to the right group in _data/partners.yml, in the same format as the others: `- name: ...` and, if there is a website, a `url: "https://..."` line beneath it. Put them at the end of the group unless I say otherwise. Check that the website URL loads and belongs to that organisation, and tell me what you found. Do not add any other details.
 
 Create a branch, run the checks in AGENTS.md, open a pull request, and tell me where it appears in the preview (Connect page).
 ```
@@ -20,7 +20,7 @@ Create a branch, run the checks in AGENTS.md, open a pull request, and tell me w
 ## Prompt: add links to existing partners
 
 ```
-In _data/partners.yml, add website links to these existing partners, changing each plain name into the `{ name: "...", url: "..." }` form and keeping everything else the same:
+In _data/partners.yml, add website links to these existing partners, adding a `url: "https://..."` line under each partner's `name:` and keeping everything else the same:
 
 [Partner name] : [https://...]
 [Partner name] : [https://...]

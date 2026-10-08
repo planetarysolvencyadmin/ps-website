@@ -91,6 +91,7 @@ if partners.is_a?(Array)
     err(w, 'group name is missing') if blank?(g['group'])
     g['partners'].each do |p|
       name = p.is_a?(Hash) ? p['name'] : p
+      err(w, "partner #{p.inspect} must be written as `- name: ...` (with an optional `url:`), not a bare name") unless p.is_a?(Hash)
       err(w, "a partner has no name (#{p.inspect})") if blank?(name)
       check_url(w + " > #{name}", 'url', p['url']) if p.is_a?(Hash)
       warn_(w, "#{name} is listed more than once") if seen.include?(name.to_s.downcase)
@@ -160,6 +161,53 @@ Dir['_posts/*'].sort.each do |f|
   err(f, "kind must be news or commentary (got #{fm['kind'].inspect})") if fm.key?('kind') && !%w[news commentary].include?(fm['kind'])
   check_url(f, 'link', fm['link'])
   err(f, 'a post that links to an outside article should also name the outlet in `source`') if !blank?(fm['link']) && blank?(fm['source'])
+end
+
+
+# --- Pages CMS configuration (.pages.yml) must agree with the files it edits
+if File.exist?('.pages.yml')
+  cfg = load_yaml('.pages.yml')
+  if cfg.is_a?(Hash)
+    field_names = lambda do |fields|
+      Array(fields).flat_map { |f| f.is_a?(Hash) ? [f['name']] : [] }
+    end
+    keys_ok = lambda do |where, record, fields|
+      next unless record.is_a?(Hash) && fields.is_a?(Array)
+      known = field_names.call(fields)
+      (record.keys - known).each { |k| err(where, "has a `#{k}` field that .pages.yml does not list, so Pages CMS would drop it when saving. Add it to .pages.yml (or remove it here).") }
+      fields.each do |f|
+        next unless f.is_a?(Hash) && f['type'] == 'object' && record[f['name']]
+        Array(record[f['name']]).each { |sub| keys_ok.call("#{where} > #{f['name']}", sub, f['fields']) }
+      end
+    end
+    walk = lambda do |items|
+      Array(items).each do |c|
+        next unless c.is_a?(Hash)
+        walk.call(c['items']) if c['type'] == 'group'
+        w = ".pages.yml, #{c['name']}"
+        case c['type']
+        when 'file'
+          unless File.exist?(c['path'].to_s) then err(w, "path #{c['path']} does not exist"); next end
+          next unless c['fields'].is_a?(Array) && c['format'].to_s == 'yaml'
+          content = load_yaml(c['path'])
+          if c['list'] == true
+            err(w, "#{c['path']} should be a list (each entry starting with \"- \") because `list: true` is set") unless content.is_a?(Array)
+            Array(content).each_with_index { |rec, i| keys_ok.call("#{c['path']}, entry #{i + 1}", rec, c['fields']) }
+          else
+            keys_ok.call(c['path'], content, c['fields'])
+          end
+        when 'collection'
+          err(w, "folder #{c['path']} does not exist") unless Dir.exist?(c['path'].to_s)
+          next unless c['fields'].is_a?(Array)
+          Dir["#{c['path']}/*"].sort.each do |f|
+            fm = front_matter(f)
+            keys_ok.call(f, fm.reject { |k, _| k == 'body' }, c['fields']) if fm
+          end
+        end
+      end
+    end
+    walk.call(cfg['content'])
+  end
 end
 
 # --- Uploads referenced but unused or missing
