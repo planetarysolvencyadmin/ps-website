@@ -2,6 +2,23 @@
 # How to use it, and the rules for each file, are in docs/pages-cms.md and docs/data-files.md.
 # If you change the structure of a data file, change it here too (scripts/validate-site.rb checks they agree).
 
+settings:
+  # Hide the in-app Settings page so non-technical editors cannot change this configuration.
+  # It is changed in Git, by pull request.
+  hide: true
+  content:
+    # false (the default, stated here on purpose): each save rewrites the file from the fields below only.
+    # scripts/validate-site.rb fails if a data file has a key that is not listed below, so nothing is dropped unnoticed.
+    merge: false
+  commit:
+    # app: commits are written with the editor's own GitHub identity; their email is not added to the commit.
+    identity: app
+    templates:
+      create: "Create {path} (via Pages CMS, {userName})"
+      update: "Update {path} (via Pages CMS, {userName})"
+      delete: "Delete {path} (via Pages CMS, {userName})"
+      rename: "Rename {oldPath} to {newPath} (via Pages CMS, {userName})"
+
 media:
   input: _uploads
   output: /uploads

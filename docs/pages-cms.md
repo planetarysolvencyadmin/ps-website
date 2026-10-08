@@ -18,7 +18,7 @@ Not editable there, by design: the menu, footer, contact form, image library, CS
 
 ## What Pages CMS cannot do
 
-- **Resize images.** A report cover uploaded in Media lands in `_uploads/` as it is. The website uses resized copies made by `node scripts/process-covers.mjs`, so a new cover needs that script run, by a developer or an assistant ([prompts/report.md](prompts/report.md)), before the thumbnail appears. Until then the report shows the year placeholder.
+- **Resize images.** This is deliberately handled outside the CMS. A report cover uploaded in Media lands in `_uploads/` as it is. The website uses resized copies made by `node scripts/process-covers.mjs`, so a new cover needs that script run, by a developer or an assistant ([prompts/report.md](prompts/report.md)), before the thumbnail appears. Until then the report shows the year placeholder.
 - **Check facts.** It checks that links start `https://` and required boxes are filled in. Whether a name, date or claim is right is for the person editing and the person approving.
 - **Keep YAML comments.** It may rewrite a data file without the explanatory comments at the top. The guidance is therefore also in [data-files.md](data-files.md).
 
@@ -26,7 +26,23 @@ Not editable there, by design: the menu, footer, contact form, image library, CS
 
 1. Sign in at [app.pagescms.org](https://app.pagescms.org) with GitHub, and install the Pages CMS GitHub App on the `planetarysolvencyadmin/ps-website` repository when asked.
 2. Anyone who will edit needs a free GitHub account and access to the repository. Add them under the repository's Settings, Collaborators.
-3. Decide how editors save. The safest arrangement: editors work on their own branch (or one shared "editing" branch) and a named person merges a pull request into `main` after checking the Cloudflare preview. Check Pages CMS's `settings` options for commit and merge behaviour before turning editors loose on `main`.
+3. Decide how editors save (see the next section).
+
+## How editors save changes
+
+Pages CMS commits to whichever branch is open in it. It does not open pull requests itself, so there are two workable arrangements. Choose one and write the choice at the top of this file.
+
+**A. A shared `editing` branch (recommended).** Editors always choose the `editing` branch in Pages CMS. Cloudflare Pages builds a preview for it (branch previews are on by default; check this under the project's Settings, Builds). One named person looks at the preview, opens a pull request from `editing` to `main` in GitHub (the checks run on it) and merges. After a merge, update `editing` from `main` before the next round of edits (GitHub's "Update branch" button on a new pull request does this). Nothing editors do can reach the public site until that person merges.
+
+**B. Editors save straight to `main`.** Quicker, with no review step. A broken build leaves the last good site live and the checks run after the fact, but wrong words go live as soon as they are saved. Reasonable for a very small team who trust each other, if everyone knows how to revert (open the commit in GitHub and click Revert).
+
+Either way, commit messages name who made the change (for example "Update _data/team.yml (via Pages CMS, Jenny Poulter)"), and the Settings page is hidden in Pages CMS so the configuration can only be changed by pull request.
+
+## How the configuration is set up (settings)
+
+- `settings.hide: true`: editors do not see the Settings screen.
+- `settings.content.merge: false`: each save rewrites a file from the fields in `.pages.yml` only. The alternative (`true`) keeps unlisted keys, but the docs do not say how it treats entries removed from a list, so it is left off until it has been tested. The validator guards against unlisted keys instead.
+- `settings.commit`: commit messages include the editor's name. `identity: app` means the editor's email address is not written into commits as committer metadata.
 
 ## Trying it safely (recommended before real use)
 
