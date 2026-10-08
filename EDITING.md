@@ -1,5 +1,7 @@
 # Editing the site safely
 
+Using an AI assistant to make changes? Start with [docs/prompts](docs/prompts/README.md) for ready-made prompts. The rules it follows are in [AGENTS.md](AGENTS.md). Run `ruby scripts/validate-site.rb` to check your changes before opening a pull request.
+
 Page text is plain Markdown. You can edit paragraphs, headings and links without touching any code. Everything that builds cards, grids, lists and forms lives in `_includes/` and `_data/`, not in the page text.
 
 ## Safe to change

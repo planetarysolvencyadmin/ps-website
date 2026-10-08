@@ -15,6 +15,8 @@ Then open http://localhost:4000
 
 ## Editing content
 
+Using an AI assistant? See [AGENTS.md](AGENTS.md) (the rules), [docs/prompts](docs/prompts/README.md) (ready-made prompts for common jobs) and [docs/editor-options.md](docs/editor-options.md) (friendlier editing interfaces being considered). `ruby scripts/validate-site.rb` checks content and data.
+
 See [EDITING.md](EDITING.md) for the safe-editing rules (what to change, what to leave alone, and the patterns to copy).
 
 * **Pages:** `explore.md`, `intelligence.md`, `act.md`, `connect.md`, `press-and-commentary.md` and the footer pages are plain markdown.
