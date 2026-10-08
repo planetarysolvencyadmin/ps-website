@@ -1,0 +1,199 @@
+# Pages CMS configuration: the editing screens at https://app.pagescms.org for this site.
+# How to use it, and the rules for each file, are in docs/pages-cms.md and docs/data-files.md.
+# If you change the structure of a data file, change it here too (scripts/validate-site.rb checks they agree).
+
+settings:
+  # Hide the in-app Settings page so non-technical editors cannot change this configuration.
+  # It is changed in Git, by pull request.
+  hide: true
+  content:
+    # false (the default, stated here on purpose): each save rewrites the file from the fields below only.
+    # scripts/validate-site.rb fails if a data file has a key that is not listed below, so nothing is dropped unnoticed.
+    merge: false
+  commit:
+    # app: commits are written with the editor's own GitHub identity; their email is not added to the commit.
+    identity: app
+    templates:
+      create: "Create {path} (via Pages CMS, {userName})"
+      update: "Update {path} (via Pages CMS, {userName})"
+      delete: "Delete {path} (via Pages CMS, {userName})"
+      rename: "Rename {oldPath} to {newPath} (via Pages CMS, {userName})"
+
+media:
+  input: _uploads
+  output: /uploads
+  rename: safe
+  categories: [image]
+
+content:
+  - name: posts
+    label: News and commentary
+    type: collection
+    path: _posts
+    format: yaml-frontmatter
+    filename:
+      template: "{year}-{month}-{day}-{primary}.md"
+      field: create
+    view:
+      fields: [title, date, kind, source]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Headline
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: kind
+        label: List under
+        type: select
+        required: true
+        default: news
+        options:
+          values:
+            - { name: news, label: News and announcements }
+            - { name: commentary, label: Commentary }
+      - name: link
+        label: Link to the article (leave blank if the text is on our own site)
+        type: string
+        pattern:
+          regex: "^https://\\S+$"
+          message: "Must start with https:// and contain no spaces"
+      - name: source
+        label: Outlet, for example The Guardian (needed if there is a link)
+        type: string
+      - name: body
+        label: Text (leave blank for a link-only press mention)
+        type: rich-text
+
+  - name: reports
+    label: Reports
+    type: file
+    path: _data/reports.yml
+    format: yaml
+    list: true
+    operations:
+      delete: false
+    fields:
+      - name: year
+        type: number
+        required: true
+      - name: title
+        type: string
+        required: true
+      - name: url
+        label: Page URL
+        type: string
+        required: true
+        pattern:
+          regex: "^https://\\S+$"
+          message: "Must start with https:// and contain no spaces"
+      - name: pdf
+        label: PDF URL (optional)
+        type: string
+        pattern:
+          regex: "^https://\\S+$"
+          message: "Must start with https:// and contain no spaces"
+      - name: cover
+        label: Cover image name, without the extension (upload the image in Media first; see docs/pages-cms.md)
+        type: string
+        pattern:
+          regex: "^[a-z0-9-]+$"
+          message: "Lower case letters, numbers and hyphens only"
+      - name: question
+        label: The question this report answers
+        type: string
+        required: true
+      - name: summary
+        type: text
+        required: true
+
+  - name: team
+    label: Team
+    type: file
+    path: _data/team.yml
+    format: yaml
+    list: true
+    operations:
+      delete: false
+    fields:
+      - name: name
+        type: string
+        required: true
+      - name: role
+        type: string
+        required: true
+      - name: bio
+        label: Bio paragraphs (add one item per paragraph)
+        type: text
+        list: true
+
+  - name: partners
+    label: Partners
+    type: file
+    path: _data/partners.yml
+    format: yaml
+    list: true
+    operations:
+      delete: false
+    fields:
+      - name: group
+        label: Group name (Science, Solutions or Impact)
+        type: string
+        required: true
+      - name: partners
+        type: object
+        list: true
+        fields:
+          - name: name
+            type: string
+            required: true
+          - name: url
+            label: Website (optional)
+            type: string
+            pattern:
+              regex: "^https://\\S+$"
+              message: "Must start with https:// and contain no spaces"
+
+  - name: newsletter
+    label: Newsletter banner
+    type: file
+    path: _data/newsletter.yml
+    format: yaml
+    operations:
+      delete: false
+    fields:
+      - name: url
+        label: Sign-up link
+        type: string
+        required: true
+      - name: title
+        type: string
+        required: true
+      - name: text
+        type: text
+      - name: button
+        label: Button label
+        type: string
+        required: true
+
+  - name: pages
+    label: Page text (advanced)
+    type: group
+    items:
+      # No `fields`: these open in the raw file editor, which keeps the lines at the top of each page
+      # (title, layout, permalink) and the `{: ...}` and `{% ... %}` lines exactly as they are.
+      # Only change the words. See EDITING.md.
+      - { name: page-explore, label: Explore, type: file, path: explore.md, operations: { delete: false } }
+      - { name: page-intelligence, label: Intelligence, type: file, path: intelligence.md, operations: { delete: false } }
+      - { name: page-act, label: Act, type: file, path: act.md, operations: { delete: false } }
+      - { name: page-connect, label: Connect, type: file, path: connect.md, operations: { delete: false } }
+      - { name: page-press, label: Press and commentary, type: file, path: press-and-commentary.md, operations: { delete: false } }

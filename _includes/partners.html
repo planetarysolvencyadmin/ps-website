@@ -2,7 +2,7 @@
 <div class="partner-group">
 <h3>{{ g.group }}</h3>
 <ul class="partner-list">
-{% for p in g.partners %}{% if p.name %}<li><a href="{{ p.url }}">{{ p.name }}</a></li>{% else %}<li>{{ p }}</li>{% endif %}
+{% for p in g.partners %}{% if p.name %}<li>{% if p.url and p.url != "" %}<a href="{{ p.url }}">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}</li>{% else %}<li>{{ p }}</li>{% endif %}
 {% endfor %}</ul>
 </div>
 {% endfor %}

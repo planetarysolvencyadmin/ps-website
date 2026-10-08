@@ -1,30 +1,33 @@
-# Logos to follow (to be confirmed); names only for now.
+# Partners, in groups. Each partner has a `name` and, optionally, a `url` (must start https://).
+# Logos to follow (to be confirmed); names and links only for now.
+# Guidance for editing this file is in docs/data-files.md.
 - group: Science
   partners:
-    - University of Exeter
-    - Climate Crisis Advisory Group
-    - Anglia Ruskin University
-    - Earth Capital Nexus
-    - Cambridge Institute of Sustainability Leadership
+    - name: University of Exeter
+    - name: Climate Crisis Advisory Group
+    - name: Anglia Ruskin University
+    - name: Earth Capital Nexus
+    - name: Cambridge Institute of Sustainability Leadership
 - group: Solutions
   partners:
-    - Strategic Climate Risks Initiative
-    - Tipping Frontier
-    - Dark Matter Labs
-    - Centre for Tomorrow
-    - Accelerator for Systemic Risk Assessment
-    - SAARI.Earth
-    - { name: "The Rising Earth Fund", url: "https://risingearth.fund/" }
+    - name: Strategic Climate Risks Initiative
+    - name: Tipping Frontier
+    - name: Dark Matter Labs
+    - name: Centre for Tomorrow
+    - name: Accelerator for Systemic Risk Assessment
+    - name: SAARI.Earth
+    - name: "The Rising Earth Fund"
+      url: "https://risingearth.fund/"
 - group: Impact
   partners:
-    - Institute and Faculty of Actuaries
-    - International Actuarial Association
-    - Accounting for Sustainability
-    - Chapter Zero
-    - Investors for Purpose
-    - UN PRI
-    - National Emergency Briefing
-    - Just Have a Think
-    - Climate Change Committee
-    - Physiological Society
-    - NZ Lawyers
+    - name: Institute and Faculty of Actuaries
+    - name: International Actuarial Association
+    - name: Accounting for Sustainability
+    - name: Chapter Zero
+    - name: Investors for Purpose
+    - name: UN PRI
+    - name: National Emergency Briefing
+    - name: Just Have a Think
+    - name: Climate Change Committee
+    - name: Physiological Society
+    - name: NZ Lawyers

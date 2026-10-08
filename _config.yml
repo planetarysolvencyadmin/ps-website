@@ -37,6 +37,10 @@ exclude:
 - README.md
 - EDITING.md
 - IMAGES.md
+- AGENTS.md
+- CLAUDE.md
+- GEMINI.md
+- docs
 - scripts
 - vendor
 - node_modules
