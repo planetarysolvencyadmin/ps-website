@@ -1,0 +1,17 @@
+{%- comment -%}
+  Picture element for a report cover (built by scripts/process-covers.mjs from _uploads/).
+  Parameters: id (the `cover` in _data/reports.yml), title (the report title, for the alt text), sizes (how wide it displays, so the browser can pick a file), class.
+  Every cover is A4 portrait, so height is width x 1.4142 (keep in step with RATIO in the script).
+  WebP is offered first, with a JPEG fallback. Outputs nothing if the cover has no files.
+{%- endcomment -%}
+{%- assign widths = site.data.cover_files[include.id] -%}
+{%- if widths -%}
+  {%- assign stem = '/assets/images/covers/' | append: include.id | append: '-' -%}
+  {%- capture webp_set -%}{% for x in widths %}{{ stem | append: x | append: '.webp' | relative_url }} {{ x }}w{% unless forloop.last %}, {% endunless %}{% endfor %}{%- endcapture -%}
+  {%- capture jpg_set -%}{% for x in widths %}{{ stem | append: x | append: '.jpg' | relative_url }} {{ x }}w{% unless forloop.last %}, {% endunless %}{% endfor %}{%- endcapture -%}
+  {%- assign w = widths.first -%}
+<picture>
+  <source type="image/webp" srcset="{{ webp_set }}" sizes="{{ include.sizes }}">
+  <img class="{{ include.class }}" src="{{ stem | append: w | append: '.jpg' | relative_url }}" srcset="{{ jpg_set }}" sizes="{{ include.sizes }}" width="{{ w }}" height="{{ w | times: 1.4142 | round }}" alt="Cover of {{ include.title | escape }}" loading="lazy" decoding="async">
+</picture>
+{%- endif -%}

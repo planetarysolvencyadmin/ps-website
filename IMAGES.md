@@ -169,6 +169,16 @@ Other templates can use the same machinery through `_includes/responsive-image.h
 - Add `priority=true` only for a large image at the top of the page (it then loads early); `eager=true` for a small image that is visible straight away. Otherwise it is lazy-loaded.
 - Add `decorative=true` for `alt=""` when a visible label already describes it.
 
+## Report covers
+
+Report thumbnails (the Research list on Intelligence, and the report grid) are separate from the home page library, with no orbit treatment. Put the cover image (PNG or JPEG, the larger the better) in `_uploads/`, named after the report, for example `parasol-lost.png`. Then:
+
+1. Set `cover: parasol-lost` (the filename without its extension) on that report in `_data/reports.yml`.
+2. Run `node scripts/process-covers.mjs` from the repo root. It needs only Node and ImageMagick, like the other script.
+3. Commit the new files in `assets/images/covers/`, plus `_data/cover_files.yml`.
+
+Every cover comes out the same shape (A4 portrait) in two widths, 480px and 240px, as WebP with a JPEG fallback, and never upscaled. A cover that is a few pixels off A4 is trimmed from the bottom. Never edit `assets/images/covers/` or `_data/cover_files.yml` by hand. Templates use them through `_includes/report-cover.html`.
+
 ## Troubleshooting
 
 | Symptom | Likely cause |
@@ -180,12 +190,13 @@ Other templates can use the same machinery through `_includes/responsive-image.h
 | A new image has no description | Run the script again and copy the stub it prints into `images.yml`. |
 | The treatment looks wrong or too strong | Adjust the `TREATMENT` block in the script and re-run. |
 | A hero looks soft | The original was narrower than 2400px, so only smaller sizes exist. Use a larger original. |
+| A report thumbnail is missing or soft | The `cover` id in `reports.yml` has a typo or the script has not been run, or the file in `_uploads/` is small. Covers are never upscaled, so use a larger original. |
 | Alt text or crop looks wrong | Edit `images.yml`; no need to re-run the script. |
 | Builds slow down or the repo grows quickly | Each image is about 1.7 MB across all sizes. The JPEG 2400px and 1600px files are only fallbacks for very old browsers and could be dropped from the script if size matters. |
 
 ## Rules of thumb
 
-- Never edit files in `assets/images/library/` or `_data/image_files.yml` by hand: the script overwrites them.
+- Never edit files in `assets/images/library/`, `assets/images/covers/`, `_data/image_files.yml` or `_data/cover_files.yml` by hand: the script overwrites them.
 - Never commit full-size originals, and never commit untreated (`--no-treatment`) output.
 - Every image needs `alt`, `credit` and `licence` before it goes live.
 - Check the Cloudflare preview on a phone after changing the hero or circles.

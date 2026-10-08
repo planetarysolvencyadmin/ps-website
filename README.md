@@ -21,6 +21,7 @@ See [EDITING.md](EDITING.md) for the safe-editing rules (what to change, what to
 * **Top menu and footer links:** `_data/navigation.yml` and `_data/footer.yml`.
 * **Reports, partners and team:** `_data/reports.yml`, `_data/partners.yml`, `_data/team.yml`.
 * **News and commentary:** add a post (Posts in Siteleaf). Set `kind` to `news` or `commentary` to choose its list. Set `link` to send readers straight to an outside article, and `source` to name the outlet.
+* **Report covers:** `cover` in `_data/reports.yml`, built by `scripts/process-covers.mjs`. See [IMAGES.md](IMAGES.md#report-covers).
 * **Images:** the home page hero and section circles come from an image library. See [IMAGES.md](IMAGES.md) for how it works, how to add or change pictures and how to run `scripts/process-images.mjs`.
 * **Colours:** the variables at the top of `assets/css/style.css`.
 * **Font:** [Inter](https://rsms.me/inter/) (SIL Open Font License), self-hosted from `assets/fonts/` so no request goes to Google or any other third party. The `@font-face` rules and the font stack are at the top of `assets/css/style.css`. To update it, replace the `.woff2` files and keep the filenames.
