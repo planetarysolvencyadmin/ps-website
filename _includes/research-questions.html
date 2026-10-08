@@ -1,13 +1,10 @@
-<ul class="questions-list">
-  {% for r in site.data.reports %}
-  <li class="question-item">
-    <a href="{{ r.url }}" class="question-link">
-      <img src="{{ r.image | relative_url }}" alt="Cover of {{ r.title }}" class="question-thumb" style="width:67px; height:84px">
-      <div class="question-content">
-        <span class="question-text">{{ r.question }}</span>
-        <small class="question-meta">{{ r.title }} ({{ r.year }})</small>
-      </div>
-    </a>
-  </li>
-  {% endfor %}
+<ul class="questions">
+{% for r in site.data.reports %}
+<li>
+<a href="{{ r.url }}">
+{% if r.cover %}{% include report-cover.html id=r.cover title=r.title sizes="64px" class="question-cover" %}{% endif %}
+<span class="question-body"><span class="question-text">{{ r.question }}</span> <small>{{ r.title }} ({{ r.year }})</small></span>
+</a>
+</li>
+{% endfor %}
 </ul>

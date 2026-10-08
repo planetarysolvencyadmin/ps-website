@@ -1,7 +1,7 @@
 <div class="report-grid">
 {% for r in site.data.reports %}
 <article class="report-card">
-{% if r.image %}<a class="report-thumb" href="{{ r.url }}"><img src="{{ r.image | relative_url }}" alt="Cover of {{ r.title }}"></a>{% else %}<a class="report-thumb placeholder" href="{{ r.url }}" aria-hidden="true" tabindex="-1">{{ r.year }}</a>{% endif %}
+{% if r.cover %}<a class="report-thumb" href="{{ r.url }}">{% include report-cover.html id=r.cover title=r.title sizes="(min-width: 1044px) 330px, (min-width: 640px) 45vw, 90vw" %}</a>{% else %}<a class="report-thumb placeholder" href="{{ r.url }}" aria-hidden="true" tabindex="-1">{{ r.year }}</a>{% endif %}
 <div class="report-body">
 <h3><a href="{{ r.url }}">{{ r.year }}: {{ r.title }}</a></h3>
 <p>{{ r.summary }}</p>
