@@ -26,15 +26,42 @@ Not editable there, by design: the menu, footer, contact form, image library, CS
 
 1. Sign in at [app.pagescms.org](https://app.pagescms.org) with GitHub, and install the Pages CMS GitHub App on the `planetarysolvencyadmin/ps-website` repository when asked.
 2. Anyone who will edit needs a free GitHub account and access to the repository. Add them under the repository's Settings, Collaborators.
-3. Decide how editors save (see the next section).
+3. Create the `editing` branch and name the merger (see the next section).
 
-## How editors save changes
+## How editors save changes (agreed process)
 
-Pages CMS commits to whichever branch is open in it. It does not open pull requests itself, so there are two workable arrangements. Choose one and write the choice at the top of this file.
+**Decision (October 2026): editors work on a shared `editing` branch, and a named person merges it into `main`.** Nothing editors do can reach the public site until that merge, and it keeps the number of production deployments down on Cloudflare's free plan. This can be revisited: see "Switching to saving straight to `main`" below.
 
-**A. A shared `editing` branch (recommended).** Editors always choose the `editing` branch in Pages CMS. Cloudflare Pages builds a preview for it (branch previews are on by default; check this under the project's Settings, Builds). One named person looks at the preview, opens a pull request from `editing` to `main` in GitHub (the checks run on it) and merges. After a merge, update `editing` from `main` before the next round of edits (GitHub's "Update branch" button on a new pull request does this). Nothing editors do can reach the public site until that person merges.
+Pages CMS commits to whichever branch is open in it and does not open pull requests itself, hence the steps.
 
-**B. Editors save straight to `main`.** Quicker, with no review step. A broken build leaves the last good site live and the checks run after the fact, but wrong words go live as soon as they are saved. Reasonable for a very small team who trust each other, if everyone knows how to revert (open the commit in GitHub and click Revert).
+**Named merger:** [name to be filled in]. If they are away, someone else with merge rights can do it.
+
+### One-off: create the branch
+
+In GitHub, create a branch called `editing` from `main`. Cloudflare Pages builds a preview of it (branch previews are on for this project).
+
+### For editors
+
+1. Open Pages CMS and choose the **`editing`** branch every time. Never `main`.
+2. Make your changes. Each save is a commit and triggers a preview build, so it is kinder to the build allowance to make several related changes and then stop, rather than saving after every small tweak.
+3. Open the preview link for the `editing` branch (Cloudflare shows it; the merger can send it) and check the pages you changed, on a phone as well if you can.
+4. Tell the merger it is ready, and what changed, in a sentence.
+
+### For the merger
+
+1. In GitHub, open a pull request from `editing` into `main`. The checks run on it; wait for them to pass. A red cross means something the CMS wrote is not valid. Read the message, or ask a developer or an AI assistant ([prompts/](prompts/README.md)) to fix it on the `editing` branch.
+2. Open the preview and read the changes properly. Whether names, dates, links and wording are right is a human job: the checks cannot tell.
+3. Merge. Use "Squash and merge" to keep the history to one line per round of edits (it also keeps the commit messages naming who edited, in the description).
+4. Bring `editing` back in line with `main` before the next round, or the next pull request will show conflicts or old changes. The simplest way: open a pull request from `main` into `editing` in GitHub ("base: editing, compare: main"), merge it, and delete nothing. (A developer can also reset the branch; ask if unsure.)
+5. If a merged change turns out to be wrong, open it in GitHub and click **Revert**, then merge the revert pull request.
+
+### Switching to saving straight to `main`
+
+Quicker, with no review step. A broken build leaves the last good site live and the checks run after the fact, but wrong words go live as soon as they are saved, and every save is a production deployment. It may suit a very small team who trust each other. To switch:
+
+1. Tell editors to choose `main` in Pages CMS instead of `editing`.
+2. Make sure everyone knows how to revert: open the commit in GitHub and click Revert.
+3. Delete the `editing` branch, so no one saves to it by mistake, and update this section.
 
 Either way, commit messages name who made the change (for example "Update _data/team.yml (via Pages CMS, Jenny Poulter)"), and the Settings page is hidden in Pages CMS so the configuration can only be changed by pull request.
 
