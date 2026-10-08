@@ -6,12 +6,12 @@ layout: page
 bands: false
 ---
 
-> Draft text for review. It has not been legally reviewed. Details in [square brackets] are placeholders to be completed.
+> Initial draft subject to review 
 {: .note}
 
 ## Who is responsible for your information
 
-[Legal entity name] ("we", "us") is responsible for the personal information described in this notice. You can contact us using the [contact form](/connect/#contact).
+Planetary Solvency ("we", "us") is responsible for the personal information described in this notice. You can contact us using the [contact form](/connect/#contact).
 
 ## What we collect
 

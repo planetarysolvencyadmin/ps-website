@@ -6,7 +6,7 @@ layout: page
 bands: false
 ---
 
-> Draft text for review. Please check it against the cookies the live site actually sets before publication.
+> Initial draft subject to change.
 {: .note}
 
 ## What are cookies?
@@ -21,10 +21,11 @@ If we add analytics in future, we will describe them here and ask for your conse
 
 ## Third-party services
 
-If you follow links to other services, or use them from our pages, they may set their own cookies under their own policies. These include:
+If you follow links to other services, or use them from our pages, they may set their own cookies under their own policies. These include (but are not limited to):
 
 * **Substack**, for our newsletter and sign-up
 * **Google Forms**, for our contact form
+* **Google Analytics**, for tracking website usage
 * **Cloudflare Turnstile**, a spam check on the contact form (only if switched on)
 * **YouTube**, if you watch a linked video
 * **Reports and resources hosted by others**, such as the IFoA website

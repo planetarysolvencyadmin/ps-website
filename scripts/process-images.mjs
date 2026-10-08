@@ -28,7 +28,7 @@ import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSy
 import { dirname, extname, isAbsolute, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const DEFAULT_ORIGINALS = 'C:\\Users\\olive\\OneDrive\\Cronk Advisory\\Clients\\Planetary Solvency\\Brand-Assets-Revised-by-OC\\ChosenImages';
+const DEFAULT_ORIGINALS = 'C:\\src\\ChosenImages';
 const HERO_WIDTHS = [2400, 1600, 800];
 const SQUARE_WIDTHS = [600, 300];
 const WEBP_QUALITY = 78;
