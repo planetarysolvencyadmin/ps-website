@@ -1,0 +1,8 @@
+{%- comment -%}
+  Google Analytics, only loaded after a visitor accepts the cookie banner (assets/js/consent.js).
+  Settings: _data/analytics.yml. Set `enabled: false` there to remove all of it.
+{%- endcomment -%}
+{%- if site.data.analytics.enabled -%}
+<script>window.psAnalytics = { id: {{ site.data.analytics.measurement_id | jsonify }} };</script>
+<script src="{{ '/assets/js/consent.js' | relative_url }}" defer></script>
+{%- endif -%}

@@ -1,33 +1,52 @@
 # Partners, in groups. Each partner has a `name` and, optionally, a `url` (must start https://).
-# Logos to follow (to be confirmed); names and links only for now.
+# Optional `logo`: the filename of an agreed logo in assets/images/partners/ (for example `exeter.svg`). Leave it out until the partner has agreed one.
 # Guidance for editing this file is in docs/data-files.md.
 - group: Science
   partners:
     - name: University of Exeter
+      url: "https://www.exeter.ac.uk/"
     - name: Climate Crisis Advisory Group
+      url: "https://www.ccag.earth/"
     - name: Anglia Ruskin University
+      url: "https://www.aru.ac.uk/"
     - name: Earth Capital Nexus
+      url: "https://earthcapitalnexus.org/"
     - name: Cambridge Institute of Sustainability Leadership
+      url: "https://www.cisl.cam.ac.uk/"
 - group: Solutions
   partners:
     - name: Strategic Climate Risks Initiative
+      url: "https://www.scri.org.uk/"
     - name: Tipping Frontier
+      url: "https://www.tippingfrontier.com/"
     - name: Dark Matter Labs
+      url: "https://darkmatterlabs.org/"
     - name: Centre for Tomorrow
     - name: Accelerator for Systemic Risk Assessment
+      url: "https://www.asranetwork.org/"
     - name: SAARI.Earth
     - name: "The Rising Earth Fund"
       url: "https://risingearth.fund/"
 - group: Impact
   partners:
     - name: Institute and Faculty of Actuaries
+      url: "https://actuaries.org.uk/"
     - name: International Actuarial Association
+      url: "https://actuaries.org/"
     - name: Accounting for Sustainability
+      url: "https://www.accountingforsustainability.org/"
     - name: Chapter Zero
+      url: "https://chapterzero.org.uk/"
     - name: Investors for Purpose
+      url: "https://www.investorsforpurpose.com/"
     - name: UN PRI
+      url: "https://www.unpri.org/"
     - name: National Emergency Briefing
+      url: "https://www.nebriefing.org/"
     - name: Just Have a Think
+      url: "https://www.justhaveathink.com/"
     - name: Climate Change Committee
+      url: "https://www.theccc.org.uk/"
     - name: Physiological Society
+      url: "https://www.physoc.org/"
     - name: NZ Lawyers

@@ -36,8 +36,13 @@ The people shown as cards on the Explore page. A list.
 | `name` | yes | As it should appear. |
 | `role` | yes | Job title. A role saying "to be confirmed" is allowed but flagged by the validator. |
 | `bio` | no | A list of paragraphs, one item each. May contain `<a href="https://...">text</a>` links. With no bio the card shows "Biography to follow." |
+| `linkedin` | no | The person's LinkedIn profile URL (starts `https://`). A "... on LinkedIn" link appears on the card only if this is filled in. |
 
-Only list people who have agreed to be listed. Order is the order on the page. There are no photos yet.
+Only list people who have agreed to be listed. Order is the order on the page.
+
+### Team photos
+
+`photo` (optional) is shown as a small round picture on the person's card, and `linkedin` as a LinkedIn icon beside their name. Each appears only if filled in. To add a photo: put the original (with the person's agreement) in `_uploads/team/`, for example `jesse-abrams.jpg`, run `node scripts/process-team-photos.mjs`, then set `photo: jesse-abrams` in `team.yml`. The script makes a 320px square (cropped from the centre) as WebP and JPEG in `assets/images/team/`, which it owns: never edit that folder by hand. The photo's alt text is generated from the person's name.
 
 ## `partners.yml` (CMS)
 
@@ -52,8 +57,16 @@ Partner organisations in groups (Science, Solutions, Impact), shown on the Conne
 ```
 
 - Every partner is written `- name: ...`, with an optional `url:`. A partner with a `url` is shown as a link, one without as plain text. A bare name without `name:` is rejected by the validator, because the CMS cannot edit it.
-- Logos are not supported yet.
+- `logo` (optional): the filename of an agreed logo in `assets/images/partners/`, for example `exeter.svg`. If set, the logo is shown instead of the name (the name becomes its alt text, and it links to the `url` if there is one). Leave it out until the partner has agreed a logo with us. The validator checks the file exists.
 - Only list organisations that have agreed to be listed.
+
+## `social.yml` (CMS)
+
+The organisation's social accounts, listed under "Follow" on the Connect page. Each has `name`, `url` and `show`. `show: false` keeps an account stored but hidden; set it to `true` to publish it. If none are shown, the Follow section disappears, so also remove the "Follow" item from `navigation.yml` in that case.
+
+## `analytics.yml` (developers)
+
+Google Analytics and the cookie banner. `enabled: true` loads the Google tag **only after a visitor clicks Accept** on the banner at the bottom of the page (their choice is kept in their browser, and the footer "Cookie settings" button reopens it). `measurement_id` is the GA4 ID and `banner_text` the banner wording. To stop using Google Analytics, set `enabled: false`: the tag, banner, footer button and the analytics wording on the Cookies and Privacy pages all disappear. The code is `_includes/analytics.html`, `_includes/consent-banner.html` and `assets/js/consent.js`.
 
 ## `newsletter.yml` (CMS)
 

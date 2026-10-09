@@ -276,6 +276,8 @@ ul.partner-list li {
   border: 1px solid var(--line); border-radius: 8px; padding: 0.75rem 1rem; background: #fff; font-weight: 700; color: var(--navy);
 }
 ul.partner-list a { color: var(--navy); }
+ul.partner-list li.has-logo { display: flex; align-items: center; justify-content: center; }
+.partner-logo { display: block; max-width: 100%; max-height: 3.5rem; width: auto; height: auto; }
 
 .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
 .team-card { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 1.25rem 1.5rem; }
@@ -322,3 +324,26 @@ ul.partner-list a { color: var(--navy); }
 .footer-nav { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin-bottom: 1rem; }
 .footer-nav a { color: var(--lilac); }
 .footer-nav a:hover { color: #fff; }
+
+/* Cookie consent banner (shown only if _data/analytics.yml is enabled and no choice is saved yet). */
+.consent-banner {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+  gap: 0.75rem 1.5rem; padding: 0.85rem 1rem; background: var(--deep); color: #fff; font-size: 0.9rem; box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+}
+.consent-banner[hidden] { display: none; }
+.consent-banner p { margin: 0; max-width: 60ch; }
+.consent-banner a { color: #fff; text-decoration: underline; }
+.consent-actions { display: flex; gap: 0.5rem; }
+.consent-btn { font: inherit; font-weight: 700; padding: 0.4rem 1rem; border-radius: 999px; border: 2px solid #fff; cursor: pointer; }
+.consent-accept { background: #fff; color: var(--deep); }
+.consent-decline { background: transparent; color: #fff; }
+.consent-btn:focus-visible { outline: 3px solid var(--coral); outline-offset: 2px; }
+.footer-link-button { font: inherit; background: none; border: 0; padding: 0; color: var(--lilac); text-decoration: underline; cursor: pointer; }
+.footer-link-button:hover { color: #fff; }
+
+/* Follow links on the Connect page, and the LinkedIn icon on team cards. */
+ul.social-list { list-style: none; display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; margin: 1rem 0 0; padding: 0; font-weight: 700; }
+.icon-link { display: inline-flex; vertical-align: middle; margin-left: 0.35rem; color: var(--navy); }
+.icon-link:hover, .icon-link:focus-visible { color: var(--teal-dark); }
+.team-photo { display: block; width: 96px; height: 96px; margin-bottom: 0.75rem; }
+.team-photo img { display: block; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; background: var(--soft); }

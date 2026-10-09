@@ -1,0 +1,6 @@
+{%- assign visible = site.data.social | where: 'show', true -%}
+{%- if visible.size > 0 -%}
+<ul class="social-list">
+{% for s in visible %}<li><a href="{{ s.url }}" rel="me noopener">{{ s.name }}</a></li>
+{% endfor %}</ul>
+{%- endif -%}

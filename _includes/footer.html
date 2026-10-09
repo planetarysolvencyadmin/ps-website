@@ -4,6 +4,7 @@
       {% for link in site.data.footer %}
       <a href="{{ link.url | relative_url }}">{{ link.title }}</a>
       {% endfor %}
+      {% if site.data.analytics.enabled %}<button type="button" class="footer-link-button" data-cookie-settings>Cookie settings</button>{% endif %}
     </nav>
     <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}.</p>
   </div>

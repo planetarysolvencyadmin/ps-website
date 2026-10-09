@@ -1,0 +1,9 @@
+{%- if site.data.analytics.enabled -%}
+<div class="consent-banner" id="consent-banner" role="region" aria-label="Cookie consent" hidden>
+  <p>{{ site.data.analytics.banner_text }} <a href="{{ '/cookies/' | relative_url }}">Read about cookies</a>.</p>
+  <div class="consent-actions">
+    <button type="button" class="consent-btn consent-accept" data-consent="granted">Accept</button>
+    <button type="button" class="consent-btn consent-decline" data-consent="denied">Decline</button>
+  </div>
+</div>
+{%- endif -%}
