@@ -1,0 +1,6 @@
+# Google Analytics and the cookie consent banner. Guidance: docs/data-files.md.
+# Set `enabled: false` to switch off everything at once: the Google tag, the banner, the footer "Cookie settings"
+# link and the analytics wording on the Cookies and Privacy pages. Nothing is loaded from Google until a visitor accepts.
+enabled: true
+measurement_id: "G-TRFM1X36Q3"
+banner_text: "We would like to use Google Analytics cookies to understand how this site is used. They are off unless you accept."

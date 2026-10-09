@@ -141,6 +141,35 @@ content:
         pattern:
           regex: "^https://\\S+$"
           message: "Must start with https:// and contain no spaces"
+      - name: photo
+        label: Photo id (optional; see docs/data-files.md, Team photos)
+        type: string
+        pattern:
+          regex: "^[a-z0-9-]+$"
+          message: "Lower case letters, numbers and hyphens only"
+
+  - name: social
+    label: Social links
+    type: file
+    path: _data/social.yml
+    format: yaml
+    list: true
+    operations:
+      delete: false
+    fields:
+      - name: name
+        type: string
+        required: true
+      - name: url
+        label: Link
+        type: string
+        required: true
+        pattern:
+          regex: "^https://\\S+$"
+          message: "Must start with https:// and contain no spaces"
+      - name: show
+        label: Show on the Connect page
+        type: boolean
 
   - name: partners
     label: Partners

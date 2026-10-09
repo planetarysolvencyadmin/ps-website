@@ -77,9 +77,28 @@ if team.is_a?(Array)
     end
     warn_(w, 'role says "to be confirmed"') if p['role'].to_s =~ /to be confirmed/i
     check_url(w, 'linkedin', p['linkedin']) unless blank?(p['linkedin'])
+    err(w, "photo \"#{p['photo']}\" has no processed files. Put the original in _uploads/team/ and run: node scripts/process-team-photos.mjs") if !blank?(p['photo']) && !File.exist?("assets/images/team/#{p['photo']}-320.jpg")
   end
   names = team.filter_map { |p| p['name'] if p.is_a?(Hash) }
   (names.select { |n| names.count(n) > 1 }.uniq).each { |n| err('_data/team.yml', "#{n} appears more than once") }
+end
+
+# --- Social links
+social = data['social']
+if social.is_a?(Array)
+  social.each_with_index do |l, i|
+    w = "_data/social.yml, entry #{i + 1} (#{l.is_a?(Hash) ? l['name'] : '?'})"
+    unless l.is_a?(Hash) then err(w, 'is not a set of fields'); next end
+    err(w, 'name is missing') if blank?(l['name'])
+    check_url(w, 'url', l['url'], required: true)
+    err(w, '`show` must be true or false') unless [true, false].include?(l['show'])
+  end
+end
+
+# --- Analytics
+an = data['analytics']
+if an.is_a?(Hash) && an['enabled']
+  err('_data/analytics.yml', 'measurement_id must look like G-XXXXXXXXXX') unless an['measurement_id'].to_s =~ /\AG-[A-Z0-9]+\z/
 end
 
 # --- Partners

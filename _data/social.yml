@@ -1,0 +1,24 @@
+# The organisation's social accounts, listed under "Follow" on the Connect page, in this order.
+# Each has a `name`, a `url` (starts https://) and `show`. Set `show: true` to publish one, `show: false` to keep it stored but hidden.
+# If none are shown, the Follow section disappears. Guidance: docs/data-files.md.
+- name: LinkedIn
+  url: "https://www.linkedin.com/company/planetary-solvency/"
+  show: true
+- name: Substack
+  url: "https://planetarysolvency.substack.com"
+  show: false
+- name: YouTube
+  url: "https://www.youtube.com/@PlanetarySolvency"
+  show: false
+- name: Instagram
+  url: "https://www.instagram.com/planetarysolvency/"
+  show: false
+- name: Facebook
+  url: "https://www.facebook.com/profile.php?id=61593943686795"
+  show: false
+- name: X
+  url: "https://x.com/planetsolvency"
+  show: false
+- name: GitHub
+  url: "https://github.com/Planetary-Solvency"
+  show: false
