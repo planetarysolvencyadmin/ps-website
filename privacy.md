@@ -19,7 +19,7 @@ This website is a static site and does not ask you to create an account. We may 
 
 * **Contact us** through our contact form. Your message passes through our website host (Cloudflare) and is stored in Google Forms, so the details you submit (your name, email address, phone number if you give one, and your message) are processed by both. We may use Cloudflare Turnstile to check that a submission comes from a person.
 * **Subscribe to our newsletter**. Our newsletter is delivered through Substack, which collects your email address under its own privacy policy.
-* **Visit the website**. Like most websites, our hosting provider may log technical information such as your IP address, browser type and the pages you request.
+* **Visit the website**. Like most websites, our hosting provider may log technical information such as your IP address, browser type and the pages you request. We also use Google Analytics to measure how the site is used, which sets cookies and sends information about your visit to Google (see our [cookies page](/cookies/)).
 
 ## How we use it
 

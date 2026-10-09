@@ -36,6 +36,7 @@ The people shown as cards on the Explore page. A list.
 | `name` | yes | As it should appear. |
 | `role` | yes | Job title. A role saying "to be confirmed" is allowed but flagged by the validator. |
 | `bio` | no | A list of paragraphs, one item each. May contain `<a href="https://...">text</a>` links. With no bio the card shows "Biography to follow." |
+| `linkedin` | no | The person's LinkedIn profile URL (starts `https://`). A "... on LinkedIn" link appears on the card only if this is filled in. |
 
 Only list people who have agreed to be listed. Order is the order on the page. There are no photos yet.
 
@@ -52,7 +53,7 @@ Partner organisations in groups (Science, Solutions, Impact), shown on the Conne
 ```
 
 - Every partner is written `- name: ...`, with an optional `url:`. A partner with a `url` is shown as a link, one without as plain text. A bare name without `name:` is rejected by the validator, because the CMS cannot edit it.
-- Logos are not supported yet.
+- `logo` (optional): the filename of an agreed logo in `assets/images/partners/`, for example `exeter.svg`. If set, the logo is shown instead of the name (the name becomes its alt text, and it links to the `url` if there is one). Leave it out until the partner has agreed a logo with us. The validator checks the file exists.
 - Only list organisations that have agreed to be listed.
 
 ## `newsletter.yml` (CMS)

@@ -276,6 +276,9 @@ ul.partner-list li {
   border: 1px solid var(--line); border-radius: 8px; padding: 0.75rem 1rem; background: #fff; font-weight: 700; color: var(--navy);
 }
 ul.partner-list a { color: var(--navy); }
+ul.partner-list li.has-logo { display: flex; align-items: center; justify-content: center; }
+.partner-logo { display: block; max-width: 100%; max-height: 3.5rem; width: auto; height: auto; }
+.team-card .team-links { margin: 0.75rem 0 0; }
 
 .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
 .team-card { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 1.25rem 1.5rem; }

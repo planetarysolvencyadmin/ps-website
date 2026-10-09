@@ -2,7 +2,7 @@
 <div class="partner-group">
 <h3>{{ g.group }}</h3>
 <ul class="partner-list">
-{% for p in g.partners %}{% if p.name %}<li>{% if p.url and p.url != "" %}<a href="{{ p.url }}">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}</li>{% else %}<li>{{ p }}</li>{% endif %}
+{% for p in g.partners %}{% if p.name %}{% capture face %}{% if p.logo and p.logo != "" %}<img class="partner-logo" src="{{ p.logo | prepend: '/assets/images/partners/' | relative_url }}" alt="{{ p.name }}" loading="lazy">{% else %}{{ p.name }}{% endif %}{% endcapture %}<li{% if p.logo and p.logo != "" %} class="has-logo"{% endif %}>{% if p.url and p.url != "" %}<a href="{{ p.url }}">{{ face }}</a>{% else %}{{ face }}{% endif %}</li>{% else %}<li>{{ p }}</li>{% endif %}
 {% endfor %}</ul>
 </div>
 {% endfor %}

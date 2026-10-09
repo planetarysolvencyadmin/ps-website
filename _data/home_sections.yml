@@ -8,16 +8,16 @@
 #            header on that section's own page. If both are set, image wins.
 - url: /explore/
   colour: teal-dark
-  # image: coral2
+  image: pexels-qui-nguyen-7862521-6070960
 - url: /intelligence/
   colour: navy
-  # image: cyclone1
+  image: pexels-yuanpang-wa-406313444-18991870
 - url: /act/
   colour: coral
-  # image: ice1
+  image: pexels-yasin-onus-520099596-34241888
 - url: /connect/
   colour: lilac
-  # image: flood3
+  image: pexels-pok-rie-33563-14823608
 - url: /press-and-commentary/
   colour: deep
-  # image: fossilfuels2
+  image: pexels-jwvein-19419368

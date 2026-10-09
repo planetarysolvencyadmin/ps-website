@@ -135,6 +135,12 @@ content:
         label: Bio paragraphs (add one item per paragraph)
         type: text
         list: true
+      - name: linkedin
+        label: LinkedIn profile URL (optional, shown only if filled in)
+        type: string
+        pattern:
+          regex: "^https://\\S+$"
+          message: "Must start with https:// and contain no spaces"
 
   - name: partners
     label: Partners
@@ -162,6 +168,9 @@ content:
             pattern:
               regex: "^https://\\S+$"
               message: "Must start with https:// and contain no spaces"
+          - name: logo
+            label: Logo filename in assets/images/partners/ (optional, only once the partner has agreed it)
+            type: string
 
   - name: newsletter
     label: Newsletter banner

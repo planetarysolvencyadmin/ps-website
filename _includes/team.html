@@ -5,6 +5,7 @@
 <p class="role">{{ person.role }}</p>
 {% for para in person.bio %}<p>{{ para }}</p>
 {% endfor %}{% if person.bio.size == 0 %}<p><em>Biography to follow.</em></p>{% endif %}
+{% if person.linkedin and person.linkedin != "" %}<p class="team-links"><a href="{{ person.linkedin }}">{{ person.name }} on LinkedIn</a></p>{% endif %}
 </div>
 {% endfor %}
 </div>

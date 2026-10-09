@@ -76,6 +76,7 @@ if team.is_a?(Array)
     elsif p['bio'].empty? then warn_(w, 'has no bio, so the page shows "Biography to follow"')
     end
     warn_(w, 'role says "to be confirmed"') if p['role'].to_s =~ /to be confirmed/i
+    check_url(w, 'linkedin', p['linkedin']) unless blank?(p['linkedin'])
   end
   names = team.filter_map { |p| p['name'] if p.is_a?(Hash) }
   (names.select { |n| names.count(n) > 1 }.uniq).each { |n| err('_data/team.yml', "#{n} appears more than once") }
@@ -94,6 +95,7 @@ if partners.is_a?(Array)
       err(w, "partner #{p.inspect} must be written as `- name: ...` (with an optional `url:`), not a bare name") unless p.is_a?(Hash)
       err(w, "a partner has no name (#{p.inspect})") if blank?(name)
       check_url(w + " > #{name}", 'url', p['url']) if p.is_a?(Hash)
+      err(w, "#{name}: logo \"#{p['logo']}\" is not in assets/images/partners/") if p.is_a?(Hash) && !blank?(p['logo']) && !File.exist?(File.join('assets/images/partners', p['logo'].to_s))
       warn_(w, "#{name} is listed more than once") if seen.include?(name.to_s.downcase)
       seen << name.to_s.downcase
     end
