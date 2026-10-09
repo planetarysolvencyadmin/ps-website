@@ -65,11 +65,12 @@ else
   err('_data/reports.yml', 'should be a list of reports') unless reports.nil?
 end
 
-# --- Team
-team = data['team']
-if team.is_a?(Array)
-  team.each_with_index do |p, i|
-    w = "_data/team.yml, entry #{i + 1} (#{p.is_a?(Hash) ? p['name'] : '?'})"
+# --- Team and Fellows (same fields, so people can move between the two files)
+%w[team fellows].each do |key|
+  people = data[key]
+  next unless people.is_a?(Array)
+  people.each_with_index do |p, i|
+    w = "_data/#{key}.yml, entry #{i + 1} (#{p.is_a?(Hash) ? p['name'] : '?'})"
     unless p.is_a?(Hash) then err(w, 'is not a set of fields'); next end
     %w[name role].each { |k| err(w, "#{k} is missing") if blank?(p[k]) }
     if !p['bio'].is_a?(Array) then err(w, 'bio must be a list of paragraphs (each starting with "- ")')
@@ -77,9 +78,9 @@ if team.is_a?(Array)
     end
     warn_(w, 'role says "to be confirmed"') if p['role'].to_s =~ /to be confirmed/i
   end
-  names = team.filter_map { |p| p['name'] if p.is_a?(Hash) }
-  (names.select { |n| names.count(n) > 1 }.uniq).each { |n| err('_data/team.yml', "#{n} appears more than once") }
 end
+all_names = %w[team fellows].flat_map { |key| (data[key] || []).filter_map { |p| p['name'] if p.is_a?(Hash) } }
+(all_names.select { |n| all_names.count(n) > 1 }.uniq).each { |n| err('_data/team.yml, _data/fellows.yml', "#{n} appears more than once") }
 
 # --- Partners
 partners = data['partners']

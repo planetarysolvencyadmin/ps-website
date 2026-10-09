@@ -73,3 +73,7 @@ Our vision is for financial and economic decisions to work with the Earth system
 Planetary Solvency brings together people with experience across Earth-system science, actuarial risk management, finance, policy, business and public engagement:
 
 {% include team.html %}
+
+## Fellows {#fellows}
+
+{% include fellows.html %}

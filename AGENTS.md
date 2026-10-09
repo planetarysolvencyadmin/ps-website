@@ -25,12 +25,13 @@ The website for Planetary Solvency (planetarysolvency.org): a [Jekyll](https://j
 | Menu and jump links | `_data/navigation.yml` (anchors must match `{: #anchor}` lines in the page) | Validate |
 | Footer links | `_data/footer.yml` | Validate |
 | Reports | `_data/reports.yml`, cover image in `_uploads/` | `node scripts/process-covers.mjs` |
-| Team | `_data/team.yml` | Validate |
+| Team and Fellows (same fields; move people by cutting and pasting between the files) | `_data/team.yml`, `_data/fellows.yml` | Validate |
 | Partners | `_data/partners.yml` | Validate |
 | News and commentary | A new file in `_posts/` | Validate |
 | Home page pictures and the image library | `_data/images.yml`, `_data/hero_images.yml`, `_data/home_sections.yml` | `node scripts/process-images.mjs` (needs the originals; see IMAGES.md) |
 | Newsletter banner, contact form settings | `_data/newsletter.yml`, `_data/contact.yml` | Validate |
 | Fields in a data file edited through Pages CMS (reports, team, partners, newsletter, posts) | The data file **and** `.pages.yml` in the same change | Validate (it fails if they disagree) |
+| Logo and favicon | Originals are kept in `_brand/originals/` (not published); the site uses `assets/images/logo.svg` and `favicon.png` | Ask first |
 | Colours, spacing, fonts | `assets/css/style.css` | Ask first |
 
 ## Checks to run before every pull request

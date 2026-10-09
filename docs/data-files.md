@@ -39,6 +39,10 @@ The people shown as cards on the Explore page. A list.
 
 Only list people who have agreed to be listed. Order is the order on the page. There are no photos yet.
 
+## `fellows.yml` (CMS)
+
+Fellows, shown as cards under the Team on the Explore page. It has exactly the same fields and rules as `team.yml`, so someone can be moved between the two files by cutting and pasting their entry. Every Fellow's `role` is "Fellow".
+
 ## `partners.yml` (CMS)
 
 Partner organisations in groups (Science, Solutions, Impact), shown on the Connect page. A list of groups.

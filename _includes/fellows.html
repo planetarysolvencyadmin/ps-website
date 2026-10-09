@@ -1,0 +1,10 @@
+<div class="team-grid">
+{% for person in site.data.fellows %}
+<div class="team-card">
+<h3>{{ person.name }}</h3>
+<p class="role">{{ person.role }}</p>
+{% for para in person.bio %}<p>{{ para }}</p>
+{% endfor %}{% if person.bio.size == 0 %}<p><em>Biography to follow.</em></p>{% endif %}
+</div>
+{% endfor %}
+</div>

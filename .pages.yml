@@ -136,6 +136,26 @@ content:
         type: text
         list: true
 
+  - name: fellows
+    label: Fellows
+    type: file
+    path: _data/fellows.yml
+    format: yaml
+    list: true
+    operations:
+      delete: false
+    fields:
+      - name: name
+        type: string
+        required: true
+      - name: role
+        type: string
+        required: true
+      - name: bio
+        label: Bio paragraphs (add one item per paragraph)
+        type: text
+        list: true
+
   - name: partners
     label: Partners
     type: file

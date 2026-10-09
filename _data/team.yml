@@ -1,8 +1,3 @@
-- name: Sandy Trust
-  role: IFoA Planetary Solvency Lead
-  bio:
-    - Sandy is a Scottish sustainability actuary who developed the Planetary Solvency concept and has led the research agenda since the first report in 2022, pioneering the collaborative approach that defines our working style. He brings over 20 years’ financial services experience across pensions, savings and investment, including advising several regulatory and policy climate initiatives.
-    - Sandy previously set up the UK branch of the climate change action charity Protect Our Winters UK.
 - name: Jesse Abrams
   role: Science Lead
   bio:
@@ -13,26 +8,12 @@
   bio:
     - Jenny has spent over 25 years working in sustainability, thought leadership and systems change, latterly with the advisory firm Volans.
     - As a former journalist, producer and editorial head of a media start-up, Jenny has led partnerships with many international corporate and academic organisations. Through her experience as co-founder of two leaders’ networks, her interest has crystallised around how to spark meaningful relationships and collaboration across silos - key to moving the post-sustainability world towards repair and regeneration. 
-- name: Alex Wilks
-  role: Title to be confirmed
-  bio:
-    - Alex is a campaigner and researcher who has worked on climate issues since the early 1990s. For a decade he led international civil society coalitions which called on the World Bank, IMF and other financial institutions to act in favour of the global south. Later at Avaaz he contributed to a two-year push to show that citizens wanted what became the Paris Agreement. More recently - with both Sunrise Project and Client Earth - he has worked to challenge pension funds to act on climate risk.
-    - Alex also sings (bass) with the Climate Choir Movement and is part of the core group that organises its actions.
 - name: Oliver (Ollie) Cronk
   role: Technology Lead (Fractional CTO)
   bio:
     - Ollie is an independent Chief Architect and the founder of <a href="https://cronkadvisory.com">Cronk Advisory</a>, working across responsible tech and sustainability. He leads the team providing Planetary Solvency digital foundations, building the website, tools and platforms.
     - A long-standing advocate for sustainable technology, part of the UK Government Digital Sustainability Alliance (<a href="https://www.gov.uk/government/groups/government-digital-sustainability-alliance-gdsa">GDSA</a>) and is a key part of the team developing the <a href="https://dist.greenweb.org/">Digital Impacts Schema and Taxonomy (DIST)</a>, an open framework helping organisations categorise and report the environmental impacts of their digital technology. He is also the founder and co-host of <a href="https://architecttomorrow.com">Architect Tomorrow</a>. 
     - Ollie is a keen Cyclist and Photographer. <a href="https://www.linkedin.com/in/cronky/">Find Ollie on Linkedin.</a>
-- name: Oliver Bettis
-  role: ESG Actuary
-  bio:
-    - Oliver is a Fellow of the Institute and Faculty of Actuaries (IFoA) and has contributed to several IFoA working parties on climate change and sustainability.
-
-- name: Amos Wittenberg
-  role: Fellow
-  bio: 
-    - Amos leads Human Influence research, engineering, and mobilisation at the UK's AI Security Institute.
 - name: Gareth Slevin
   role: Actuarial Intern
   bio:

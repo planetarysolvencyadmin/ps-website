@@ -9,6 +9,7 @@
 | News and commentary | One post per entry in `_posts/` | Headline, date, list under, link, outlet, text. |
 | Reports | `_data/reports.yml` | A list; add, edit or reorder entries. |
 | Team | `_data/team.yml` | A list; bio is one item per paragraph. |
+| Fellows | `_data/fellows.yml` | Same fields as Team; move someone by cutting and pasting their entry. |
 | Partners | `_data/partners.yml` | Groups, each with partners (name, optional website). |
 | Newsletter banner | `_data/newsletter.yml` | |
 | Page text (advanced) | The five main pages | Opens the raw file. Change only the words. See [EDITING.md](../EDITING.md). |
