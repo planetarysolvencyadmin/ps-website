@@ -6,12 +6,12 @@ layout: page
 bands: false
 ---
 
-> Draft text for review. It has not been legally reviewed. Details in [square brackets] are placeholders to be completed.
+> Initial draft subject to change.
 {: .note}
 
 ## About these terms
 
-By using this website you agree to these terms. The site is operated by [legal entity name]. If you do not agree, please do not use it.
+By using this website you agree to these terms. The site is operated by Cronk Advisory Ltd on behalf of Planetary Solvency. If you do not agree, please do not use it.
 
 ## Information, not advice
 
