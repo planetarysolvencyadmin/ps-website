@@ -36,6 +36,14 @@ Sign up to the Planetary Solvency newsletter, the PS Chronicles, on Substack.
 
 [Subscribe on Substack](https://planetarysolvency.substack.com/subscribe){: .button}
 
+{% assign shown_social = site.data.social | where: "show", true %}{% if shown_social.size > 0 %}
+## Follow {#follow}
+
+Keep up with Planetary Solvency on social media.
+
+{% include social-links.html %}
+{% endif %}
+
 ## Contact {#contact}
 
 To find out more about Planetary Solvency or enquire about our products and services, get in touch.
