@@ -1,0 +1,21 @@
+# Fellows: people associated with Planetary Solvency. Same fields as team.yml, so someone can be moved between the
+# two files by cutting and pasting their entry. Every Fellow's role is "Fellow". Shown under the Team on the Explore page.
+- name: Sandy Trust
+  role: Fellow
+  bio:
+    - Sandy is a Scottish sustainability actuary who developed the Planetary Solvency concept and has led the research agenda since the first report in 2022, pioneering the collaborative approach that defines our working style. He brings over 20 years’ financial services experience across pensions, savings and investment, including advising several regulatory and policy climate initiatives.
+    - Sandy previously set up the UK branch of the climate change action charity Protect Our Winters UK.
+- name: Alex Wilks
+  role: Fellow
+  bio:
+    - Alex is a campaigner and researcher who has worked on climate issues since the early 1990s. For a decade he led international civil society coalitions which called on the World Bank, IMF and other financial institutions to act in favour of the global south. Later at Avaaz he contributed to a two-year push to show that citizens wanted what became the Paris Agreement. More recently - with both Sunrise Project and Client Earth - he has worked to challenge pension funds to act on climate risk.
+    - Alex also sings (bass) with the Climate Choir Movement and is part of the core group that organises its actions.
+- name: Oliver Bettis
+  role: Fellow
+  bio:
+    - Oliver is an actuary working in the City of London for a general insurance company. He was elected in 2022 to the governing council of the Institute & Faculty of Actuaries (IFoA).
+    - Oliver has a strong interest in climate change and sustainability, and has worked in this field for nearly two decades. He is a co-author of three of the flagship reports produced by the IFoA and the University of Exeter: Planetary Solvency, Climate Scorpion and Parasol Lost.
+- name: Amos Wittenberg
+  role: Fellow
+  bio: 
+    - Amos leads Human Influence research, engineering, and mobilisation at the UK's AI Security Institute.

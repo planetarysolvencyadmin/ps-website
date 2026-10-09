@@ -21,7 +21,7 @@ See [EDITING.md](EDITING.md) for the safe-editing rules (what to change, what to
 
 * **Pages:** `explore.md`, `intelligence.md`, `act.md`, `connect.md`, `press-and-commentary.md` and the footer pages are plain markdown.
 * **Top menu and footer links:** `_data/navigation.yml` and `_data/footer.yml`.
-* **Reports, partners and team:** `_data/reports.yml`, `_data/partners.yml`, `_data/team.yml`.
+* **Reports, partners and team:** `_data/reports.yml`, `_data/partners.yml`, `_data/team.yml`, `_data/fellows.yml`.
 * **News and commentary:** add a post (Posts in Siteleaf). Set `kind` to `news` or `commentary` to choose its list. Set `link` to send readers straight to an outside article, and `source` to name the outlet.
 * **Report covers:** `cover` in `_data/reports.yml`, built by `scripts/process-covers.mjs`. See [IMAGES.md](IMAGES.md#report-covers).
 * **Images:** the home page hero and section circles come from an image library. See [IMAGES.md](IMAGES.md) for how it works, how to add or change pictures and how to run `scripts/process-images.mjs`.

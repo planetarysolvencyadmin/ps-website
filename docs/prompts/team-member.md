@@ -1,6 +1,6 @@
 # Add, update or remove a team member
 
-The team is a list in `_data/team.yml`, shown as cards on the Explore page. Each has a name, role and a bio of one or more paragraphs.
+The team is a list in `_data/team.yml`, shown as cards on the Explore page. Fellows are in `_data/fellows.yml`, which has the same format and is shown below the team. Each has a name, role and a bio of one or more paragraphs.
 
 ## Prompt: add a team member
 

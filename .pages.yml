@@ -171,6 +171,38 @@ content:
         label: Show on the Connect page
         type: boolean
 
+  - name: fellows
+    label: Fellows
+    type: file
+    path: _data/fellows.yml
+    format: yaml
+    list: true
+    operations:
+      delete: false
+    fields:
+      - name: name
+        type: string
+        required: true
+      - name: role
+        type: string
+        required: true
+      - name: bio
+        label: Bio paragraphs (add one item per paragraph)
+        type: text
+        list: true
+      - name: linkedin
+        label: LinkedIn profile URL (optional, shown only if filled in)
+        type: string
+        pattern:
+          regex: "^https://\\S+$"
+          message: "Must start with https:// and contain no spaces"
+      - name: photo
+        label: Photo id (optional; see docs/data-files.md, Team photos)
+        type: string
+        pattern:
+          regex: "^[a-z0-9-]+$"
+          message: "Lower case letters, numbers and hyphens only"
+
   - name: partners
     label: Partners
     type: file

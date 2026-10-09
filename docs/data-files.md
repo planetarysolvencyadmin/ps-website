@@ -44,6 +44,10 @@ Only list people who have agreed to be listed. Order is the order on the page.
 
 `photo` (optional) is shown as a small round picture on the person's card, and `linkedin` as a LinkedIn icon beside their name. Each appears only if filled in. To add a photo: put the original (with the person's agreement) in `_uploads/team/`, for example `jesse-abrams.jpg`, run `node scripts/process-team-photos.mjs`, then set `photo: jesse-abrams` in `team.yml`. The script makes a 320px square (cropped from the centre) as WebP and JPEG in `assets/images/team/`, which it owns: never edit that folder by hand. The photo's alt text is generated from the person's name.
 
+## `fellows.yml` (CMS)
+
+Fellows, shown as cards under the Team on the Explore page. It has exactly the same fields and rules as `team.yml`, so someone can be moved between the two files by cutting and pasting their entry. Every Fellow's `role` is "Fellow". `photo` and `linkedin` work as for the team (see above).
+
 ## `partners.yml` (CMS)
 
 Partner organisations in groups (Science, Solutions, Impact), shown on the Connect page. A list of groups.
